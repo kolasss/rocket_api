@@ -1,0 +1,11 @@
+Rails:
+  Enabled: true
+
+Style/Documentation:
+  Enabled: false
+
+# Offense count: 2
+Style/MixinUsage:
+  Exclude:
+    - 'bin/setup'
+    - 'bin/update'
