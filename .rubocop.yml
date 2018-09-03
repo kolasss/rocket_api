@@ -1,5 +1,12 @@
+AllCops:
+  DisplayStyleGuide: true
+
 Rails:
   Enabled: true
+
+# because project using mongoid
+Rails/HasAndBelongsToMany:
+  Enabled: false
 
 Style/Documentation:
   Enabled: false
