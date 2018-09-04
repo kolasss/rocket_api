@@ -4,49 +4,63 @@ module Api
   module V1
     class ShopsController < ApplicationController
       def index
-        # without(:products_categories)
-        @shops = Shops::Shop.all
+        @shops = ::Shops::Shop.all.without(:products_categories)
 
-        render json: @shops
+        shops_json = Api::V1::Shops::CompactSerializer.new(
+          @shops
+        ).build_schema
+        # json = {
+        #   response: {
+        #     data: shops_json
+        #   }
+        # }
+        # render json: json
+        render json: json_success(items: shops_json)
       end
 
       def show
         set_shop
-        render json: @shop
+        render json: json_success(serialize_shop)
       end
 
       def create
-        @shop = Shops::Shop.new(shop_params)
+        @shop = ::Shops::Shop.new(shop_params)
 
         if @shop.save
           render(
-            json: @shop,
+            json: json_success(serialize_shop),
             status: :created,
             location: api_v1_shop_path(@shop)
           )
         else
-          render json: @shop.errors, status: :unprocessable_entity
+          # render json: @shop.errors, status: :unprocessable_entity
+          render_error
         end
       end
 
       def update
         set_shop
         if @shop.update(shop_params)
-          render json: @shop
+          render json: json_success(serialize_shop)
         else
-          render json: @shop.errors, status: :unprocessable_entity
+          # render json: @shop.errors, status: :unprocessable_entity
+          render_error
         end
       end
 
       def destroy
         set_shop
-        @shop.destroy
+        if @shop.destroy
+          render json: json_success
+        else
+          render_error
+        end
       end
 
       private
 
       def set_shop
-        @shop = Shops::Shop.find(params[:id])
+        @shop = ::Shops::Shop.find(params[:id])
       end
 
       def shop_params
@@ -55,6 +69,21 @@ module Api
           :description,
           category_ids: []
         )
+      end
+
+      def render_error
+        json = json_error(
+          code: 422,
+          errors: @shop.errors
+        )
+        render(
+          json: json,
+          status: :unprocessable_entity
+        )
+      end
+
+      def serialize_shop
+        Api::V1::Shops::Serializer.new(@shop).build_schema
       end
     end
   end

@@ -9,33 +9,37 @@ module Api
 
         if @category.save
           render(
-            json: @category,
+            json: json_success(serialize_category),
             status: :created,
             location: api_v1_shop_path(@shop)
           )
         else
-          render json: @category.errors, status: :unprocessable_entity
+          render_error
         end
       end
 
       def update
         set_category
         if @category.update(category_params)
-          render json: @category
+          render json: json_success(serialize_category)
         else
-          render json: @category.errors, status: :unprocessable_entity
+          render_error
         end
       end
 
       def destroy
         set_category
-        @category.destroy
+        if @category.destroy
+          render json: json_success
+        else
+          render_error
+        end
       end
 
       private
 
       def set_shop
-        @shop = Shops::Shop.find(params[:shop_id])
+        @shop = ::Shops::Shop.find(params[:shop_id])
       end
 
       def set_category
@@ -45,6 +49,23 @@ module Api
 
       def category_params
         params.require(:category).permit(:title)
+      end
+
+      def render_error
+        json = json_error(
+          code: 422,
+          errors: @category.errors
+        )
+        render(
+          json: json,
+          status: :unprocessable_entity
+        )
+      end
+
+      def serialize_category
+        Api::V1::ProductsCategories::Serializer.new(
+          @category
+        ).build_schema
       end
     end
   end

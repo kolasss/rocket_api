@@ -34,5 +34,9 @@ module RocketApi
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    config.i18n.available_locales = %i[ru en]
+    config.i18n.default_locale = :ru
+    config.i18n.fallbacks = [:en]
   end
 end
