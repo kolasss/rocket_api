@@ -12,12 +12,6 @@ Style/Documentation:
   Enabled: false
 
 # Offense count: 2
-Style/MixinUsage:
-  Exclude:
-    - 'bin/setup'
-    - 'bin/update'
-
-# Offense count: 2
 # Configuration parameters: CountComments.
 Metrics/MethodLength:
   Max: 11
