@@ -1,5 +1,8 @@
 AllCops:
   DisplayStyleGuide: true
+  Exclude:
+    - 'bin/bundle'
+    - 'bin/puma'
 
 Rails:
   Enabled: true

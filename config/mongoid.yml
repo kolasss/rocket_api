@@ -162,3 +162,17 @@ test:
         read:
           mode: :primary
         max_pool_size: 1
+
+production:
+  clients:
+    default:
+      database: rocket_api_production
+      hosts:
+        - localhost:27017
+      options:
+        # read:
+        #   mode: :primary
+        # min_pool_size 1
+        # max_pool_size: 5
+  options:
+    # use_utc: false

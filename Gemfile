@@ -18,9 +18,6 @@ gem 'puma', '~> 3.11'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
@@ -31,10 +28,11 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'oj' # json parser
 gem 'surrealist' # json serializer
 
+# TODO: remove github source after release > 1.9.1
+gem 'faker', github: 'stympy/faker' # fake data generator
+
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  # TODO: remove github source after release > 1.9.1
-  gem 'faker', github: 'stympy/faker' # fake data generator
 end
 
 group :development do
