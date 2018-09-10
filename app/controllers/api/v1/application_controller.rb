@@ -16,6 +16,19 @@ module Api
         json[:errors] = errors if errors.present?
         Oj.dump error: json
       end
+
+      rescue_from Mongoid::Errors::DocumentNotFound, with: :not_found
+
+      def not_found
+        json = json_error(
+          code: 404,
+          message: 'Not Found'
+        )
+        render(
+          json: json,
+          status: :not_found
+        )
+      end
     end
   end
 end
