@@ -14,10 +14,7 @@ namespace :faker do
 
     shops = Shops::Shop.all
     shops.each do |shop|
-      ShopsFaker.prng.rand(2..3).times do
-        ShopsFaker.generate_products_for(shop)
-      end
-      Faker::UniqueGenerator.clear
+      ShopsFaker.generate_products_for(shop)
     end
 
     p 'Fake shops generated'
@@ -47,10 +44,13 @@ module ShopsFaker
     end
 
     def generate_products_for(shop)
-      category = generate_product_category_for(shop)
-      prng.rand(5..20).times do
-        generate_product_for(category)
+      prng.rand(2..3).times do
+        category = generate_product_category_for(shop)
+        prng.rand(5..20).times do
+          generate_product_for(category)
+        end
       end
+      Faker::UniqueGenerator.clear
     end
 
     private
