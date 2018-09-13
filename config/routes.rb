@@ -26,6 +26,12 @@ Rails.application.routes.draw do
       # namespace :supervisor do
       #   resources :shops
       # end
+      namespace :users do
+        post    :register,  to: 'registration#create'
+        post    :login,     to: 'authentication#create'
+        # delete  :logout,    to: 'authentication#destroy'
+      end
+      resources :users
     end
   end
 end

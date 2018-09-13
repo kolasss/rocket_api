@@ -3,6 +3,10 @@
 module Api
   module V1
     class ApplicationController < ::ApplicationController
+      include UserAuthentication::Controller
+
+      before_action :authenticate
+
       private
 
       def json_success(data = nil)
@@ -27,6 +31,21 @@ module Api
         render(
           json: json,
           status: :not_found
+        )
+      end
+
+      def authenticate
+        not_authorized unless logged_in?
+      end
+
+      def not_authorized
+        json = json_error(
+          code: 401,
+          message: 'Unauthorized'
+        )
+        render(
+          json: json,
+          status: :unauthorized
         )
       end
     end
