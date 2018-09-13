@@ -7,13 +7,14 @@ module Api
         skip_before_action :authenticate
 
         def create
-          @user = ::Users::User.find_by(phone: user_params[:phone])
+          # TODO: move to operation
+          @user = ::Users::User.where(phone: user_params[:phone]).first
+          # @user = ::Users::User.find_by(phone: user_params[:phone])
 
           # TODO: check code_hash with hash of params code
-          if @user.code_hash.present? && @user.code_hash == user_params[:code]
-            payload = UserAuthentication::User.payload(@user)
-            jwt = UserAuthentication::Token.issue(payload)
-            render json: { token: jwt }
+          if @user&.code_hash.present? && @user.code_hash == user_params[:code]
+            token = UserAuthentication::User.new(user: @user).new_token
+            render json: { token: token }
           else
             not_authorized
           end
