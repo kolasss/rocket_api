@@ -10,6 +10,7 @@ module UserAuthentication
 
     def find(payload)
       return nil if payload.blank?
+
       @klass.find(payload[TOKEN_KEY.to_s])
 
       # current_user.authentications.find decoded_auth_token[:auth_id]

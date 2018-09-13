@@ -3,6 +3,7 @@ AllCops:
   Exclude:
     - 'bin/bundle'
     - 'bin/puma'
+    - 'bin/rspec'
 
 Rails:
   Enabled: true

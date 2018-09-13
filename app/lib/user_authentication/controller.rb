@@ -15,6 +15,7 @@ module UserAuthentication
 
     def find_user_with_token
       return unless token_present?
+
       UserAuthentication::User.new(::Users::User)
                               .find(decoded_auth_token)
     end
