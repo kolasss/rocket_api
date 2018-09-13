@@ -9,7 +9,8 @@ module Api
         def create
           @user = ::Users::User.find_by(phone: user_params[:phone])
 
-          if @user.code_hash == user_params[:code]
+          # TODO: check code_hash with hash of params code
+          if @user.code_hash.present? && @user.code_hash == user_params[:code]
             payload = UserAuthentication::User.payload(@user)
             jwt = UserAuthentication::Token.issue(payload)
             render json: { token: jwt }
