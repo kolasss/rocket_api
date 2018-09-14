@@ -30,7 +30,7 @@ module Api
       def destroy
         set_category
         if @category.destroy
-          render json: json_success
+          head :no_content
         else
           render_error
         end

@@ -19,3 +19,7 @@ Style/Documentation:
 # Configuration parameters: CountComments.
 Metrics/MethodLength:
   Max: 11
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'

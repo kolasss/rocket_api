@@ -43,7 +43,7 @@ module Api
       def destroy
         set_user
         if @user.destroy
-          render json: json_success
+          head :no_content
         else
           render_error
         end

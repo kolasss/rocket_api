@@ -9,8 +9,8 @@ module Api
 
       private
 
-      def json_success(data = nil)
-        Oj.dump data: data
+      def json_success(data)
+        Oj.dump(data: data)
       end
 
       def json_error(code: nil, message: nil, errors: nil)
@@ -18,12 +18,12 @@ module Api
         json[:code] = code if code.present?
         json[:message] = message if message.present?
         json[:errors] = errors if errors.present?
-        Oj.dump error: json
+        Oj.dump(error: json)
       end
 
-      rescue_from Mongoid::Errors::DocumentNotFound, with: :not_found
+      rescue_from Mongoid::Errors::DocumentNotFound, with: :render_not_found
 
-      def not_found
+      def render_not_found
         json = json_error(
           code: 404,
           message: 'Not Found'
@@ -35,10 +35,10 @@ module Api
       end
 
       def authenticate
-        not_authorized unless logged_in?
+        render_not_authorized unless logged_in?
       end
 
-      def not_authorized
+      def render_not_authorized
         json = json_error(
           code: 401,
           message: 'Unauthorized'

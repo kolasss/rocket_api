@@ -51,7 +51,7 @@ module Api
       def destroy
         set_shop
         if @shop.destroy
-          render json: json_success
+          head :no_content
         else
           render_error
         end

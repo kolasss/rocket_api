@@ -16,12 +16,12 @@ module Api
             token = UserAuthentication::User.new(user: @user).new_token
             render json: { token: token }
           else
-            not_authorized
+            render_not_authorized
           end
         end
 
         # def destroy
-        #   head :ok
+        #   head :no_content
         # end
 
         private

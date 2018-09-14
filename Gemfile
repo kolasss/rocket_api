@@ -32,7 +32,10 @@ gem 'faker', github: 'stympy/faker' # fake data generator
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'database_cleaner'
+  gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 3.8'
+  gem 'rspec-rails-swagger' # swagger docs generator
 end
 
 group :development do
@@ -41,4 +44,8 @@ group :development do
   # the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :test do
+  gem 'fuubar' # rspec output formatter
 end
