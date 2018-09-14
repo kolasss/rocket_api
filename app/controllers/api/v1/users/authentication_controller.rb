@@ -14,7 +14,10 @@ module Api
           # TODO: check code_hash with hash of params code
           if @user&.code_hash.present? && @user.code_hash == user_params[:code]
             token = UserAuthentication::User.new(user: @user).new_token
-            render json: { token: token }
+            render(
+              json: json_success(token: token),
+              status: :created
+            )
           else
             render_not_authorized
           end

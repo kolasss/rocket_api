@@ -2,12 +2,12 @@
 
 require 'swagger_helper'
 
-RSpec.describe 'shops', type: :request, tags: [:shops] do
+RSpec.describe 'users', type: :request, tags: [:users] do
   let(:user) { create(:user) }
   let(:token) { UserAuthentication::User.new(user: user).new_token }
   let(:Authorization) { "Bearer #{token}" }
 
-  path '/api/v1/shops' do
+  path '/api/v1/users' do
     parameter(
       :Authorization,
       in: :header,
@@ -17,24 +17,22 @@ RSpec.describe 'shops', type: :request, tags: [:shops] do
     )
 
     get summary: 'list items' do
-      let!(:shop) { create(:shop) }
-
       produces 'application/json'
 
       response(200, description: 'successful') do
-        it 'contains array of shops' do
+        it 'contains array of users' do
           json = JSON.parse(response.body)
           items = json['data']['items']
           expect(items).to be_an_instance_of(Array)
           expect(items.size).to eq 1
+          expect(items[0]['name']).to eq user.name
         end
         capture_example
       end
     end
 
     post summary: 'create' do
-      let(:category) { create(:shop_category) }
-      let(:shop_attributes) { attributes_for(:shop) }
+      let(:item_attributes) { attributes_for(:user) }
 
       produces 'application/json'
       consumes 'application/json'
@@ -42,33 +40,31 @@ RSpec.describe 'shops', type: :request, tags: [:shops] do
       parameter :body, in: :body, required: true, schema: {
         type: :object,
         properties: {
-          title: { type: :string },
-          description: { type: :string },
-          category_ids: {
-            type: :array,
-            items: { type: :string }
+          user: {
+            type: :object,
+            properties: {
+              name: { type: :string },
+              phone: { type: :string }
+            }
           }
         }
       }
       let(:body) do
-        { shop: shop_attributes.merge(category_ids: [category.id.to_s]) }
+        { user: item_attributes }
       end
 
       response(201, description: 'successfully created') do
         it 'uses the params we passed in' do
           json = JSON.parse(response.body)
-          shop = json['data']
-          expect(shop['title']).to eq shop_attributes[:title]
-          expect(shop['categories'][0]['title']).to eq category.title
+          item = json['data']
+          expect(item['name']).to eq item_attributes[:name]
         end
         capture_example
       end
     end
   end
 
-  path '/api/v1/shops/{shop_id}' do
-    let(:shop) { create(:shop) }
-
+  path '/api/v1/users/{user_id}' do
     parameter(
       :Authorization,
       in: :header,
@@ -77,8 +73,9 @@ RSpec.describe 'shops', type: :request, tags: [:shops] do
       description: 'Bearer token'
     )
 
-    parameter :shop_id, in: :path, type: :string, required: true
-    let(:shop_id) { shop.id.to_s }
+    parameter :user_id, in: :path, type: :string, required: true
+    let(:user2) { create(:user) }
+    let(:user_id) { user2.id.to_s }
 
     get summary: 'fetch an item' do
       produces 'application/json'
@@ -92,28 +89,29 @@ RSpec.describe 'shops', type: :request, tags: [:shops] do
       produces 'application/json'
       consumes 'application/json'
 
-      let(:new_title) { 'new title' }
+      let(:new_name) { 'new name' }
 
       parameter :body, in: :body, required: true, schema: {
         type: :object,
         properties: {
-          title: { type: :string },
-          description: { type: :string },
-          category_ids: {
-            type: :array,
-            items: { type: :string }
+          user: {
+            type: :object,
+            properties: {
+              name: { type: :string },
+              phone: { type: :string }
+            }
           }
         }
       }
       let(:body) do
-        { shop: { title: new_title } }
+        { user: { name: new_name } }
       end
 
       response 200, description: 'success' do
         it 'uses the params we passed in' do
           json = JSON.parse(response.body)
-          shop = json['data']
-          expect(shop['title']).to eq new_title
+          item = json['data']
+          expect(item['name']).to eq new_name
         end
         capture_example
       end

@@ -55,4 +55,8 @@ RSpec.configure do |config|
       example.run
     end
   end
+
+  config.after(:context) do
+    Faker::UniqueGenerator.clear
+  end
 end

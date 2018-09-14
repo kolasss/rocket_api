@@ -57,9 +57,8 @@ module Api
 
       def user_params
         params.require(:user).permit(
-          :title,
-          :description,
-          category_ids: []
+          :name,
+          :phone
         )
       end
 

@@ -1,3 +1,5 @@
+inherit_from: .rubocop_todo.yml
+
 AllCops:
   DisplayStyleGuide: true
   Exclude:
@@ -14,11 +16,6 @@ Rails/HasAndBelongsToMany:
 
 Style/Documentation:
   Enabled: false
-
-# Offense count: 2
-# Configuration parameters: CountComments.
-Metrics/MethodLength:
-  Max: 11
 
 Metrics/BlockLength:
   Exclude:
