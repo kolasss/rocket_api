@@ -27,6 +27,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'oj' # json parser
 gem 'surrealist' # json serializer
 
+gem 'dry-monads' # for operations
+gem 'dry-validation' # validations
+
 # TODO: remove github source after release > 1.9.1
 gem 'faker', github: 'stympy/faker' # fake data generator
 

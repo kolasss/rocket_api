@@ -7,13 +7,11 @@ module Api
         skip_before_action :authenticate
 
         def create
-          # TODO: move to operation
-          @user = ::Users::User.where(phone: user_params[:phone]).first
-          # @user = ::Users::User.find_by(phone: user_params[:phone])
+          operation = Operations::Users::AuthenticateUser.new
+          result = operation.call(request.parameters)
 
-          # TODO: check code_hash with hash of params code
-          if @user&.code_hash.present? && @user.code_hash == user_params[:code]
-            token = UserAuthentication::User.new(user: @user).new_token
+          if result.success?
+            token = result.value!
             render(
               json: json_success(token: token),
               status: :created
@@ -26,15 +24,6 @@ module Api
         # def destroy
         #   head :no_content
         # end
-
-        private
-
-        def user_params
-          params.require(:user).permit(
-            :code,
-            :phone
-          )
-        end
       end
     end
   end
