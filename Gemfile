@@ -38,7 +38,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 3.8'
-  gem 'rspec-rails-swagger' # swagger docs generator
+  gem 'rspec-rails-swagger', require: false # swagger docs generator
 end
 
 group :development do

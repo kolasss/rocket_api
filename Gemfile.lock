@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/stympy/faker.git
-  revision: d5d22148b4144cfc165ea9b8b8551cec11ba88f7
+  revision: e220758871e64b85e799efc6143617b1cb722761
   specs:
     faker (1.9.1)
       i18n (>= 0.7)
@@ -123,7 +123,7 @@ GEM
     minitest (5.11.3)
     mongo (2.6.2)
       bson (>= 4.3.0, < 5.0.0)
-    mongoid (7.0.1)
+    mongoid (7.0.2)
       activemodel (>= 5.1, < 6.0.0)
       mongo (>= 2.5.1, < 3.0.0)
     msgpack (1.2.4)
