@@ -4,7 +4,9 @@ require 'dry/monads/result'
 require 'dry/monads/do'
 
 module Operations
-  class Base
-    include Dry::Monads::Result::Mixin
+  module V1
+    class Base
+      include Dry::Monads::Result::Mixin
+    end
   end
 end

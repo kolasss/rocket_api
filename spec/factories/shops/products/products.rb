@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :product, class: Products::Product do
+  factory :product, class: Shops::Products::Product do
     title { Faker::Restaurant.unique.type }
     description { Faker::Food.description }
     price { Faker::Number.decimal(3, 2) }

@@ -5,10 +5,24 @@ FactoryBot.define do
     title { Faker::Restaurant.unique.name }
     description { Faker::Restaurant.description }
 
-    # association :categories, factory: :shop_category
-    before :create do |shop|
-      shop.categories << create(:shop_category)
-      # create_list :comment, 3, post: post   # has_many
+    transient do
+      categories_count { 1 }
+    end
+
+    after(:create) do |shop, evaluator|
+      create_list(:shop_category, evaluator.categories_count,
+                  shops: [shop])
+    end
+
+    trait :with_product do
+      transient do
+        pc_count { 1 }
+      end
+
+      after(:create) do |shop, evaluator|
+        create_list(:product_category, evaluator.pc_count,
+                    :with_product, shop: shop)
+      end
     end
   end
 end

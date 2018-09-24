@@ -44,7 +44,8 @@ RSpec.describe 'users', type: :request, tags: [:users] do
             type: :object,
             properties: {
               name: { type: :string },
-              phone: { type: :string }
+              phone: { type: :string },
+              role: { type: :string }
             }
           }
         }

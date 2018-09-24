@@ -4,14 +4,16 @@ module Api
   module V1
     module Products
       class Serializer < Api::V1::ObjectSerializer
+        PRODUCT_FIELDS = {
+          id: String,
+          title: String,
+          description: String,
+          price: BigDecimal,
+          weight: String
+        }.freeze
+
         json_schema do
-          {
-            id: String,
-            title: String,
-            description: String,
-            price: BigDecimal,
-            weight: String
-          }
+          PRODUCT_FIELDS
         end
       end
     end

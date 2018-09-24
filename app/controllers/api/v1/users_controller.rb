@@ -58,14 +58,15 @@ module Api
       def user_params
         params.require(:user).permit(
           :name,
-          :phone
+          :phone,
+          :role
         )
       end
 
       def render_error
         json = json_error(
           code: 422,
-          errors: @user.errors
+          errors: @user.errors.as_json
         )
         render(
           json: json,

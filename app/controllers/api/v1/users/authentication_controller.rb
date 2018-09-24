@@ -7,7 +7,7 @@ module Api
         skip_before_action :authenticate
 
         def create
-          operation = Operations::Users::AuthenticateUser.new
+          operation = Operations::V1::Users::Authenticate.new
           result = operation.call(request.parameters)
 
           if result.success?

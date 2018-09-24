@@ -8,9 +8,20 @@ module Api
           {
             id: String,
             name: String,
-            phone: String
+            phone: String,
+            role: String,
+            # client: String,
+            # courier: String
           }
         end
+
+        # def client
+        #   object.client.to_json
+        # end
+
+        # def courier
+        #   object.client.to_json
+        # end
       end
     end
   end

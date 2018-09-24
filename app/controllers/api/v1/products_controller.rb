@@ -62,7 +62,7 @@ module Api
       def render_error
         json = json_error(
           code: 422,
-          errors: @product.errors
+          errors: @product.errors.as_json
         )
         render(
           json: json,

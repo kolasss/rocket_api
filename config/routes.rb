@@ -11,12 +11,24 @@ Rails.application.routes.draw do
           resources :products, except: %i[index show]
         end
       end
+      resources :orders
+
+      namespace :users do
+        post    :register,  to: 'registration#create'
+        post    :login,     to: 'authentication#create'
+        # delete  :logout,    to: 'authentication#destroy'
+      end
+      resources :users
+
       # namespace :admin do
       #   resources :shops
       # end
-      # namespace :client do
-      #   resources :shops
-      # end
+      namespace :client do
+        # resources :shops
+        resources :orders, except: %i[destroy update] do
+          put :cancel
+        end
+      end
       # namespace :courier do
       #   resources :shops
       # end
@@ -26,12 +38,6 @@ Rails.application.routes.draw do
       # namespace :supervisor do
       #   resources :shops
       # end
-      namespace :users do
-        post    :register,  to: 'registration#create'
-        post    :login,     to: 'authentication#create'
-        # delete  :logout,    to: 'authentication#destroy'
-      end
-      resources :users
     end
   end
 end

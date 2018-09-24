@@ -4,6 +4,7 @@ FactoryBot.define do
   factory :user, class: Users::User do
     name { Faker::Name.name }
     phone { Faker::PhoneNumber.unique.phone_number }
+    role { 'client' }
 
     trait :with_code do
       code_hash { '1234' }
