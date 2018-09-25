@@ -24,5 +24,11 @@ module Shops
       inverse_of: :shop,
       dependent: :restrict_with_error
     )
+    has_one(
+      :manager,
+      class_name: 'Users::User',
+      inverse_of: :shop,
+      dependent: :nullify
+    )
   end
 end

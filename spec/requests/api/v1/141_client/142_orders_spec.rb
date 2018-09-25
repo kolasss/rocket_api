@@ -2,7 +2,7 @@
 
 require 'swagger_helper'
 
-RSpec.describe 'orders', type: :request, tags: [:client_orders] do
+RSpec.describe 'orders', type: :request, tags: ['client orders'] do
   let(:user) { create(:user) }
   let(:token) { UserAuthentication::User.new(user: user).new_token }
   let(:Authorization) { "Bearer #{token}" }

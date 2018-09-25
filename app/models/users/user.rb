@@ -8,19 +8,28 @@ module Users
     field :code_hash, type: String
     field :role, type: String
 
-    # embeds_one :client
-    # embeds_one :courier
+    # for client
     has_many(
       :client_orders,
       class_name: 'Orders::Order',
       inverse_of: :client,
       dependent: :restrict_with_error
     )
+
+    # for courier
     has_many(
       :courier_orders,
       class_name: 'Orders::Order',
       inverse_of: :courier,
       dependent: :restrict_with_error
+    )
+
+    # for shop_manager
+    belongs_to(
+      :shop,
+      class_name: 'Shops::Shop',
+      inverse_of: :manager,
+      optional: true
     )
 
     ROLES = %w[

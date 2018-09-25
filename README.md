@@ -19,3 +19,12 @@ generate swagger's json `RAILS_ENV=test bin/rake swagger`
 
 > before generating json comment `, require: false` in `Gemfile`
 > line `gem 'rspec-rails-swagger', require: false`
+
+## Deploy
+
+- ssh to server
+- cd dir
+- git pull
+- bundle
+- run rake tasks if needed
+- restart puma service

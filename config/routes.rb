@@ -25,16 +25,20 @@ Rails.application.routes.draw do
       # end
       namespace :client do
         # resources :shops
-        resources :orders, except: %i[destroy update] do
+        resources :orders, except: %i[update destroy] do
           put :cancel
         end
       end
       # namespace :courier do
       #   resources :shops
       # end
-      # namespace :shop_manager do
-      #   resources :shops
-      # end
+      namespace :shop_manager do
+        resource :shop, except: %i[create destroy] do
+          resources :products_categories, except: %i[index show] do
+            resources :products, except: %i[index show]
+          end
+        end
+      end
       # namespace :supervisor do
       #   resources :shops
       # end

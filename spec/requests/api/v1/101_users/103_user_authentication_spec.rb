@@ -2,13 +2,13 @@
 
 require 'swagger_helper'
 
-RSpec.describe 'user registration', type: :request,
-                                    tags: [:user_registration] do
-  path '/api/v1/users/register' do
-    post summary: 'sign up',
-         description: 'регистрация нового пользователя' do
-      let(:item_attributes) { attributes_for(:user) }
+RSpec.describe 'user authentication', type: :request,
+                                      tags: ['user authentication'] do
+  path '/api/v1/users/login' do
+    let(:user) { create(:user, :with_code) }
 
+    post summary: 'sign in',
+         description: 'получение токена' do
       produces 'application/json'
       consumes 'application/json'
 
@@ -18,21 +18,24 @@ RSpec.describe 'user registration', type: :request,
           user: {
             type: :object,
             properties: {
-              name: { type: :string },
-              phone: { type: :string }
+              phone: { type: :string },
+              code: { type: :string }
             }
           }
         }
       }
       let(:body) do
-        { user: item_attributes }
+        { user: {
+          phone: user.phone,
+          code: '1234'
+        } }
       end
 
       response(201, description: 'successfully created') do
         it 'uses the params we passed in' do
           json = JSON.parse(response.body)
           item = json['data']
-          expect(item['phone']).to eq item_attributes[:phone]
+          expect(item['token']).to be
         end
         capture_example
       end

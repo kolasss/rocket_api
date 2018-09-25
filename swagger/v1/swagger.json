@@ -13,9 +13,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5ba8bb9e8cc1567f837a029a",
-                  "name": "Ульяна Ярославовна Брагина",
-                  "phone": "+7(983)574-22-18",
+                  "id": "5ba9fe448cc15630509cf166",
+                  "name": "Эдуард Евгеньевич Князев",
+                  "phone": "+7(964)815-75-32",
                   "role": "client"
                 }
               }
@@ -46,7 +46,7 @@
           }
         ],
         "tags": [
-          "user_registration"
+          "user registration"
         ],
         "summary": "sign up",
         "description": "регистрация нового пользователя",
@@ -66,7 +66,7 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNWJhOGJiOWY4Y2MxNTY3ZjgzN2EwMjljIn0.WPUJmNCu2zV263HAkbA1cZG2mw9m7Z-J5BTr1Q8ieAo"
+                  "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNWJhOWZlNDQ4Y2MxNTYzMDUwOWNmMTY4In0.Ev0275u8vT_o26cDdAfHHYozntxv8ErlM4g735Gwu4g"
                 }
               }
             }
@@ -96,7 +96,7 @@
           }
         ],
         "tags": [
-          "user_authentication"
+          "user authentication"
         ],
         "summary": "sign in",
         "description": "получение токена",
@@ -127,8 +127,8 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5ba8bb9f8cc1567f837a029f",
-                      "title": "Sushi"
+                      "id": "5ba9fe448cc15630509cf16b",
+                      "title": "Desserts"
                     }
                   ]
                 }
@@ -151,8 +151,8 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5ba8bb9f8cc1567f837a02a4",
-                  "title": "Sandwiches",
+                  "id": "5ba9fe448cc15630509cf170",
+                  "title": "Chinese",
                   "shopIds": [
 
                   ]
@@ -216,7 +216,7 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5ba8bb9f8cc1567f837a02a7",
+                  "id": "5ba9fe448cc15630509cf173",
                   "title": "new title",
                   "shopIds": [
 
@@ -288,8 +288,8 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5ba8bba08cc1567f837a02ae",
-                      "title": "Fast Box",
+                      "id": "5ba9fe458cc15630509cf17a",
+                      "title": "Fast Bakery",
                       "description": "To deliver an exceptional shopping experience by offering the best service, value, quality, and freshest products while being good stewards of our environment and giving back to the communities we serve.",
                       "categoryIds": [
 
@@ -316,13 +316,13 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5ba8bba08cc1567f837a02b6",
-                  "title": "Belly Bakery",
-                  "description": "We earn the loyalty of the people we serve by first anticipating, then fulfilling their needs with our superior-quality products, a unique shopping experience, customer-focused service and continuous innovation, while generating long-term profitable growth for our shareholders.",
+                  "id": "5ba9fe458cc15630509cf182",
+                  "title": "Orange Eatery",
+                  "description": "Our Mission at Denny’s is to establish beneficial business relationships with diverse suppliers who share our commitment to customer service, quality and competitive pricing.",
                   "categories": [
                     {
-                      "id": "5ba8bba08cc1567f837a02b5",
-                      "title": "Bar"
+                      "id": "5ba9fe458cc15630509cf181",
+                      "title": "Mexican"
                     }
                   ],
                   "productsCategories": [
@@ -396,9 +396,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5ba8bba08cc1567f837a02b7",
-                  "title": "Big Subs",
-                  "description": "We are committed to using the finest ingredients in our recipes. No food leaves our kitchen that we ourselves would not eat.",
+                  "id": "5ba9fe458cc15630509cf183",
+                  "title": "SU King",
+                  "description": "To sell delicious and remarkable food and drinks. That the food and drink we sell meets the highest standards of quality, freshness and seasonality and combines both modern-creative and traditional southern styles of cooking. To consistently provide our customers with impeccable service by demonstrating warmth, graciousness, efficiency, knowledge, professionalism and integrity in our work. To have every customer who comes through our doors leave impressed by Maxie’s and excited to come back again. To create and maintain a restaurant that is comprehensive and exceptional in its attention to every detail of operation. To provide all who work with us a friendly, cooperative and rewarding environment which encourages long- term, satisfying, growth employment. To keep our concept fresh, exciting and on the cutting edge of the hospitality and entertainment industry. To be a giving member of the Ithaca community and to use our restaurant to improve the quality of life in the Finger Lakes region.",
                   "categories": [
 
                   ],
@@ -426,9 +426,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5ba8bba08cc1567f837a02bd",
+                  "id": "5ba9fe468cc15630509cf189",
                   "title": "new title",
-                  "description": "Our mission is to be a leader in the distribution and merchandising of food, pharmacy, health and personal care items, seasonal merchandise, and related products and services. We place considerable importance on forging strong supplier partnerships. Our suppliers, large or small, local or global, are essential components in accomplishing our mission.",
+                  "description": "To ensure that each guest receives prompt, professional, friendly and courteous service. To maintain a clean, comfortable and well maintained premises for our guests and staff. To provide at a fair price – nutritional, well-prepared meals – using only quality ingredients. To ensure that all guests and staff are treated with the respect and dignity they deserve. To thank each guest for the opportunity to serve them. By maintaining these objectives we shall be assured of a fair profit that will allow us to contribute to the community we serve.",
                   "categories": [
 
                   ],
@@ -515,8 +515,8 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5ba8bba18cc1567f837a02ca",
-                  "title": "Bakery",
+                  "id": "5ba9fe468cc15630509cf196",
+                  "title": "Vegetarian",
                   "products": [
 
                   ]
@@ -587,7 +587,7 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5ba8bba18cc1567f837a02d1",
+                  "id": "5ba9fe468cc15630509cf19d",
                   "title": "new title",
                   "products": [
 
@@ -669,11 +669,11 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5ba8bba28cc1567f837a02e0",
-                  "title": "Ice Cream",
-                  "description": "Granny Smith apples mixed with brown sugar and butter filling, in a flaky all-butter crust, with ice cream.",
-                  "price": 205.09,
-                  "weight": "9 decigrams"
+                  "id": "5ba9fe468cc15630509cf1ac",
+                  "title": "Mexican",
+                  "description": "Three egg omelet with Roquefort cheese, chives, and ham. With a side of roasted potatoes, and your choice of toast or croissant.",
+                  "price": 904.06,
+                  "weight": "3 hectograms"
                 }
               }
             }
@@ -756,11 +756,11 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5ba8bba38cc1567f837a02e9",
+                  "id": "5ba9fe478cc15630509cf1b5",
                   "title": "new title",
-                  "description": "Three eggs with cilantro, tomatoes, onions, avocados and melted Emmental cheese. With a side of roasted potatoes, and your choice of toast or croissant.",
-                  "price": 800.04,
-                  "weight": "9 dekagrams"
+                  "description": "Two buttermilk waffles, topped with whipped cream and maple syrup, a side of two eggs served any style, and your choice of smoked bacon or smoked ham.",
+                  "price": 705.06,
+                  "weight": "6 grams"
                 }
               }
             }
@@ -837,10 +837,10 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5ba8bba38cc1567f837a02f5",
-                      "clientId": "5ba8bba38cc1567f837a02f4",
+                      "id": "5ba9fe478cc15630509cf1c1",
+                      "clientId": "5ba9fe478cc15630509cf1c0",
                       "courierId": "",
-                      "shopId": "5ba8bba38cc1567f837a02f6",
+                      "shopId": "5ba9fe478cc15630509cf1c2",
                       "status": "new",
                       "priceTotal": 0.0,
                       "products": [
@@ -868,10 +868,10 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5ba8bba48cc1567f837a0305",
-                  "clientId": "5ba8bba48cc1567f837a0300",
+                  "id": "5ba9fe478cc15630509cf1d1",
+                  "clientId": "5ba9fe478cc15630509cf1cc",
                   "courierId": "",
-                  "shopId": "5ba8bba48cc1567f837a0301",
+                  "shopId": "5ba9fe478cc15630509cf1cd",
                   "status": "new",
                   "priceTotal": null,
                   "products": [
@@ -946,21 +946,21 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5ba8bba48cc1567f837a030f",
-                  "clientId": "5ba8bba48cc1567f837a030e",
+                  "id": "5ba9fe478cc15630509cf1db",
+                  "clientId": "5ba9fe478cc15630509cf1da",
                   "courierId": "",
-                  "shopId": "5ba8bba48cc1567f837a0310",
+                  "shopId": "5ba9fe478cc15630509cf1dc",
                   "status": "new",
-                  "priceTotal": 1418.12,
+                  "priceTotal": 1080.2,
                   "products": [
                     {
-                      "id": "5ba8bba48cc1567f837a0314",
+                      "id": "5ba9fe478cc15630509cf1e0",
                       "title": "American (Traditional)",
-                      "description": "Three egg omelet with Roquefort cheese, chives, and ham. With a side of roasted potatoes, and your choice of toast or croissant.",
-                      "price": 709.06,
-                      "weight": "0 hectograms",
-                      "quantity": 2,
-                      "shopProductId": "5ba8bba48cc1567f837a0313"
+                      "description": "Fresh Norwegian salmon, lightly brushed with our herbed Dijon mustard sauce, with choice of two sides.",
+                      "price": 108.02,
+                      "weight": "4 decigrams",
+                      "quantity": 10,
+                      "shopProductId": "5ba9fe478cc15630509cf1df"
                     }
                   ]
                 }
@@ -983,21 +983,21 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5ba8bba58cc1567f837a0320",
-                  "clientId": "5ba8bba58cc1567f837a031f",
-                  "courierId": "5ba8bba58cc1567f837a0327",
-                  "shopId": "5ba8bba58cc1567f837a0321",
+                  "id": "5ba9fe478cc15630509cf1ec",
+                  "clientId": "5ba9fe478cc15630509cf1eb",
+                  "courierId": "5ba9fe478cc15630509cf1f3",
+                  "shopId": "5ba9fe478cc15630509cf1ed",
                   "status": "delivered",
-                  "priceTotal": 735.49,
+                  "priceTotal": 1845.36,
                   "products": [
                     {
-                      "id": "5ba8bba58cc1567f837a0325",
-                      "title": "Vietnamese",
-                      "description": "Granny Smith apples mixed with brown sugar and butter filling, in a flaky all-butter crust, with ice cream.",
-                      "price": 105.07,
-                      "weight": "8 centigrams",
-                      "quantity": 7,
-                      "shopProductId": "5ba8bba58cc1567f837a0324"
+                      "id": "5ba9fe478cc15630509cf1f1",
+                      "title": "Pizza",
+                      "description": "Three eggs with cilantro, tomatoes, onions, avocados and melted Emmental cheese. With a side of roasted potatoes, and your choice of toast or croissant.",
+                      "price": 205.04,
+                      "weight": "9 hectograms",
+                      "quantity": 9,
+                      "shopProductId": "5ba9fe478cc15630509cf1f0"
                     }
                   ]
                 }
@@ -1076,9 +1076,9 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5ba8bba68cc1567f837a0331",
-                      "name": "Дарья Васильевна Быкова",
-                      "phone": "+7(986)719-59-60",
+                      "id": "5ba9fe488cc15630509cf1fd",
+                      "name": "Волков Николай",
+                      "phone": "+7(961)196-82-03",
                       "role": "client"
                     }
                   ]
@@ -1102,9 +1102,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5ba8bba68cc1567f837a0335",
-                  "name": "Молчанов Владимир",
-                  "phone": "+7(998)566-64-11",
+                  "id": "5ba9fe488cc15630509cf201",
+                  "name": "Алексей Алексеевич Марков",
+                  "phone": "+7(962)585-14-68",
                   "role": "client"
                 }
               }
@@ -1171,9 +1171,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5ba8bba78cc1567f837a0336",
-                  "name": "Муравьева Зинаида",
-                  "phone": "+7(989)347-85-95",
+                  "id": "5ba9fe488cc15630509cf202",
+                  "name": "Фомин Игорь Даниилович",
+                  "phone": "+7(942)304-19-77",
                   "role": "client"
                 }
               }
@@ -1196,9 +1196,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5ba8bba78cc1567f837a033a",
+                  "id": "5ba9fe488cc15630509cf206",
                   "name": "new name",
-                  "phone": "+7(976)954-24-99",
+                  "phone": "+7(954)783-48-61",
                   "role": "client"
                 }
               }
@@ -1270,10 +1270,10 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5ba8bba78cc1567f837a0342",
-                      "clientId": "5ba8bba78cc1567f837a0341",
+                      "id": "5ba9fe488cc15630509cf20e",
+                      "clientId": "5ba9fe488cc15630509cf20d",
                       "courierId": "",
-                      "shopId": "5ba8bba78cc1567f837a0343",
+                      "shopId": "5ba9fe488cc15630509cf20f",
                       "status": "new",
                       "priceTotal": 0.0,
                       "products": [
@@ -1287,7 +1287,7 @@
           }
         },
         "tags": [
-          "client_orders"
+          "client orders"
         ],
         "summary": "list items",
         "produces": [
@@ -1301,21 +1301,21 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5ba8bba88cc1567f837a0350",
-                  "clientId": "5ba8bba88cc1567f837a034b",
+                  "id": "5ba9fe488cc15630509cf21c",
+                  "clientId": "5ba9fe488cc15630509cf217",
                   "courierId": "",
-                  "shopId": "5ba8bba88cc1567f837a034c",
+                  "shopId": "5ba9fe488cc15630509cf218",
                   "status": "new",
-                  "priceTotal": 402.14,
+                  "priceTotal": 1004.1,
                   "products": [
                     {
-                      "id": "5ba8bba88cc1567f837a0351",
-                      "title": "Indian",
-                      "description": "Thick slices of French toast bread, brown sugar, half-and-half and vanilla, topped with powdered sugar. With two eggs served any style, and your choice of smoked bacon or smoked ham.",
-                      "price": 201.07,
-                      "weight": "3 decigrams",
+                      "id": "5ba9fe488cc15630509cf21d",
+                      "title": "Vietnamese",
+                      "description": "Breaded fried chicken with waffles. Served with maple syrup.",
+                      "price": 502.05,
+                      "weight": "4 decigrams",
                       "quantity": 2,
-                      "shopProductId": "5ba8bba88cc1567f837a034f"
+                      "shopProductId": "5ba9fe488cc15630509cf21b"
                     }
                   ]
                 }
@@ -1359,7 +1359,7 @@
           }
         ],
         "tags": [
-          "client_orders"
+          "client orders"
         ],
         "summary": "create",
         "consumes": [
@@ -1393,21 +1393,21 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5ba8bba88cc1567f837a035a",
-                  "clientId": "5ba8bba88cc1567f837a0359",
+                  "id": "5ba9fe488cc15630509cf226",
+                  "clientId": "5ba9fe488cc15630509cf225",
                   "courierId": "",
-                  "shopId": "5ba8bba88cc1567f837a035b",
+                  "shopId": "5ba9fe488cc15630509cf227",
                   "status": "new",
-                  "priceTotal": 3604.2,
+                  "priceTotal": 3645.72,
                   "products": [
                     {
-                      "id": "5ba8bba88cc1567f837a035f",
-                      "title": "Desserts",
-                      "description": "Creamy mascarpone cheese and custard layered between espresso and rum soaked house-made ladyfingers, topped with Valrhona cocoa powder.",
-                      "price": 901.05,
-                      "weight": "2 centigrams",
-                      "quantity": 4,
-                      "shopProductId": "5ba8bba88cc1567f837a035e"
+                      "id": "5ba9fe488cc15630509cf22b",
+                      "title": "Vegetarian",
+                      "description": "Granny Smith apples mixed with brown sugar and butter filling, in a flaky all-butter crust, with ice cream.",
+                      "price": 405.08,
+                      "weight": "2 milligrams",
+                      "quantity": 9,
+                      "shopProductId": "5ba9fe488cc15630509cf22a"
                     }
                   ]
                 }
@@ -1416,12 +1416,415 @@
           }
         },
         "tags": [
-          "client_orders"
+          "client orders"
         ],
         "summary": "fetch an item",
         "produces": [
           "application/json"
         ]
+      }
+    },
+    "/api/v1/shop_manager/shop": {
+      "parameters": [
+        {
+          "name": "Authorization",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "Bearer token"
+        }
+      ],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "success",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "5ba9fe488cc15630509cf22f",
+                  "title": "Sugar Box",
+                  "description": "To provide an exceptional dining experience that satisfies our guests’ grown-up tastes by being a Cut-Above in everything we do.",
+                  "categories": [
+
+                  ],
+                  "productsCategories": [
+
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "shop_manager shop"
+        ],
+        "summary": "fetch an item",
+        "produces": [
+          "application/json"
+        ]
+      },
+      "put": {
+        "responses": {
+          "200": {
+            "description": "success",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "5ba9fe498cc15630509cf235",
+                  "title": "new title",
+                  "description": "To sell delicious and remarkable food and drinks. That the food and drink we sell meets the highest standards of quality, freshness and seasonality and combines both modern-creative and traditional southern styles of cooking. To consistently provide our customers with impeccable service by demonstrating warmth, graciousness, efficiency, knowledge, professionalism and integrity in our work. To have every customer who comes through our doors leave impressed by Maxie’s and excited to come back again. To create and maintain a restaurant that is comprehensive and exceptional in its attention to every detail of operation. To provide all who work with us a friendly, cooperative and rewarding environment which encourages long- term, satisfying, growth employment. To keep our concept fresh, exciting and on the cutting edge of the hospitality and entertainment industry. To be a giving member of the Ithaca community and to use our restaurant to improve the quality of life in the Finger Lakes region.",
+                  "categories": [
+
+                  ],
+                  "productsCategories": [
+
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "shop": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "category_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "shop_manager shop"
+        ],
+        "summary": "update an item",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/api/v1/shop_manager/shop/products_categories": {
+      "parameters": [
+        {
+          "name": "Authorization",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "Bearer token"
+        }
+      ],
+      "post": {
+        "responses": {
+          "201": {
+            "description": "successfully created",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "5ba9fe498cc15630509cf23f",
+                  "title": "Japanese",
+                  "products": [
+
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "category": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "shop_manager products_categories"
+        ],
+        "summary": "create",
+        "description": "создает новую категорию товаров для магазина",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/api/v1/shop_manager/shop/products_categories/{category_id}": {
+      "parameters": [
+        {
+          "name": "Authorization",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "Bearer token"
+        },
+        {
+          "name": "category_id",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "put": {
+        "responses": {
+          "200": {
+            "description": "success",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "5ba9fe498cc15630509cf246",
+                  "title": "new title",
+                  "products": [
+
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "category": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "shop_manager products_categories"
+        ],
+        "summary": "update an item",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "responses": {
+          "204": {
+            "description": "success"
+          }
+        },
+        "tags": [
+          "shop_manager products_categories"
+        ],
+        "summary": "delete an item"
+      }
+    },
+    "/api/v1/shop_manager/shop/products_categories/{category_id}/products": {
+      "parameters": [
+        {
+          "name": "Authorization",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "Bearer token"
+        },
+        {
+          "name": "category_id",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "post": {
+        "responses": {
+          "201": {
+            "description": "successfully created",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "5ba9fe498cc15630509cf255",
+                  "title": "Comfort Food",
+                  "description": "Fresh Norwegian salmon, lightly brushed with our herbed Dijon mustard sauce, with choice of two sides.",
+                  "price": 200.05,
+                  "weight": "5 kilograms"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "product": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "number"
+                    },
+                    "weight": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "shop_manager products"
+        ],
+        "summary": "create",
+        "description": "создает новую товар в данной категории",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/api/v1/shop_manager/shop/products_categories/{category_id}/products/{product_id}": {
+      "parameters": [
+        {
+          "name": "Authorization",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "Bearer token"
+        },
+        {
+          "name": "category_id",
+          "in": "path",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "product_id",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "put": {
+        "responses": {
+          "200": {
+            "description": "success",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "5ba9fe498cc15630509cf25e",
+                  "title": "new title",
+                  "description": "Breaded fried chicken with waffles. Served with maple syrup.",
+                  "price": 103.09,
+                  "weight": "9 hectograms"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "product": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "number"
+                    },
+                    "weight": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "shop_manager products"
+        ],
+        "summary": "update an item",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "responses": {
+          "204": {
+            "description": "success"
+          }
+        },
+        "tags": [
+          "shop_manager products"
+        ],
+        "summary": "delete an item"
       }
     }
   }

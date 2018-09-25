@@ -34,9 +34,9 @@ gem 'dry-validation' # validations
 gem 'faker', github: 'stympy/faker' # fake data generator
 
 group :development, :test do
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'database_cleaner'
   gem 'factory_bot_rails'
+  gem 'pry-byebug'
   gem 'rspec-rails', '~> 3.8'
   gem 'rspec-rails-swagger', require: false # swagger docs generator
 end
