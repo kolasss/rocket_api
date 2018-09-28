@@ -13,13 +13,13 @@ module Orders
 
     belongs_to(
       :client,
-      class_name: 'Users::User',
-      inverse_of: :client_orders
+      class_name: 'Users::Client',
+      inverse_of: :orders
     )
     belongs_to(
       :courier,
-      class_name: 'Users::User',
-      inverse_of: :courier_orders,
+      class_name: 'Users::Courier',
+      inverse_of: :orders,
       optional: true
     )
     belongs_to :shop, class_name: 'Shops::Shop', inverse_of: :orders

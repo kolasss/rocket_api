@@ -14,7 +14,6 @@ Rails.application.routes.draw do
       resources :orders
 
       namespace :users do
-        post    :register,  to: 'registration#create'
         post    :login,     to: 'authentication#create'
         # delete  :logout,    to: 'authentication#destroy'
       end
@@ -24,6 +23,9 @@ Rails.application.routes.draw do
       #   resources :shops
       # end
       namespace :client do
+        post    :register,  to: 'registration#create'
+        post    :login,     to: 'authentication#create'
+        # delete  :logout,    to: 'authentication#destroy'
         # resources :shops
         resources :orders, except: %i[update destroy] do
           put :cancel

@@ -5,7 +5,7 @@ require 'swagger_helper'
 RSpec.describe 'products', type: :request,
                            tags: ['shop_manager products'] do
   let(:shop) { create(:shop) }
-  let(:user) { create(:user, :shop_manager, shop: shop) }
+  let(:user) { create(:shop_manager, shop: shop) }
   let(:token) { UserAuthentication::User.new(user: user).new_token }
   let(:Authorization) { "Bearer #{token}" }
   let(:category) { create(:product_category, shop: shop) }

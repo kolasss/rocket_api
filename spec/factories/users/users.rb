@@ -4,15 +4,28 @@ FactoryBot.define do
   factory :user, class: Users::User do
     name { Faker::Name.name }
     phone { Faker::PhoneNumber.unique.phone_number }
-    role { 'client' }
 
-    trait :with_code do
-      code_hash { '1234' }
+    factory :client, class: Users::Client do
+      trait :with_code do
+        code_hash { '1234' }
+      end
     end
 
-    trait :shop_manager do
-      role { 'shop_manager' }
+    factory :shop_manager, class: Users::ShopManager do
       association :shop, factory: :shop
+    end
+
+    factory :courier, class: Users::Courier do
+    end
+
+    factory :supervisor, class: Users::Supervisor do
+    end
+
+    factory :admin, class: Users::Admin do
+    end
+
+    trait :with_password do
+      password_hash { '1234' }
     end
   end
 end

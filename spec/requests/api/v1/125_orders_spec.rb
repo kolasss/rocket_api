@@ -3,7 +3,7 @@
 require 'swagger_helper'
 
 RSpec.describe 'orders', type: :request, tags: [:orders] do
-  let(:user) { create(:user) }
+  let(:user) { create(:client) }
   let(:token) { UserAuthentication::User.new(user: user).new_token }
   let(:Authorization) { "Bearer #{token}" }
 
@@ -37,7 +37,7 @@ RSpec.describe 'orders', type: :request, tags: [:orders] do
       let(:item_attributes) { attributes_for(:order) }
       # let(:product) { shop.products_categories.first.products.first }
       # let(:quantity) { 2 }
-      let(:client) { create(:user) }
+      let(:client) { create(:client) }
 
       produces 'application/json'
       consumes 'application/json'
@@ -126,7 +126,7 @@ RSpec.describe 'orders', type: :request, tags: [:orders] do
     end
 
     put summary: 'update an item' do
-      let(:new_courier) { create(:user) }
+      let(:new_courier) { create(:courier) }
       let(:new_status) { 'delivered' }
 
       produces 'application/json'

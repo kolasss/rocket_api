@@ -5,7 +5,7 @@ FactoryBot.define do
     status { 'new' }
     price_total { 0 }
 
-    association :client, factory: :user
+    association :client, factory: :client
     association :shop, factory: :shop, strategy: :build
 
     trait :with_product do

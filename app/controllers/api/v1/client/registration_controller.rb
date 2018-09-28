@@ -2,12 +2,12 @@
 
 module Api
   module V1
-    module Users
+    module Client
       class RegistrationController < ApplicationController
         skip_before_action :authenticate
 
         def create
-          operation = Operations::V1::Users::Register.new
+          operation = Operations::V1::Users::Client::Register.new
           result = operation.call(request.parameters)
 
           if result.success?

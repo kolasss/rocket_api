@@ -3,7 +3,7 @@
 require 'swagger_helper'
 
 RSpec.describe 'users', type: :request, tags: [:users] do
-  let(:user) { create(:user) }
+  let(:user) { create(:client) }
   let(:token) { UserAuthentication::User.new(user: user).new_token }
   let(:Authorization) { "Bearer #{token}" }
 
@@ -45,7 +45,7 @@ RSpec.describe 'users', type: :request, tags: [:users] do
             properties: {
               name: { type: :string },
               phone: { type: :string },
-              role: { type: :string }
+              # role: { type: :string }
             }
           }
         }
@@ -75,7 +75,7 @@ RSpec.describe 'users', type: :request, tags: [:users] do
     )
 
     parameter :user_id, in: :path, type: :string, required: true
-    let(:user2) { create(:user) }
+    let(:user2) { create(:client) }
     let(:user_id) { user2.id.to_s }
 
     get summary: 'fetch an item' do

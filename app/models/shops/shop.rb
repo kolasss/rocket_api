@@ -26,7 +26,7 @@ module Shops
     )
     has_one(
       :manager,
-      class_name: 'Users::User',
+      class_name: 'Users::ShopManager',
       inverse_of: :shop,
       dependent: :nullify
     )

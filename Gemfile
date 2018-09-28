@@ -38,7 +38,6 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'pry-byebug'
   gem 'rspec-rails', '~> 3.8'
-  gem 'rspec-rails-swagger', require: false # swagger docs generator
 end
 
 group :development do
@@ -51,4 +50,5 @@ end
 
 group :test do
   gem 'fuubar' # rspec output formatter
+  gem 'rspec-rails-swagger' # swagger docs generator
 end

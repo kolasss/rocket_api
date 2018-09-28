@@ -6,7 +6,7 @@ RSpec.describe 'products_categories',
                type: :request,
                tags: ['shop_manager products_categories'] do
   let(:shop) { create(:shop) }
-  let(:user) { create(:user, :shop_manager, shop: shop) }
+  let(:user) { create(:shop_manager, shop: shop) }
   let(:token) { UserAuthentication::User.new(user: user).new_token }
   let(:Authorization) { "Bearer #{token}" }
 

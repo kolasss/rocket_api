@@ -5,7 +5,7 @@ module Api
     module Client
       class OrdersController < ApplicationController
         def index
-          @orders = current_user.client_orders
+          @orders = current_user.orders
 
           orders_json = Api::V1::Orders::Serializer.new(
             @orders
@@ -51,7 +51,7 @@ module Api
         private
 
         def set_order
-          @order = current_user.client_orders.find(params[:id])
+          @order = current_user.orders.find(params[:id])
         end
 
         def render_error(errors)
