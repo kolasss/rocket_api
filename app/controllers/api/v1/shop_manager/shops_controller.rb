@@ -14,7 +14,10 @@ module Api
           if @shop.update(shop_params)
             render json: json_success(serialize_shop)
           else
-            render_error
+            render_error(
+              status: :unprocessable_entity,
+              errors: @shop.errors.as_json
+            )
           end
         end
 
@@ -29,17 +32,6 @@ module Api
             :title,
             :description,
             category_ids: []
-          )
-        end
-
-        def render_error
-          json = json_error(
-            code: 422,
-            errors: @shop.errors.as_json
-          )
-          render(
-            json: json,
-            status: :unprocessable_entity
           )
         end
 

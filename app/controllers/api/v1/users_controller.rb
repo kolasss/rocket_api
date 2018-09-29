@@ -27,7 +27,7 @@ module Api
             location: api_v1_user_path(@user)
           )
         else
-          render_error
+          render_user_error
         end
       end
 
@@ -36,7 +36,7 @@ module Api
         if @user.update(user_params)
           render json: json_success(serialize_user)
         else
-          render_error
+          render_user_error
         end
       end
 
@@ -45,7 +45,7 @@ module Api
         if @user.destroy
           head :no_content
         else
-          render_error
+          render_user_error
         end
       end
 
@@ -62,14 +62,10 @@ module Api
         )
       end
 
-      def render_error
-        json = json_error(
-          code: 422,
+      def render_user_error
+        render_error(
+          status: :unprocessable_entity,
           errors: @user.errors.as_json
-        )
-        render(
-          json: json,
-          status: :unprocessable_entity
         )
       end
 

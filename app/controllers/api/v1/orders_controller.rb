@@ -29,7 +29,7 @@ module Api
           )
         else
           # render json: @order.errors, status: :unprocessable_entity
-          render_error
+          render_order_error
         end
       end
 
@@ -39,7 +39,7 @@ module Api
           render json: json_success(serialize_order)
         else
           # render json: @order.errors, status: :unprocessable_entity
-          render_error
+          render_order_error
         end
       end
 
@@ -48,7 +48,7 @@ module Api
         if @order.destroy
           head :no_content
         else
-          render_error
+          render_order_error
         end
       end
 
@@ -68,14 +68,10 @@ module Api
         )
       end
 
-      def render_error
-        json = json_error(
-          code: 422,
+      def render_order_error
+        render_error(
+          status: :unprocessable_entity,
           errors: @order.errors.as_json
-        )
-        render(
-          json: json,
-          status: :unprocessable_entity
         )
       end
 

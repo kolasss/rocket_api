@@ -14,7 +14,7 @@ module Api
             location: api_v1_shop_path(@shop)
           )
         else
-          render_error
+          render_category_error
         end
       end
 
@@ -23,7 +23,7 @@ module Api
         if @category.update(category_params)
           render json: json_success(serialize_category)
         else
-          render_error
+          render_category_error
         end
       end
 
@@ -32,7 +32,7 @@ module Api
         if @category.destroy
           head :no_content
         else
-          render_error
+          render_category_error
         end
       end
 
@@ -51,14 +51,10 @@ module Api
         params.require(:category).permit(:title)
       end
 
-      def render_error
-        json = json_error(
-          code: 422,
+      def render_category_error
+        render_error(
+          status: :unprocessable_entity,
           errors: @category.errors.as_json
-        )
-        render(
-          json: json,
-          status: :unprocessable_entity
         )
       end
 

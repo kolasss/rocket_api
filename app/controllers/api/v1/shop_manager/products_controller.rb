@@ -15,7 +15,7 @@ module Api
               location: api_v1_shop_path(@shop)
             )
           else
-            render_error
+            render_product_error
           end
         end
 
@@ -24,7 +24,7 @@ module Api
           if @product.update(product_params)
             render json: json_success(serialize_product)
           else
-            render_error
+            render_product_error
           end
         end
 
@@ -33,7 +33,7 @@ module Api
           if @product.destroy
             head :no_content
           else
-            render_error
+            render_product_error
           end
         end
 
@@ -60,14 +60,10 @@ module Api
           )
         end
 
-        def render_error
-          json = json_error(
-            code: 422,
+        def render_product_error
+          render_error(
+            status: :unprocessable_entity,
             errors: @product.errors.as_json
-          )
-          render(
-            json: json,
-            status: :unprocessable_entity
           )
         end
 

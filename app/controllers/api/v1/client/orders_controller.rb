@@ -34,7 +34,10 @@ module Api
               location: api_v1_client_order_path(@order)
             )
           else
-            render_error(result.failure)
+            render_error(
+              status: :unprocessable_entity,
+              errors: result.failure
+            )
           end
         end
 
@@ -52,17 +55,6 @@ module Api
 
         def set_order
           @order = current_user.orders.find(params[:id])
-        end
-
-        def render_error(errors)
-          json = json_error(
-            code: 422,
-            errors: errors
-          )
-          render(
-            json: json,
-            status: :unprocessable_entity
-          )
         end
 
         def serialize_order

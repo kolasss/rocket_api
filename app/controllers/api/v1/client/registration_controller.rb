@@ -18,7 +18,10 @@ module Api
               location: api_v1_user_path(@user)
             )
           else
-            render_error(result.failure)
+            render_error(
+              status: :unprocessable_entity,
+              errors: result.failure
+            )
           end
         end
 
@@ -27,17 +30,6 @@ module Api
         # end
 
         private
-
-        def render_error(errors)
-          json = json_error(
-            code: 422,
-            errors: errors
-          )
-          render(
-            json: json,
-            status: :unprocessable_entity
-          )
-        end
 
         def serialize_user
           Api::V1::Users::Serializer.new(@user).build_schema

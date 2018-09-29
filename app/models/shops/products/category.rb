@@ -12,6 +12,8 @@ module Shops
       embeds_many(
         :products, class_name: 'Shops::Products::Product', inverse_of: :category
       )
+
+      # validates :title, presence: true
     end
   end
 end

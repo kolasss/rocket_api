@@ -21,16 +21,25 @@ module Api
         Oj.dump(error: json)
       end
 
-      rescue_from Mongoid::Errors::DocumentNotFound, with: :render_not_found
-
-      def render_not_found
+      def render_error(status:, message: nil, errors: nil)
+        code = Rack::Utils::SYMBOL_TO_STATUS_CODE[status]
         json = json_error(
-          code: 404,
-          message: 'Not Found'
+          code: code,
+          message: message,
+          errors: errors
         )
         render(
           json: json,
-          status: :not_found
+          status: status
+        )
+      end
+
+      rescue_from Mongoid::Errors::DocumentNotFound, with: :render_not_found
+
+      def render_not_found
+        render_error(
+          status: :not_found,
+          message: 'Not Found'
         )
       end
 
@@ -39,13 +48,9 @@ module Api
       end
 
       def render_not_authorized
-        json = json_error(
-          code: 401,
+        render_error(
+          status: :unauthorized,
           message: 'Unauthorized'
-        )
-        render(
-          json: json,
-          status: :unauthorized
         )
       end
     end
