@@ -3,7 +3,7 @@
 require 'swagger_helper'
 
 RSpec.describe 'client registration', type: :request,
-                                    tags: ['client registration'] do
+                                      tags: ['client registration'] do
   path '/api/v1/client/register' do
     post summary: 'sign up',
          description: 'регистрация нового пользователя' do

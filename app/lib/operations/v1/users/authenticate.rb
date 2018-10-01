@@ -4,7 +4,6 @@ module Operations
   module V1
     module Users
       class Authenticate < ::Operations::V1::Base
-
         private
 
         def find_user(phone, klass)

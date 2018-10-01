@@ -7,9 +7,9 @@ RSpec.describe 'user authentication', type: :request,
   path '/api/v1/users/login' do
     let(:user) { create(:shop_manager, :with_password) }
 
-    description = %{Получение токена, требуются пароль и роль пользователя.
+    description = %(Получение токена, требуются пароль и роль пользователя.
 Для логина по паролю supervisor, courier, admin, shop_manager.
-Для логина client используйте client authentication}
+Для логина client используйте client authentication)
     post summary: 'sign in',
          description: description do
       produces 'application/json'
@@ -25,11 +25,11 @@ RSpec.describe 'user authentication', type: :request,
               password: { type: :string },
               role: {
                 type: :string,
-                enum: [
-                  'supervisor',
-                  'courier',
-                  'admin',
-                  'shop_manager'
+                enum: %w[
+                  supervisor
+                  courier
+                  admin
+                  shop_manager
                 ]
               }
             }

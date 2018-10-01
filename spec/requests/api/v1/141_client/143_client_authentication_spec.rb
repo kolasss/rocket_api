@@ -3,7 +3,7 @@
 require 'swagger_helper'
 
 RSpec.describe 'client authentication', type: :request,
-                                      tags: ['client authentication'] do
+                                        tags: ['client authentication'] do
   path '/api/v1/client/login' do
     let(:user) { create(:client, :with_code) }
 

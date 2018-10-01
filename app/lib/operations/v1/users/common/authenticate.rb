@@ -17,7 +17,7 @@ module Operations
 
           def call(params)
             payload = yield VALIDATOR.call(params).to_monad
-            user_class = yield set_class(payload[:user][:role])
+            user_class = yield detect_class(payload[:user][:role])
             user = yield find_user(payload[:user][:phone], user_class)
             yield check_password(user, payload[:user][:password])
             get_token(user)
@@ -25,7 +25,7 @@ module Operations
 
           private
 
-          def set_class(role)
+          def detect_class(role)
             case role
             when 'supervisor' then Success(::Users::Supervisor)
             when 'courier' then Success(::Users::Courier)

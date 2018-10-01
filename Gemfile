@@ -5,17 +5,15 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
-# Use Puma as the app server
-gem 'mongoid', '~> 7.0'
+
 gem 'puma', '~> 3.11'
+
+gem 'mongoid', '~> 7.0'
+gem 'redis', '~> 4.0'
 
 # gem 'bcrypt' # TODO: use for store encoded sms code in user
 gem 'jwt'
-
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
