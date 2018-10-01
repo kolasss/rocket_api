@@ -123,31 +123,30 @@ RSpec.describe 'orders', type: :request, tags: ['client orders'] do
     end
   end
 
-  # path '/api/v1/client/orders/{order_id}/cancel' do
-  #   parameter(
-  #     :Authorization,
-  #     in: :header,
-  #     type: :string,
-  #     required: true,
-  #     description: 'Bearer token'
-  #   )
+  path '/api/v1/client/orders/{order_id}/make_request' do
+    parameter(
+      :Authorization,
+      in: :header,
+      type: :string,
+      required: true,
+      description: 'Bearer token'
+    )
 
-  #   parameter :order_id, in: :path, type: :string, required: true
-  #   let(:order) { create(:order, :with_product, client: user) }
-  #   let(:order_id) { order.id.to_s }
+    parameter :order_id, in: :path, type: :string, required: true
+    let(:order) { create(:order, :with_product, client: user) }
+    let(:order_id) { order.id.to_s }
 
-  #   put summary: 'fetch an item' do
-  #     produces 'application/json'
+    put summary: 'change status of order to "requested"' do
+      produces 'application/json'
 
-  #     response(200, description: 'success') do
-  #       it 'shows right info' do
-  #         json = JSON.parse(response.body)
-  #         item = json['data']
-  #         expect(item['clientId']).to eq user.id.to_s
-  #         expect(item['priceTotal']).to be > 0
-  #       end
-  #       capture_example
-  #     end
-  #   end
-  # end
+      response(200, description: 'success') do
+        it 'shows right info' do
+          json = JSON.parse(response.body)
+          item = json['data']
+          expect(item['status']).to eq 'requested'
+        end
+        capture_example
+      end
+    end
+  end
 end

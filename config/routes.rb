@@ -29,6 +29,7 @@ Rails.application.routes.draw do
         # resources :shops
         resources :orders, except: %i[update destroy] do
           put :cancel
+          put :make_request
         end
       end
       # namespace :courier do
@@ -41,9 +42,12 @@ Rails.application.routes.draw do
           end
         end
       end
-      # namespace :supervisor do
-      #   resources :shops
-      # end
+      namespace :supervisor do
+        resources :orders, only: %i[index show] do
+          post :assign_courier
+        end
+        resources :couriers, only: %i[index]
+      end
     end
   end
 end

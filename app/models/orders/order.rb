@@ -26,12 +26,19 @@ module Orders
     embeds_many(
       :products, class_name: 'Orders::Product', inverse_of: :order
     )
+    embeds_many(
+      :courier_assignments,
+      class_name: 'Orders::CourierAssignment',
+      inverse_of: :order
+    )
 
     STATUSES = %w[
       new
       requested
       accepted
+      at_shop
       on_delivery
+      at_client
       delivered
       canceled
     ].freeze
