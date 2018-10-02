@@ -10,8 +10,7 @@ RSpec.describe 'user authentication', type: :request,
     description = %(Получение токена, требуются пароль и роль пользователя.
 Для логина по паролю supervisor, courier, admin, shop_manager.
 Для логина client используйте client authentication)
-    post summary: 'sign in',
-         description: description do
+    post summary: 'sign in', description: description do
       produces 'application/json'
       consumes 'application/json'
 

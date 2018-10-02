@@ -6,6 +6,7 @@ AllCops:
     - 'bin/bundle'
     - 'bin/puma'
     - 'bin/rspec'
+    - 'bin/sidekiq'
 
 Rails:
   Enabled: true

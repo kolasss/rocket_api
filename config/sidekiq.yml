@@ -1,0 +1,24 @@
+# :pidfile: tmp/pids/sidekiq.pid
+development:
+  # :logfile: ./log/sidekiq_development.log
+  :schedule:
+    CourierStatusCleanupWorker:
+      every: ['10m', first_in: '1m']
+      description: "clean up ready status of couriers from redis"
+
+production:
+  :logfile: ./log/sidekiq_production.log
+  :schedule:
+    CourierStatusCleanupJob:
+      every: ['10m', first_in: '1m']
+      description: "clean up ready status of couriers from redis"
+
+test:
+  :logfile: ./log/sidekiq_test.log
+
+# :queues:
+#   - orders
+#   - auctions
+#   - mailers
+#   - notifications
+#   - export_orders

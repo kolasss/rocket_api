@@ -32,9 +32,10 @@ Rails.application.routes.draw do
           put :make_request
         end
       end
-      # namespace :courier do
-      #   resources :shops
-      # end
+      namespace :courier do
+        resource :ready, only: %i[create destroy], controller: :ready
+        # post :ready, to: 'ready#create'
+      end
       namespace :shop_manager do
         resource :shop, except: %i[create destroy] do
           resources :products_categories, except: %i[index show] do

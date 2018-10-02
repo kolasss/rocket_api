@@ -12,6 +12,9 @@ gem 'puma', '~> 3.11'
 gem 'mongoid', '~> 7.0'
 gem 'redis', '~> 4.0'
 
+gem 'sidekiq'
+gem 'sidekiq-scheduler'
+
 # gem 'bcrypt' # TODO: use for store encoded sms code in user
 gem 'jwt'
 

@@ -5,8 +5,9 @@ module Api
     module Supervisor
       class CouriersController < ApplicationController
         def index
-          # TODO: get couriers from redis
-          @couriers = ::Users::Courier.all
+          service = Services::CourierStatusManager.new
+          ids = service.actual
+          @couriers = ::Users::Courier.in(id: ids)
 
           couriers_json = Api::V1::Users::Serializer.new(
             @couriers
