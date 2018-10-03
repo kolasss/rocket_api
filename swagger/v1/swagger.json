@@ -13,7 +13,7 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNWJiMzNmNjA4Y2MxNTY0NTQyMTY5YzNiIn0.YkwwcNmXSki2XvbxTs_LCTL4oPvQaEbUDlwMK1CKMoo"
+                  "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNWJiNDliMDg4Y2MxNTY3YjZlYTQ5NmM5In0.kudBgpwGSBgqTqugd69cghvK4dHvTHYdrNAuuu4WMco"
                 }
               }
             }
@@ -83,8 +83,8 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5bb33f608cc1564542169c3e",
-                      "title": "Juice & Smoothies"
+                      "id": "5bb49b088cc1567b6ea496cc",
+                      "title": "Mexican"
                     }
                   ]
                 }
@@ -107,8 +107,8 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb33f608cc1564542169c43",
-                  "title": "Tex Mex",
+                  "id": "5bb49b088cc1567b6ea496d1",
+                  "title": "Argentinian",
                   "shopIds": [
 
                   ]
@@ -172,7 +172,7 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb33f608cc1564542169c46",
+                  "id": "5bb49b088cc1567b6ea496d4",
                   "title": "new title",
                   "shopIds": [
 
@@ -244,9 +244,9 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5bb33f608cc1564542169c4d",
-                      "title": "Silver King",
-                      "description": "To achieve and maintain such distinction in food and wine, service, atmosphere and setting that the restaurant gains a first class reputation for gastronomy, gracious and informed hospitality, comfort and beauty which draws new and repeat customers year after year. To achieve the above whilst upholding staff policies and practices which promote a fair and positive working environment. To be aware of and act on our responsibilities as a good corporate citizen to  provide a safe, clean and attractive place for guests to enjoy and for employees to work in - ensure ecologically sound management practices at the restaurant and in our surrounding gardens and woods - undertake meaningful involvement of Restaurant Les Fougères in selected charitable activities in our community and region.",
+                      "id": "5bb49b088cc1567b6ea496db",
+                      "title": "Fast Box",
+                      "description": "We are committed to using the finest ingredients in our recipes. No food leaves our kitchen that we ourselves would not eat.",
                       "categoryIds": [
 
                       ]
@@ -272,13 +272,13 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb33f608cc1564542169c55",
-                  "title": "132 Burger",
-                  "description": "To deliver an exceptional shopping experience by offering the best service, value, quality, and freshest products while being good stewards of our environment and giving back to the communities we serve.",
+                  "id": "5bb49b098cc1567b6ea496e3",
+                  "title": "Sugar Deli",
+                  "description": "To ensure that each guest receives prompt, professional, friendly and courteous service. To maintain a clean, comfortable and well maintained premises for our guests and staff. To provide at a fair price – nutritional, well-prepared meals – using only quality ingredients. To ensure that all guests and staff are treated with the respect and dignity they deserve. To thank each guest for the opportunity to serve them. By maintaining these objectives we shall be assured of a fair profit that will allow us to contribute to the community we serve.",
                   "categories": [
                     {
-                      "id": "5bb33f608cc1564542169c54",
-                      "title": "Brazilian"
+                      "id": "5bb49b098cc1567b6ea496e2",
+                      "title": "Greek"
                     }
                   ],
                   "productsCategories": [
@@ -352,8 +352,8 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb33f608cc1564542169c56",
-                  "title": "Orange Sushi",
+                  "id": "5bb49b098cc1567b6ea496e4",
+                  "title": "Fast Gastropub",
                   "description": "Our mission has been to help people achieve their health and wellness goals. though weve changed over the years, our values have remained the same.",
                   "categories": [
 
@@ -382,9 +382,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb33f618cc1564542169c5c",
+                  "id": "5bb49b098cc1567b6ea496ea",
                   "title": "new title",
-                  "description": "Our mission is to be a leader in the distribution and merchandising of food, pharmacy, health and personal care items, seasonal merchandise, and related products and services. We place considerable importance on forging strong supplier partnerships. Our suppliers, large or small, local or global, are essential components in accomplishing our mission.",
+                  "description": "To provide an exceptional dining experience that satisfies our guests’ grown-up tastes by being a Cut-Above in everything we do.",
                   "categories": [
 
                   ],
@@ -471,7 +471,7 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb33f618cc1564542169c69",
+                  "id": "5bb49b098cc1567b6ea496f7",
                   "title": "Juice & Smoothies",
                   "products": [
 
@@ -543,7 +543,7 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb33f618cc1564542169c70",
+                  "id": "5bb49b098cc1567b6ea496fe",
                   "title": "new title",
                   "products": [
 
@@ -625,11 +625,11 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb33f618cc1564542169c7f",
-                  "title": "Bar",
-                  "description": "Breaded fried chicken with waffles. Served with maple syrup.",
-                  "price": 801.06,
-                  "weight": "3 centigrams"
+                  "id": "5bb49b0a8cc1567b6ea4970d",
+                  "title": "Vietnamese",
+                  "description": "Two butter croissants of your choice (plain, almond or cheese). With a side of herb butter or house-made hazelnut spread.",
+                  "price": 202.02,
+                  "weight": "2 grams"
                 }
               }
             }
@@ -712,11 +712,11 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb33f618cc1564542169c88",
+                  "id": "5bb49b0a8cc1567b6ea49716",
                   "title": "new title",
-                  "description": "Three egg whites with spinach, mushrooms, caramelized onions, tomatoes and low-fat feta cheese. With herbed quinoa, and your choice of rye or whole-grain toast.",
-                  "price": 201.01,
-                  "weight": "6 milligrams"
+                  "description": "Three egg omelet with Roquefort cheese, chives, and ham. With a side of roasted potatoes, and your choice of toast or croissant.",
+                  "price": 309.09,
+                  "weight": "2 milligrams"
                 }
               }
             }
@@ -793,10 +793,10 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5bb33f628cc1564542169c94",
-                      "clientId": "5bb33f628cc1564542169c93",
-                      "courierId": "",
-                      "shopId": "5bb33f628cc1564542169c95",
+                      "id": "5bb49b0a8cc1567b6ea49723",
+                      "clientId": "5bb49b0a8cc1567b6ea49722",
+                      "courierId": null,
+                      "shopId": "5bb49b0a8cc1567b6ea49724",
                       "status": "new",
                       "priceTotal": 0.0,
                       "products": [
@@ -827,10 +827,10 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb33f628cc1564542169ca4",
-                  "clientId": "5bb33f628cc1564542169c9f",
-                  "courierId": "",
-                  "shopId": "5bb33f628cc1564542169ca0",
+                  "id": "5bb49b0a8cc1567b6ea49734",
+                  "clientId": "5bb49b0a8cc1567b6ea4972f",
+                  "courierId": null,
+                  "shopId": "5bb49b0a8cc1567b6ea49730",
                   "status": "new",
                   "priceTotal": null,
                   "products": [
@@ -908,21 +908,21 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb33f628cc1564542169cae",
-                  "clientId": "5bb33f628cc1564542169cad",
-                  "courierId": "",
-                  "shopId": "5bb33f628cc1564542169caf",
+                  "id": "5bb49b0a8cc1567b6ea4973e",
+                  "clientId": "5bb49b0a8cc1567b6ea4973d",
+                  "courierId": null,
+                  "shopId": "5bb49b0a8cc1567b6ea4973f",
                   "status": "new",
-                  "priceTotal": 824.32,
+                  "priceTotal": 500.4,
                   "products": [
                     {
-                      "id": "5bb33f628cc1564542169cb3",
-                      "title": "French",
-                      "description": "Three egg omelet with Roquefort cheese, chives, and ham. With a side of roasted potatoes, and your choice of toast or croissant.",
-                      "price": 103.04,
-                      "weight": "6 metric tons",
-                      "quantity": 8,
-                      "shopProductId": "5bb33f628cc1564542169cb2"
+                      "id": "5bb49b0a8cc1567b6ea49743",
+                      "title": "Juice & Smoothies",
+                      "description": "Three eggs with cilantro, tomatoes, onions, avocados and melted Emmental cheese. With a side of roasted potatoes, and your choice of toast or croissant.",
+                      "price": 100.08,
+                      "weight": "8 kilograms",
+                      "quantity": 5,
+                      "shopProductId": "5bb49b0a8cc1567b6ea49742"
                     }
                   ],
                   "courierAssignments": [
@@ -948,21 +948,21 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb33f628cc1564542169cbf",
-                  "clientId": "5bb33f628cc1564542169cbe",
-                  "courierId": "5bb33f628cc1564542169cc6",
-                  "shopId": "5bb33f628cc1564542169cc0",
+                  "id": "5bb49b0b8cc1567b6ea4974f",
+                  "clientId": "5bb49b0b8cc1567b6ea4974e",
+                  "courierId": "5bb49b0b8cc1567b6ea49756",
+                  "shopId": "5bb49b0b8cc1567b6ea49750",
                   "status": "delivered",
-                  "priceTotal": 306.01,
+                  "priceTotal": 2812.16,
                   "products": [
                     {
-                      "id": "5bb33f628cc1564542169cc4",
-                      "title": "Desserts",
-                      "description": "Creamy mascarpone cheese and custard layered between espresso and rum soaked house-made ladyfingers, topped with Valrhona cocoa powder.",
-                      "price": 306.01,
-                      "weight": "1 centigram",
-                      "quantity": 1,
-                      "shopProductId": "5bb33f628cc1564542169cc3"
+                      "id": "5bb49b0b8cc1567b6ea49754",
+                      "title": "Senegalese",
+                      "description": "Smoked salmon, poached eggs, diced red onions and Hollandaise sauce on an English muffin. With a side of roasted potatoes.",
+                      "price": 703.04,
+                      "weight": "9 grams",
+                      "quantity": 4,
+                      "shopProductId": "5bb49b0b8cc1567b6ea49753"
                     }
                   ],
                   "courierAssignments": [
@@ -1044,9 +1044,9 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5bb33f638cc1564542169cd0",
-                      "name": "Буров Матвей",
-                      "phone": "+7(926)566-15-45",
+                      "id": "5bb49b0b8cc1567b6ea49760",
+                      "name": "Белоусов Игорь",
+                      "phone": "+7(918)392-36-25",
                       "role": "client"
                     }
                   ]
@@ -1070,9 +1070,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb33f638cc1564542169cd4",
-                  "name": "Самсонов Денис Матвеевич",
-                  "phone": "+7(931)816-22-99",
+                  "id": "5bb49b0b8cc1567b6ea49764",
+                  "name": "Дроздов Аркадий Лаврентьевич",
+                  "phone": "+7(992)022-04-66",
                   "role": null
                 }
               }
@@ -1136,9 +1136,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb33f638cc1564542169cd5",
-                  "name": "Бирюков Борис",
-                  "phone": "+7(960)249-24-79",
+                  "id": "5bb49b0b8cc1567b6ea49765",
+                  "name": "Гаврилова Зоя",
+                  "phone": "+7(955)336-77-06",
                   "role": "client"
                 }
               }
@@ -1161,9 +1161,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb33f638cc1564542169cd9",
+                  "id": "5bb49b0b8cc1567b6ea49769",
                   "name": "new name",
-                  "phone": "+7(977)220-39-49",
+                  "phone": "+7(970)905-80-92",
                   "role": "client"
                 }
               }
@@ -1224,9 +1224,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb33f638cc1564542169cde",
-                  "name": "Вероника Матвеева",
-                  "phone": "+7(917)098-50-26",
+                  "id": "5bb49b0b8cc1567b6ea4976e",
+                  "name": "Кудряшова Вероника Николаевна",
+                  "phone": "+7(953)267-26-40",
                   "role": "client"
                 }
               }
@@ -1277,7 +1277,7 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNWJiMzNmNjM4Y2MxNTY0NTQyMTY5Y2UwIn0.OUWwNICjzix2X50_XWm1S4NutUehEisNTZKhrwUURlY"
+                  "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNWJiNDliMGI4Y2MxNTY3YjZlYTQ5NzcwIn0.kxwJ4D1V8fJZQo618OMIiF7xJnS59HDVCRkq7pOfwdw"
                 }
               }
             }
@@ -1338,10 +1338,10 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5bb33f638cc1564542169ce5",
-                      "clientId": "5bb33f638cc1564542169ce4",
-                      "courierId": "",
-                      "shopId": "5bb33f638cc1564542169ce6",
+                      "id": "5bb49b0c8cc1567b6ea49776",
+                      "clientId": "5bb49b0c8cc1567b6ea49775",
+                      "courierId": null,
+                      "shopId": "5bb49b0c8cc1567b6ea49777",
                       "status": "new",
                       "priceTotal": 0.0,
                       "products": [
@@ -1372,21 +1372,21 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb33f638cc1564542169cf3",
-                  "clientId": "5bb33f638cc1564542169cee",
-                  "courierId": "",
-                  "shopId": "5bb33f638cc1564542169cef",
+                  "id": "5bb49b0c8cc1567b6ea49785",
+                  "clientId": "5bb49b0c8cc1567b6ea49780",
+                  "courierId": null,
+                  "shopId": "5bb49b0c8cc1567b6ea49781",
                   "status": "new",
-                  "priceTotal": 1208.06,
+                  "priceTotal": 1014.02,
                   "products": [
                     {
-                      "id": "5bb33f638cc1564542169cf4",
-                      "title": "Ice Cream",
-                      "description": "Three egg omelet with Roquefort cheese, chives, and ham. With a side of roasted potatoes, and your choice of toast or croissant.",
-                      "price": 604.03,
-                      "weight": "7 dekagrams",
+                      "id": "5bb49b0c8cc1567b6ea49786",
+                      "title": "Greek",
+                      "description": "Granny Smith apples mixed with brown sugar and butter filling, in a flaky all-butter crust, with ice cream.",
+                      "price": 507.01,
+                      "weight": "5 kilograms",
                       "quantity": 2,
-                      "shopProductId": "5bb33f638cc1564542169cf2"
+                      "shopProductId": "5bb49b0c8cc1567b6ea49784"
                     }
                   ],
                   "courierAssignments": [
@@ -1467,21 +1467,21 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb33f648cc1564542169cfd",
-                  "clientId": "5bb33f648cc1564542169cfc",
-                  "courierId": "",
-                  "shopId": "5bb33f648cc1564542169cfe",
+                  "id": "5bb49b0c8cc1567b6ea4978f",
+                  "clientId": "5bb49b0c8cc1567b6ea4978e",
+                  "courierId": null,
+                  "shopId": "5bb49b0c8cc1567b6ea49790",
                   "status": "new",
-                  "priceTotal": 2109.27,
+                  "priceTotal": 814.1,
                   "products": [
                     {
-                      "id": "5bb33f648cc1564542169d02",
-                      "title": "African",
+                      "id": "5bb49b0c8cc1567b6ea49794",
+                      "title": "Italian",
                       "description": "Smoked salmon, poached eggs, diced red onions and Hollandaise sauce on an English muffin. With a side of roasted potatoes.",
-                      "price": 703.09,
-                      "weight": "9 dekagrams",
-                      "quantity": 3,
-                      "shopProductId": "5bb33f648cc1564542169d01"
+                      "price": 407.05,
+                      "weight": "1 milligram",
+                      "quantity": 2,
+                      "shopProductId": "5bb49b0c8cc1567b6ea49793"
                     }
                   ],
                   "courierAssignments": [
@@ -1524,21 +1524,21 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb33f648cc1564542169d0b",
-                  "clientId": "5bb33f648cc1564542169d0a",
-                  "courierId": "",
-                  "shopId": "5bb33f648cc1564542169d0c",
+                  "id": "5bb49b0d8cc1567b6ea4979d",
+                  "clientId": "5bb49b0d8cc1567b6ea4979c",
+                  "courierId": null,
+                  "shopId": "5bb49b0d8cc1567b6ea4979e",
                   "status": "requested",
-                  "priceTotal": 606.24,
+                  "priceTotal": 1854.81,
                   "products": [
                     {
-                      "id": "5bb33f648cc1564542169d10",
-                      "title": "Korean",
-                      "description": "Three egg whites with spinach, mushrooms, caramelized onions, tomatoes and low-fat feta cheese. With herbed quinoa, and your choice of rye or whole-grain toast.",
-                      "price": 101.04,
-                      "weight": "5 milligrams",
-                      "quantity": 6,
-                      "shopProductId": "5bb33f648cc1564542169d0f"
+                      "id": "5bb49b0d8cc1567b6ea497a2",
+                      "title": "Indian",
+                      "description": "Granny Smith apples mixed with brown sugar and butter filling, in a flaky all-butter crust, with ice cream.",
+                      "price": 206.09,
+                      "weight": "8 decigrams",
+                      "quantity": 9,
+                      "shopProductId": "5bb49b0d8cc1567b6ea497a1"
                     }
                   ],
                   "courierAssignments": [
@@ -1575,9 +1575,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb33f648cc1564542169d14",
-                  "title": "Sweet Cafe",
-                  "description": "To provide an exceptional dining experience that satisfies our guests’ grown-up tastes by being a Cut-Above in everything we do.",
+                  "id": "5bb49b0d8cc1567b6ea497a6",
+                  "title": "Golden Shakes",
+                  "description": "We earn the loyalty of the people we serve by first anticipating, then fulfilling their needs with our superior-quality products, a unique shopping experience, customer-focused service and continuous innovation, while generating long-term profitable growth for our shareholders.",
                   "categories": [
 
                   ],
@@ -1604,9 +1604,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb33f648cc1564542169d1a",
+                  "id": "5bb49b0d8cc1567b6ea497ac",
                   "title": "new title",
-                  "description": "We are committed to using the finest ingredients in our recipes. No food leaves our kitchen that we ourselves would not eat.",
+                  "description": "Delhaize Group will achieve leading positions in food retailing in key mature and emerging markets. We accomplish our goal by developing strong regional companies benefiting from and contributing to the Groups strength, expertise and successful practices. Delhaize Group goes to market with a variety of food store formats. The Group is committed to offer a locally differentiated shopping experience to its customers in each of its markets, to deliver superior value and to maintain high social, environmental and ethical standards.",
                   "categories": [
 
                   ],
@@ -1676,8 +1676,8 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb33f648cc1564542169d24",
-                  "title": "Vegan",
+                  "id": "5bb49b0e8cc1567b6ea497b6",
+                  "title": "Brazilian",
                   "products": [
 
                   ]
@@ -1742,7 +1742,7 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb33f648cc1564542169d2b",
+                  "id": "5bb49b0e8cc1567b6ea497bd",
                   "title": "new title",
                   "products": [
 
@@ -1818,11 +1818,11 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb33f658cc1564542169d3a",
-                  "title": "French",
-                  "description": "28-day aged 300g USDA Certified Prime Ribeye, rosemary-thyme garlic butter, with choice of two sides.",
-                  "price": 703.02,
-                  "weight": "6 metric tons"
+                  "id": "5bb49b0e8cc1567b6ea497cc",
+                  "title": "American (Traditional)",
+                  "description": "Creamy mascarpone cheese and custard layered between espresso and rum soaked house-made ladyfingers, topped with Valrhona cocoa powder.",
+                  "price": 307.09,
+                  "weight": "5 milligrams"
                 }
               }
             }
@@ -1899,11 +1899,11 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb33f658cc1564542169d43",
+                  "id": "5bb49b0e8cc1567b6ea497d5",
                   "title": "new title",
-                  "description": "Creamy mascarpone cheese and custard layered between espresso and rum soaked house-made ladyfingers, topped with Valrhona cocoa powder.",
-                  "price": 309.02,
-                  "weight": "8 decigrams"
+                  "description": "Two butter croissants of your choice (plain, almond or cheese). With a side of herb butter or house-made hazelnut spread.",
+                  "price": 508.09,
+                  "weight": "9 centigrams"
                 }
               }
             }
@@ -1980,10 +1980,10 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5bb33f658cc1564542169d4f",
-                      "clientId": "5bb33f658cc1564542169d4e",
-                      "courierId": "",
-                      "shopId": "5bb33f658cc1564542169d50",
+                      "id": "5bb49b0f8cc1567b6ea497e2",
+                      "clientId": "5bb49b0f8cc1567b6ea497e1",
+                      "courierId": null,
+                      "shopId": "5bb49b0f8cc1567b6ea497e3",
                       "status": "new",
                       "priceTotal": 0.0,
                       "products": [
@@ -2030,21 +2030,21 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb33f658cc1564542169d53",
-                  "clientId": "5bb33f658cc1564542169d52",
-                  "courierId": "",
-                  "shopId": "5bb33f658cc1564542169d54",
+                  "id": "5bb49b0f8cc1567b6ea497e7",
+                  "clientId": "5bb49b0f8cc1567b6ea497e6",
+                  "courierId": null,
+                  "shopId": "5bb49b0f8cc1567b6ea497e8",
                   "status": "new",
-                  "priceTotal": 2464.24,
+                  "priceTotal": 1848.3,
                   "products": [
                     {
-                      "id": "5bb33f658cc1564542169d58",
-                      "title": "Tex Mex",
-                      "description": "28-day aged 300g USDA Certified Prime Ribeye, rosemary-thyme garlic butter, with choice of two sides.",
-                      "price": 308.03,
-                      "weight": "0 decigrams",
-                      "quantity": 8,
-                      "shopProductId": "5bb33f658cc1564542169d57"
+                      "id": "5bb49b0f8cc1567b6ea497ec",
+                      "title": "Argentinian",
+                      "description": "Three eggs with cilantro, tomatoes, onions, avocados and melted Emmental cheese. With a side of roasted potatoes, and your choice of toast or croissant.",
+                      "price": 308.05,
+                      "weight": "1 decigram",
+                      "quantity": 6,
+                      "shopProductId": "5bb49b0f8cc1567b6ea497eb"
                     }
                   ],
                   "courierAssignments": [
@@ -2088,29 +2088,21 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb33f658cc1564542169d65",
-                  "clientId": "5bb33f658cc1564542169d64",
-                  "courierId": "5bb33f658cc1564542169d6c",
-                  "shopId": "5bb33f658cc1564542169d66",
+                  "id": "5bb49b0f8cc1567b6ea497f6",
+                  "clientId": "5bb49b0f8cc1567b6ea497f5",
+                  "courierId": "5bb49b0f8cc1567b6ea497fa",
+                  "shopId": "5bb49b0f8cc1567b6ea497f7",
                   "status": "requested",
-                  "priceTotal": 3204.36,
+                  "priceTotal": 0.0,
                   "products": [
-                    {
-                      "id": "5bb33f658cc1564542169d6a",
-                      "title": "American (Traditional)",
-                      "description": "Two butter croissants of your choice (plain, almond or cheese). With a side of herb butter or house-made hazelnut spread.",
-                      "price": 801.09,
-                      "weight": "9 dekagrams",
-                      "quantity": 4,
-                      "shopProductId": "5bb33f658cc1564542169d69"
-                    }
+
                   ],
                   "courierAssignments": [
                     {
-                      "id": "5bb33f658cc1564542169d6d",
+                      "id": "5bb49b0f8cc1567b6ea497fb",
                       "status": "proposed",
                       "declineReason": null,
-                      "courierId": "5bb33f658cc1564542169d6c"
+                      "courierId": "5bb49b0f8cc1567b6ea497fa"
                     }
                   ]
                 }
@@ -2164,9 +2156,9 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5bb33f658cc1564542169d71",
-                      "name": "Быков Денис Максимович",
-                      "phone": "+7(946)957-45-38",
+                      "id": "5bb49b0f8cc1567b6ea497ff",
+                      "name": "Вероника Зайцева",
+                      "phone": "+7(992)250-04-24",
                       "role": "courier"
                     }
                   ]
@@ -2226,6 +2218,120 @@
           "courier ready"
         ],
         "summary": "set status to not ready",
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/api/v1/courier/active_order/accept": {
+      "parameters": [
+        {
+          "name": "Authorization",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "Bearer token"
+        }
+      ],
+      "put": {
+        "responses": {
+          "200": {
+            "description": "successful",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "5bb49b0f8cc1567b6ea4980c",
+                  "clientId": "5bb49b0f8cc1567b6ea4980b",
+                  "courierId": "5bb49b0f8cc1567b6ea4980a",
+                  "shopId": "5bb49b0f8cc1567b6ea4980d",
+                  "status": "requested",
+                  "priceTotal": 0.0,
+                  "products": [
+
+                  ],
+                  "courierAssignments": [
+                    {
+                      "id": "5bb49b0f8cc1567b6ea4980f",
+                      "status": "accepted",
+                      "declineReason": null,
+                      "courierId": "5bb49b0f8cc1567b6ea4980a"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "courier active_order"
+        ],
+        "summary": "accept order",
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/api/v1/courier/active_order/decline": {
+      "parameters": [
+        {
+          "name": "Authorization",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "Bearer token"
+        }
+      ],
+      "put": {
+        "responses": {
+          "200": {
+            "description": "successful",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "5bb49b0f8cc1567b6ea49818",
+                  "clientId": "5bb49b0f8cc1567b6ea49817",
+                  "courierId": null,
+                  "shopId": "5bb49b0f8cc1567b6ea49819",
+                  "status": "requested",
+                  "priceTotal": 0.0,
+                  "products": [
+
+                  ],
+                  "courierAssignments": [
+                    {
+                      "id": "5bb49b0f8cc1567b6ea4981b",
+                      "status": "declined",
+                      "declineReason": "не хочу",
+                      "courierId": "5bb49b0f8cc1567b6ea49816"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "courier active_order"
+        ],
+        "summary": "decline order",
+        "consumes": [
+          "application/json"
+        ],
         "produces": [
           "application/json"
         ]

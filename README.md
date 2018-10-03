@@ -25,3 +25,10 @@ generate swagger's json `RAILS_ENV=test bin/rake swagger`
 - bundle
 - run rake tasks if needed
 - restart puma service
+- restart sidekiq service
+
+## Development
+
+run sidekiq `bin/sidekiq`
+
+seed with shops `bin/rails faker:shops`

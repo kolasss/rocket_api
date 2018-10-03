@@ -24,15 +24,15 @@ module Api
         end
 
         def client_id
-          object.client_id.to_s
+          object.client_id&.to_s
         end
 
         def courier_id
-          object.courier_id.to_s
+          object.courier_id&.to_s
         end
 
         def shop_id
-          object.shop_id.to_s
+          object.shop_id&.to_s
         end
 
         def courier_assignments
@@ -53,7 +53,7 @@ module Api
         end
 
         def courier_id
-          object.courier_id.to_s
+          object.courier_id&.to_s
         end
       end
     end

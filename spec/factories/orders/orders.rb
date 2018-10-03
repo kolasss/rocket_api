@@ -6,7 +6,7 @@ FactoryBot.define do
     price_total { 0 }
 
     association :client, factory: :client
-    association :shop, factory: :shop, strategy: :build
+    association :shop, factory: :shop
 
     trait :with_product do
       transient do

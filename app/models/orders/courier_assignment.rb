@@ -6,6 +6,7 @@ module Orders
     field :status, type: String
     field :decline_reason, type: String
     field :courier_id, type: BSON::ObjectId
+    field :proposed_at, type: DateTime
 
     embedded_in(
       :order, class_name: 'Orders::Order', inverse_of: :courier_assignments

@@ -14,10 +14,12 @@ module Operations
         private
 
         def check_courier(courier)
-          if courier.is_a? ::Users::Courier
-            Success(true)
-          else
+          if !courier.is_a?(::Users::Courier)
             Failure(:user_is_not_courier)
+          elsif courier.active_order?
+            Failure(:courier_has_active_order)
+          else
+            Success(true)
           end
         end
 

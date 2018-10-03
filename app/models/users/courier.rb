@@ -10,5 +10,12 @@ module Users
       inverse_of: :courier,
       dependent: :restrict_with_error
     )
+    belongs_to(
+      :active_order,
+      class_name: 'Orders::Order',
+      inverse_of: nil,
+      dependent: :restrict_with_error,
+      optional: true
+    )
   end
 end

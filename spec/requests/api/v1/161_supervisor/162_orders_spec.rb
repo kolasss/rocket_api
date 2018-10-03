@@ -65,7 +65,7 @@ RSpec.describe 'orders', type: :request, tags: ['supervisor orders'] do
     )
 
     parameter :order_id, in: :path, type: :string, required: true
-    let(:order) { create(:order, :with_product, status: 'requested') }
+    let(:order) { create(:order, status: 'requested') }
     let(:order_id) { order.id.to_s }
     let(:new_courier) { create(:courier) }
 

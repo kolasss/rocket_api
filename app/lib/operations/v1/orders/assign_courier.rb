@@ -11,7 +11,10 @@ module Operations
           yield check_status(order)
           courier = yield find_courier(courier_id)
           yield validate_assignment(order, courier)
-          assign_courier(order, courier)
+          yield update_order(order, courier)
+          yield update_courier(order, courier)
+          yield unready_courier(courier)
+          Success(order)
         end
 
         private
@@ -43,17 +46,26 @@ module Operations
         end
 
         def validate_assignment(order, courier)
-          if order.courier_assignments.where(courier_id: courier.id).any?
-            Failure(:already_assigned_to_courier)
+          if courier.active_order?
+            Failure(:courier_is_busy)
+          elsif order.courier_assignments.where(courier_id: courier.id).any?
+            Failure(:already_assigned_to_this_courier)
           else
             Success(true)
           end
         end
 
-        def assign_courier(order, courier)
+        def update_order(order, courier)
           order.courier = courier
           build_assignment(order, courier)
 
+          # TODO: transactions only allowed on replica sets
+          # success = order.with_session do |session|
+          #   session.start_transaction
+          #   order.save
+          #   courier.save
+          #   session.commit_transaction
+          # end
           if order.save
             Success(order)
           else
@@ -64,8 +76,24 @@ module Operations
         def build_assignment(order, courier)
           order.courier_assignments.new(
             status: 'proposed',
-            courier_id: courier.id
+            courier_id: courier.id,
+            proposed_at: Time.current
           )
+        end
+
+        def update_courier(order, courier)
+          courier.active_order = order
+
+          if courier.save
+            Success(courier)
+          else
+            Failure(courier.errors.as_json)
+          end
+        end
+
+        def unready_courier(courier)
+          operation = Operations::V1::Couriers::Unready.new
+          operation.call(courier)
         end
       end
     end

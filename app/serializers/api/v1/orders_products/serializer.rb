@@ -12,7 +12,7 @@ module Api
         end
 
         def shop_product_id
-          object.shop_product_id.to_s
+          object.shop_product_id&.to_s
         end
       end
     end
