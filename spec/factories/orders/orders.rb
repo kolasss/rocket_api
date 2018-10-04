@@ -27,5 +27,21 @@ FactoryBot.define do
         order.update(price_total: price_total)
       end
     end
+
+    trait :requested do
+      status { 'requested' }
+    end
+
+    trait :accepted do
+      status { 'accepted' }
+    end
+
+    trait :courier_at_shop do
+      status { 'courier_at_shop' }
+    end
+
+    trait :on_delivery do
+      status { 'on_delivery' }
+    end
   end
 end

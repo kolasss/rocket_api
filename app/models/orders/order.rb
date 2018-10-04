@@ -36,9 +36,8 @@ module Orders
       new
       requested
       accepted
-      at_shop
+      courier_at_shop
       on_delivery
-      at_client
       delivered
       canceled
     ].freeze

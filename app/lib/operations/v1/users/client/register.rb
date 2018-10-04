@@ -34,12 +34,11 @@ module Operations
           def create(params, code)
             user = ::Users::Client.new(params)
             user.code_hash = encrypt_code(code)
-            # configure_defaults(user)
 
             if user.save
               Success(user)
             else
-              Failure(user.errors.as_json)
+              Failure(user: user.errors.as_json)
             end
           end
 
@@ -50,11 +49,6 @@ module Operations
           def send_sms(_phone, code)
             # TODO: send code
             Rails.logger.info("User's code is #{code}")
-          end
-
-          def configure_defaults(user)
-            # user.role = 'client'
-            # user.create_client
           end
         end
       end

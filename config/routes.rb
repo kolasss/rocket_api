@@ -37,6 +37,9 @@ Rails.application.routes.draw do
         namespace :active_order do
           put :accept
           put :decline
+          put :arrive
+          put :pick_up
+          put :deliver
         end
       end
       namespace :shop_manager do

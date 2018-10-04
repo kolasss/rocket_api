@@ -58,7 +58,7 @@ module Operations
           if order.save
             Success(order)
           else
-            Failure(order.errors.as_json)
+            Failure(order: order.errors.as_json)
           end
         end
 

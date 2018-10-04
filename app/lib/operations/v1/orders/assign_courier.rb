@@ -69,7 +69,7 @@ module Operations
           if order.save
             Success(order)
           else
-            Failure(order.errors.as_json)
+            Failure(order: order.errors.as_json)
           end
         end
 
@@ -87,7 +87,7 @@ module Operations
           if courier.save
             Success(courier)
           else
-            Failure(courier.errors.as_json)
+            Failure(courier: courier.errors.as_json)
           end
         end
 

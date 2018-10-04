@@ -61,7 +61,7 @@ module Operations
             if assignment.save
               Success(true)
             else
-              Failure(assignment.errors.as_json)
+              Failure(assignment: assignment.errors.as_json)
             end
           end
 

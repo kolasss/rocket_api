@@ -37,6 +37,51 @@ module Api
           end
         end
 
+        def arrive
+          operation = Operations::V1::Orders::Couriers::Arrive.new
+          result = operation.call(current_user)
+
+          if result.success?
+            @order = result.value!
+            render json: json_success(serialize_order)
+          else
+            render_error(
+              status: :bad_request,
+              errors: result.failure
+            )
+          end
+        end
+
+        def pick_up
+          operation = Operations::V1::Orders::Couriers::PickUp.new
+          result = operation.call(current_user)
+
+          if result.success?
+            @order = result.value!
+            render json: json_success(serialize_order)
+          else
+            render_error(
+              status: :bad_request,
+              errors: result.failure
+            )
+          end
+        end
+
+        def deliver
+          operation = Operations::V1::Orders::Couriers::Deliver.new
+          result = operation.call(current_user)
+
+          if result.success?
+            @order = result.value!
+            render json: json_success(serialize_order)
+          else
+            render_error(
+              status: :bad_request,
+              errors: result.failure
+            )
+          end
+        end
+
         private
 
         def serialize_order
