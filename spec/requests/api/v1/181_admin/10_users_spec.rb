@@ -2,16 +2,12 @@
 
 require 'swagger_helper'
 
-RSpec.describe 'products', type: :request,
-                           tags: ['admin products'] do
+RSpec.describe 'users', type: :request, tags: ['admin users'] do
   let(:user) { create(:admin) }
   let(:token) { UserAuthentication::User.new(user: user).new_token }
   let(:Authorization) { "Bearer #{token}" }
-  let(:category) { create(:product_category) }
-  let(:category_id) { category.id.to_s }
-  let(:shop_id) { category.shop.id.to_s }
 
-  path '/api/v1/admin/shops/{shop_id}/products_categories/{category_id}/products' do
+  path '/api/v1/admin/users' do
     parameter(
       :Authorization,
       in: :header,
@@ -20,12 +16,23 @@ RSpec.describe 'products', type: :request,
       description: 'Bearer token'
     )
 
-    parameter :shop_id, in: :path, type: :string, required: true
-    parameter :category_id, in: :path, type: :string, required: true
+    get summary: 'list items' do
+      produces 'application/json'
 
-    post summary: 'create',
-         description: 'создает новую товар в данной категории' do
-      let(:item_attributes) { attributes_for(:product) }
+      response(200, description: 'successful') do
+        it 'contains array of users' do
+          json = JSON.parse(response.body)
+          items = json['data']['items']
+          expect(items).to be_an_instance_of(Array)
+          expect(items.size).to eq 1
+          expect(items[0]['name']).to eq user.name
+        end
+        capture_example
+      end
+    end
+
+    post summary: 'create' do
+      let(:item_attributes) { attributes_for(:user) }
 
       produces 'application/json'
       consumes 'application/json'
@@ -33,33 +40,38 @@ RSpec.describe 'products', type: :request,
       parameter :body, in: :body, required: true, schema: {
         type: :object,
         properties: {
-          product: {
+          user: {
             type: :object,
             properties: {
-              title: { type: :string },
-              description: { type: :string },
-              price: { type: :number },
-              weight: { type: :string }
+              name: { type: :string },
+              phone: { type: :string },
+              role: { type: :string },
+              password: { type: :string }
             }
           }
         }
       }
       let(:body) do
-        { product: item_attributes }
+        {
+          user: item_attributes.merge(
+            role: 'supervisor',
+            password: '1234'
+          )
+        }
       end
 
       response(201, description: 'successfully created') do
         it 'uses the params we passed in' do
           json = JSON.parse(response.body)
           item = json['data']
-          expect(item['title']).to eq item_attributes[:title]
+          expect(item['name']).to eq item_attributes[:name]
         end
         capture_example
       end
     end
   end
 
-  path '/api/v1/admin/shops/{shop_id}/products_categories/{category_id}/products/{product_id}' do # rubocop:disable Metrics/LineLength
+  path '/api/v1/admin/users/{user_id}' do
     parameter(
       :Authorization,
       in: :header,
@@ -68,42 +80,45 @@ RSpec.describe 'products', type: :request,
       description: 'Bearer token'
     )
 
-    parameter :shop_id, in: :path, type: :string, required: true
-    parameter :category_id, in: :path, type: :string, required: true
+    parameter :user_id, in: :path, type: :string, required: true
+    let(:user2) { create(:client) }
+    let(:user_id) { user2.id.to_s }
 
-    parameter :product_id, in: :path, type: :string, required: true
-    let(:product) { create(:product, category: category) }
-    let(:product_id) { product.id.to_s }
+    get summary: 'fetch an item' do
+      produces 'application/json'
+
+      response(200, description: 'success') do
+        capture_example
+      end
+    end
 
     put summary: 'update an item' do
       produces 'application/json'
       consumes 'application/json'
 
-      let(:new_title) { 'new title' }
+      let(:new_name) { 'new name' }
 
       parameter :body, in: :body, required: true, schema: {
         type: :object,
         properties: {
-          product: {
+          user: {
             type: :object,
             properties: {
-              title: { type: :string },
-              description: { type: :string },
-              price: { type: :number },
-              weight: { type: :string }
+              name: { type: :string },
+              phone: { type: :string }
             }
           }
         }
       }
       let(:body) do
-        { product: { title: new_title } }
+        { user: { name: new_name } }
       end
 
       response 200, description: 'success' do
         it 'uses the params we passed in' do
           json = JSON.parse(response.body)
           item = json['data']
-          expect(item['title']).to eq new_title
+          expect(item['name']).to eq new_name
         end
         capture_example
       end

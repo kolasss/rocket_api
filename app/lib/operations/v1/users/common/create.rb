@@ -4,11 +4,13 @@ module Operations
   module V1
     module Users
       module Common
-        class Authenticate < ::Operations::V1::Users::Authenticate
+        class Create < ::Operations::V1::Base
           include Dry::Monads::Do.for(:call)
 
           VALIDATOR = Dry::Validation.Schema do
             required(:user).schema do
+              optional(:name).filled(:str?)
+              # required(:phone).filled(:str?, format?: GITHUB_LINK)
               required(:phone).filled(:str?)
               required(:password).filled(:str?)
               required(:role).filled(:str?)
@@ -18,9 +20,7 @@ module Operations
           def call(params)
             payload = yield VALIDATOR.call(params).to_monad
             klass = yield detect_class(payload[:user][:role])
-            user = yield find_user(payload[:user][:phone], klass)
-            yield check_password(user, payload[:user][:password])
-            get_token(user)
+            create(payload[:user], klass)
           end
 
           private
@@ -30,13 +30,22 @@ module Operations
             klass ? Success(klass) : Failure(:invalid_role)
           end
 
-          def check_password(user, password)
-            if user.password_hash.present? &&
-               user.password_hash == encrypt_code(password)
-              Success(true)
+          def create(params, klass)
+            user = klass.new(
+              phone: params[:phone],
+              name: params[:name]
+            )
+            user.password_hash = encrypt_code(params[:password])
+
+            if user.save
+              Success(user)
             else
-              Failure(:invalid_password)
+              Failure(user: user.errors.as_json)
             end
+          end
+
+          def encrypt_code(code)
+            ::UserAuthentication::Code.hash(code)
           end
         end
       end

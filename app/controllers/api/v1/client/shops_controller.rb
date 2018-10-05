@@ -20,7 +20,6 @@ module Api
           render json: json_success(serialize_shop)
         end
 
-
         private
 
         def serialize_shop

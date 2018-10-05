@@ -2,12 +2,16 @@
 
 require 'swagger_helper'
 
-RSpec.describe 'shops categories', type: :request, tags: ['admin shops_categories'] do
+RSpec.describe 'products', type: :request,
+                           tags: ['admin products'] do
   let(:user) { create(:admin) }
   let(:token) { UserAuthentication::User.new(user: user).new_token }
   let(:Authorization) { "Bearer #{token}" }
+  let(:category) { create(:product_category) }
+  let(:category_id) { category.id.to_s }
+  let(:shop_id) { category.shop.id.to_s }
 
-  path '/api/v1/admin/shops_categories' do
+  path '/api/v1/admin/shops/{shop_id}/products_categories/{category_id}/products' do # rubocop:disable Metrics/LineLength
     parameter(
       :Authorization,
       in: :header,
@@ -16,25 +20,12 @@ RSpec.describe 'shops categories', type: :request, tags: ['admin shops_categorie
       description: 'Bearer token'
     )
 
-    get summary: 'list items' do
-      let!(:category) { create(:shop_category) }
+    parameter :shop_id, in: :path, type: :string, required: true
+    parameter :category_id, in: :path, type: :string, required: true
 
-      produces 'application/json'
-
-      response(200, description: 'successful') do
-        it 'contains array of categories' do
-          json = JSON.parse(response.body)
-          items = json['data']['items']
-          expect(items).to be_an_instance_of(Array)
-          expect(items.size).to eq 1
-          expect(items[0]['title']).to eq category.title
-        end
-        capture_example
-      end
-    end
-
-    post summary: 'create' do
-      let(:item_attributes) { attributes_for(:shop_category) }
+    post summary: 'create',
+         description: 'создает новую товар в данной категории' do
+      let(:item_attributes) { attributes_for(:product) }
 
       produces 'application/json'
       consumes 'application/json'
@@ -42,16 +33,19 @@ RSpec.describe 'shops categories', type: :request, tags: ['admin shops_categorie
       parameter :body, in: :body, required: true, schema: {
         type: :object,
         properties: {
-          category: {
+          product: {
             type: :object,
             properties: {
-              title: { type: :string }
+              title: { type: :string },
+              description: { type: :string },
+              price: { type: :number },
+              weight: { type: :string }
             }
           }
         }
       }
       let(:body) do
-        { category: item_attributes }
+        { product: item_attributes }
       end
 
       response(201, description: 'successfully created') do
@@ -65,7 +59,7 @@ RSpec.describe 'shops categories', type: :request, tags: ['admin shops_categorie
     end
   end
 
-  path '/api/v1/admin/shops_categories/{category_id}' do
+  path '/api/v1/admin/shops/{shop_id}/products_categories/{category_id}/products/{product_id}' do # rubocop:disable Metrics/LineLength
     parameter(
       :Authorization,
       in: :header,
@@ -74,9 +68,12 @@ RSpec.describe 'shops categories', type: :request, tags: ['admin shops_categorie
       description: 'Bearer token'
     )
 
+    parameter :shop_id, in: :path, type: :string, required: true
     parameter :category_id, in: :path, type: :string, required: true
-    let(:category) { create(:shop_category) }
-    let(:category_id) { category.id.to_s }
+
+    parameter :product_id, in: :path, type: :string, required: true
+    let(:product) { create(:product, category: category) }
+    let(:product_id) { product.id.to_s }
 
     put summary: 'update an item' do
       produces 'application/json'
@@ -87,16 +84,19 @@ RSpec.describe 'shops categories', type: :request, tags: ['admin shops_categorie
       parameter :body, in: :body, required: true, schema: {
         type: :object,
         properties: {
-          category: {
+          product: {
             type: :object,
             properties: {
-              title: { type: :string }
+              title: { type: :string },
+              description: { type: :string },
+              price: { type: :number },
+              weight: { type: :string }
             }
           }
         }
       }
       let(:body) do
-        { category: { title: new_title } }
+        { product: { title: new_title } }
       end
 
       response 200, description: 'success' do

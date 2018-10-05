@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: 'json' } do
     namespace :v1 do
       namespace :users do
-        post    :login,     to: 'authentication#create'
+        post :login, to: 'authentication#create'
         # delete  :logout,    to: 'authentication#destroy'
       end
 
@@ -22,8 +22,8 @@ Rails.application.routes.draw do
       end
 
       namespace :client do
-        post    :register,  to: 'registration#create'
-        post    :login,     to: 'authentication#create'
+        post :register, to: 'registration#create'
+        post :login,    to: 'authentication#create'
         # delete  :logout,    to: 'authentication#destroy'
         resources :shops, only: %i[index show]
         resources :orders, except: %i[update destroy] do

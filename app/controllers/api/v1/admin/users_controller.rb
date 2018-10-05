@@ -19,16 +19,21 @@ module Api
         end
 
         def create
-          @user = ::Users::User.new(user_params)
+          operation = Operations::V1::Users::Common::Create.new
+          result = operation.call(request.parameters)
 
-          if @user.save
+          if result.success?
+            @user = result.value!
             render(
               json: json_success(serialize_user),
               status: :created,
               location: api_v1_admin_user_path(@user)
             )
           else
-            render_user_error
+            render_error(
+              status: :unprocessable_entity,
+              errors: result.failure
+            )
           end
         end
 
