@@ -34,8 +34,8 @@ module Operations
 
         private
 
-        def find_shop(id)
-          shop = ::Shops::Shop.where(id: id).first
+        def find_shop(shop_id)
+          shop = ::Shops::Shop.where(id: shop_id).first
           if shop.present?
             Success(shop)
           else

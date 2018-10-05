@@ -3,23 +3,30 @@
 module Api
   module V1
     module Users
-      class Serializer < Api::V1::ObjectSerializer
-        json_schema do
-          {
-            id: String,
-            name: String,
-            phone: String,
-            role: String
-          }
+      class Serializer
+        def initialize(object)
+          @object = object
         end
 
-        def role
-          case object._type
-          when 'Users::Client'      then 'client'
-          when 'Users::Courier'     then 'courier'
-          when 'Users::Admin'       then 'admin'
-          when 'Users::Supervisor'  then 'supervisor'
-          when 'Users::ShopManager' then 'shop_manager'
+        def build_schema
+          if Surrealist::Helper.collection?(@object)
+            serialize_collection(@object)
+          else
+            serialize(@object)
+          end
+        end
+
+        private
+
+        def serialize_collection(collection)
+          collection.map { |object| serialize(object) }
+        end
+
+        def serialize(object)
+          if object.is_a? ::Users::ShopManager
+            ShopManagerSerializer.new(object).build_schema
+          else
+            CommonSerializer.new(object).build_schema
           end
         end
       end
