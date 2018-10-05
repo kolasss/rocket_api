@@ -5,33 +5,33 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: 'json' } do
     namespace :v1 do
-      resources :shops_categories, except: [:show]
-      resources :shops do
-        resources :products_categories, except: %i[index show] do
-          resources :products, except: %i[index show]
-        end
-      end
-      resources :orders
-
       namespace :users do
         post    :login,     to: 'authentication#create'
         # delete  :logout,    to: 'authentication#destroy'
       end
-      resources :users
 
-      # namespace :admin do
-      #   resources :shops
-      # end
+      namespace :admin do
+        resources :shops_categories, except: [:show]
+        resources :shops do
+          resources :products_categories, except: %i[index show] do
+            resources :products, except: %i[index show]
+          end
+        end
+        resources :orders
+        resources :users
+      end
+
       namespace :client do
         post    :register,  to: 'registration#create'
         post    :login,     to: 'authentication#create'
         # delete  :logout,    to: 'authentication#destroy'
-        # resources :shops
+        resources :shops, only: %i[index show]
         resources :orders, except: %i[update destroy] do
           put :cancel
           put :make_request
         end
       end
+
       namespace :courier do
         resource :ready, only: %i[create destroy], controller: :ready
         namespace :active_order do
@@ -42,6 +42,7 @@ Rails.application.routes.draw do
           put :deliver
         end
       end
+
       namespace :shop_manager do
         resource :shop, except: %i[create destroy] do
           resources :products_categories, except: %i[index show] do
@@ -49,6 +50,7 @@ Rails.application.routes.draw do
           end
         end
       end
+
       namespace :supervisor do
         resources :orders, only: %i[index show] do
           post :assign_courier

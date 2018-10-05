@@ -88,7 +88,9 @@ RSpec.describe 'orders', type: :request, tags: ['client orders'] do
           expect(item['clientId']).to eq user.id.to_s
           expect(item['status']).to eq 'new'
           expect(item['products'][0]['title']).to eq product.title
-          expect(item['priceTotal']).to eq(product.price * product_quantity)
+          expect(item['priceTotal']).to(
+            eq (product.price * product_quantity).to_f
+          )
         end
         capture_example
       end

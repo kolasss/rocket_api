@@ -2,12 +2,12 @@
 
 require 'swagger_helper'
 
-RSpec.describe 'orders', type: :request, tags: [:orders] do
-  let(:user) { create(:client) }
+RSpec.describe 'orders', type: :request, tags: ['admin orders'] do
+  let(:user) { create(:admin) }
   let(:token) { UserAuthentication::User.new(user: user).new_token }
   let(:Authorization) { "Bearer #{token}" }
 
-  path '/api/v1/orders' do
+  path '/api/v1/admin/orders' do
     parameter(
       :Authorization,
       in: :header,
@@ -99,7 +99,7 @@ RSpec.describe 'orders', type: :request, tags: [:orders] do
     end
   end
 
-  path '/api/v1/orders/{order_id}' do
+  path '/api/v1/admin/orders/{order_id}' do
     parameter(
       :Authorization,
       in: :header,

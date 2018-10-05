@@ -3,15 +3,15 @@
 require 'swagger_helper'
 
 RSpec.describe 'products', type: :request,
-                           tags: [:products] do
-  let(:user) { create(:client) }
+                           tags: ['admin products'] do
+  let(:user) { create(:admin) }
   let(:token) { UserAuthentication::User.new(user: user).new_token }
   let(:Authorization) { "Bearer #{token}" }
   let(:category) { create(:product_category) }
   let(:category_id) { category.id.to_s }
   let(:shop_id) { category.shop.id.to_s }
 
-  path '/api/v1/shops/{shop_id}/products_categories/{category_id}/products' do
+  path '/api/v1/admin/shops/{shop_id}/products_categories/{category_id}/products' do
     parameter(
       :Authorization,
       in: :header,
@@ -59,7 +59,7 @@ RSpec.describe 'products', type: :request,
     end
   end
 
-  path '/api/v1/shops/{shop_id}/products_categories/{category_id}/products/{product_id}' do # rubocop:disable Metrics/LineLength
+  path '/api/v1/admin/shops/{shop_id}/products_categories/{category_id}/products/{product_id}' do # rubocop:disable Metrics/LineLength
     parameter(
       :Authorization,
       in: :header,

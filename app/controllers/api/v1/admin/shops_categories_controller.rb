@@ -2,17 +2,26 @@
 
 module Api
   module V1
-    module ShopManager
-      class ProductsCategoriesController < ApplicationController
+    module Admin
+      class ShopsCategoriesController < ApplicationController
+        def index
+          @categories = ::Shops::Category.all
+
+          categories_json = Api::V1::ShopsCategories::CompactSerializer.new(
+            @categories
+          ).build_schema
+
+          render json: json_success(items: categories_json)
+        end
+
         def create
-          set_shop
-          @category = @shop.products_categories.new(category_params)
+          @category = ::Shops::Category.new(category_params)
 
           if @category.save
             render(
               json: json_success(serialize_category),
               status: :created,
-              location: api_v1_shop_manager_shop_path
+              location: api_v1_admin_shops_categories_path
             )
           else
             render_category_error
@@ -39,13 +48,8 @@ module Api
 
         private
 
-        def set_shop
-          @shop = current_user.shop
-        end
-
         def set_category
-          set_shop
-          @category = @shop.products_categories.find(params[:id])
+          @category = ::Shops::Category.find(params[:id])
         end
 
         def category_params
@@ -60,7 +64,7 @@ module Api
         end
 
         def serialize_category
-          Api::V1::ProductsCategories::Serializer.new(
+          Api::V1::ShopsCategories::Serializer.new(
             @category
           ).build_schema
         end

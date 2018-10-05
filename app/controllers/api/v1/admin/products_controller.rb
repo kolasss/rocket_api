@@ -2,7 +2,7 @@
 
 module Api
   module V1
-    module ShopManager
+    module Admin
       class ProductsController < ApplicationController
         def create
           set_category
@@ -12,7 +12,7 @@ module Api
             render(
               json: json_success(serialize_product),
               status: :created,
-              location: api_v1_shop_manager_shop_path
+              location: api_v1_admin_shop_path(@shop)
             )
           else
             render_product_error
@@ -40,7 +40,7 @@ module Api
         private
 
         def set_category
-          @shop = current_user.shop
+          @shop = ::Shops::Shop.find(params[:shop_id])
           @category = @shop.products_categories.find(
             params[:products_category_id]
           )

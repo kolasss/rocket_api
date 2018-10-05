@@ -13,7 +13,7 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNWJiNWMzMzM4Y2MxNTYzZTk2NDQ1ZDU1In0.F8gpJ-x1WE-meKVhBZ7_dX8vF3_dlkwGG_fey4COUiI"
+                  "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNWJiNmUxZDM4Y2MxNTY1NWIyN2ZkODY2In0.-Kj_45uxSEBlJLMByVGM5yYG29-LIiljvQ-9ZddECow"
                 }
               }
             }
@@ -64,1158 +64,6 @@
         ]
       }
     },
-    "/api/v1/shops_categories": {
-      "parameters": [
-        {
-          "name": "Authorization",
-          "in": "header",
-          "type": "string",
-          "required": true,
-          "description": "Bearer token"
-        }
-      ],
-      "get": {
-        "responses": {
-          "200": {
-            "description": "successful",
-            "examples": {
-              "application/json": {
-                "data": {
-                  "items": [
-                    {
-                      "id": "5bb5c3338cc1563e96445d58",
-                      "title": "Vietnamese"
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "tags": [
-          "shops_categories"
-        ],
-        "summary": "list items",
-        "produces": [
-          "application/json"
-        ]
-      },
-      "post": {
-        "responses": {
-          "201": {
-            "description": "successfully created",
-            "examples": {
-              "application/json": {
-                "data": {
-                  "id": "5bb5c3348cc1563e96445d5d",
-                  "title": "Sushi",
-                  "shopIds": [
-
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "category": {
-                  "type": "object",
-                  "properties": {
-                    "title": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        ],
-        "tags": [
-          "shops_categories"
-        ],
-        "summary": "create",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ]
-      }
-    },
-    "/api/v1/shops_categories/{category_id}": {
-      "parameters": [
-        {
-          "name": "Authorization",
-          "in": "header",
-          "type": "string",
-          "required": true,
-          "description": "Bearer token"
-        },
-        {
-          "name": "category_id",
-          "in": "path",
-          "type": "string",
-          "required": true
-        }
-      ],
-      "put": {
-        "responses": {
-          "200": {
-            "description": "success",
-            "examples": {
-              "application/json": {
-                "data": {
-                  "id": "5bb5c3348cc1563e96445d60",
-                  "title": "new title",
-                  "shopIds": [
-
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "category": {
-                  "type": "object",
-                  "properties": {
-                    "title": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        ],
-        "tags": [
-          "shops_categories"
-        ],
-        "summary": "update an item",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ]
-      },
-      "delete": {
-        "responses": {
-          "204": {
-            "description": "success"
-          }
-        },
-        "tags": [
-          "shops_categories"
-        ],
-        "summary": "delete an item"
-      }
-    },
-    "/api/v1/shops": {
-      "parameters": [
-        {
-          "name": "Authorization",
-          "in": "header",
-          "type": "string",
-          "required": true,
-          "description": "Bearer token"
-        }
-      ],
-      "get": {
-        "responses": {
-          "200": {
-            "description": "successful",
-            "examples": {
-              "application/json": {
-                "data": {
-                  "items": [
-                    {
-                      "id": "5bb5c3348cc1563e96445d67",
-                      "title": "KK Bar & Grill",
-                      "description": "Culver’s Restaurant was founded by the Culver family in 1984, which eventually branched out to more than 300 franchised restaurants all over the US. Culver’s is well-known for its ButterBurger, which made the restaurant extremely famous. They also have other items which include salads, sandwiches, desserts, etc.",
-                      "categoryIds": [
-
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "tags": [
-          "shops"
-        ],
-        "summary": "list items",
-        "produces": [
-          "application/json"
-        ]
-      },
-      "post": {
-        "responses": {
-          "201": {
-            "description": "successfully created",
-            "examples": {
-              "application/json": {
-                "data": {
-                  "id": "5bb5c3348cc1563e96445d6f",
-                  "title": "3827 Pizza",
-                  "description": "To ensure that each guest receives prompt, professional, friendly and courteous service. To maintain a clean, comfortable and well maintained premises for our guests and staff. To provide at a fair price – nutritional, well-prepared meals – using only quality ingredients. To ensure that all guests and staff are treated with the respect and dignity they deserve. To thank each guest for the opportunity to serve them. By maintaining these objectives we shall be assured of a fair profit that will allow us to contribute to the community we serve.",
-                  "categories": [
-                    {
-                      "id": "5bb5c3348cc1563e96445d6e",
-                      "title": "Sandwiches"
-                    }
-                  ],
-                  "productsCategories": [
-
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "shop": {
-                  "type": "object",
-                  "properties": {
-                    "title": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "category_ids": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        ],
-        "tags": [
-          "shops"
-        ],
-        "summary": "create",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ]
-      }
-    },
-    "/api/v1/shops/{shop_id}": {
-      "parameters": [
-        {
-          "name": "Authorization",
-          "in": "header",
-          "type": "string",
-          "required": true,
-          "description": "Bearer token"
-        },
-        {
-          "name": "shop_id",
-          "in": "path",
-          "type": "string",
-          "required": true
-        }
-      ],
-      "get": {
-        "responses": {
-          "200": {
-            "examples": {
-              "application/json": {
-                "data": {
-                  "id": "5bb5c3348cc1563e96445d70",
-                  "title": "Smokestack Sushi",
-                  "description": "Delhaize Group will achieve leading positions in food retailing in key mature and emerging markets. We accomplish our goal by developing strong regional companies benefiting from and contributing to the Groups strength, expertise and successful practices. Delhaize Group goes to market with a variety of food store formats. The Group is committed to offer a locally differentiated shopping experience to its customers in each of its markets, to deliver superior value and to maintain high social, environmental and ethical standards.",
-                  "categories": [
-
-                  ],
-                  "productsCategories": [
-
-                  ]
-                }
-              }
-            },
-            "description": "success"
-          }
-        },
-        "tags": [
-          "shops"
-        ],
-        "summary": "fetch an item",
-        "produces": [
-          "application/json"
-        ]
-      },
-      "put": {
-        "responses": {
-          "200": {
-            "description": "success",
-            "examples": {
-              "application/json": {
-                "data": {
-                  "id": "5bb5c3348cc1563e96445d76",
-                  "title": "new title",
-                  "description": "Our Mission at Denny’s is to establish beneficial business relationships with diverse suppliers who share our commitment to customer service, quality and competitive pricing.",
-                  "categories": [
-
-                  ],
-                  "productsCategories": [
-
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "shop": {
-                  "type": "object",
-                  "properties": {
-                    "title": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "category_ids": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        ],
-        "tags": [
-          "shops"
-        ],
-        "summary": "update an item",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ]
-      },
-      "delete": {
-        "responses": {
-          "204": {
-            "description": "success"
-          }
-        },
-        "tags": [
-          "shops"
-        ],
-        "summary": "delete an item"
-      }
-    },
-    "/api/v1/shops/{shop_id}/products_categories": {
-      "parameters": [
-        {
-          "name": "Authorization",
-          "in": "header",
-          "type": "string",
-          "required": true,
-          "description": "Bearer token"
-        },
-        {
-          "name": "shop_id",
-          "in": "path",
-          "type": "string",
-          "required": true
-        }
-      ],
-      "post": {
-        "responses": {
-          "201": {
-            "description": "successfully created",
-            "examples": {
-              "application/json": {
-                "data": {
-                  "id": "5bb5c3348cc1563e96445d83",
-                  "title": "Burgers",
-                  "products": [
-
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "category": {
-                  "type": "object",
-                  "properties": {
-                    "title": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        ],
-        "tags": [
-          "products_categories"
-        ],
-        "summary": "create",
-        "description": "создает новую категорию товаров для магазина",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ]
-      }
-    },
-    "/api/v1/shops/{shop_id}/products_categories/{category_id}": {
-      "parameters": [
-        {
-          "name": "Authorization",
-          "in": "header",
-          "type": "string",
-          "required": true,
-          "description": "Bearer token"
-        },
-        {
-          "name": "shop_id",
-          "in": "path",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "category_id",
-          "in": "path",
-          "type": "string",
-          "required": true
-        }
-      ],
-      "put": {
-        "responses": {
-          "200": {
-            "description": "success",
-            "examples": {
-              "application/json": {
-                "data": {
-                  "id": "5bb5c3358cc1563e96445d8a",
-                  "title": "new title",
-                  "products": [
-
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "category": {
-                  "type": "object",
-                  "properties": {
-                    "title": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        ],
-        "tags": [
-          "products_categories"
-        ],
-        "summary": "update an item",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ]
-      },
-      "delete": {
-        "responses": {
-          "204": {
-            "description": "success"
-          }
-        },
-        "tags": [
-          "products_categories"
-        ],
-        "summary": "delete an item"
-      }
-    },
-    "/api/v1/shops/{shop_id}/products_categories/{category_id}/products": {
-      "parameters": [
-        {
-          "name": "Authorization",
-          "in": "header",
-          "type": "string",
-          "required": true,
-          "description": "Bearer token"
-        },
-        {
-          "name": "shop_id",
-          "in": "path",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "category_id",
-          "in": "path",
-          "type": "string",
-          "required": true
-        }
-      ],
-      "post": {
-        "responses": {
-          "201": {
-            "description": "successfully created",
-            "examples": {
-              "application/json": {
-                "data": {
-                  "id": "5bb5c3358cc1563e96445d99",
-                  "title": "African",
-                  "description": "Smoked salmon, poached eggs, diced red onions and Hollandaise sauce on an English muffin. With a side of roasted potatoes.",
-                  "price": 902.07,
-                  "weight": "8 centigrams"
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "product": {
-                  "type": "object",
-                  "properties": {
-                    "title": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "price": {
-                      "type": "number"
-                    },
-                    "weight": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        ],
-        "tags": [
-          "products"
-        ],
-        "summary": "create",
-        "description": "создает новую товар в данной категории",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ]
-      }
-    },
-    "/api/v1/shops/{shop_id}/products_categories/{category_id}/products/{product_id}": {
-      "parameters": [
-        {
-          "name": "Authorization",
-          "in": "header",
-          "type": "string",
-          "required": true,
-          "description": "Bearer token"
-        },
-        {
-          "name": "shop_id",
-          "in": "path",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "category_id",
-          "in": "path",
-          "type": "string",
-          "required": true
-        },
-        {
-          "name": "product_id",
-          "in": "path",
-          "type": "string",
-          "required": true
-        }
-      ],
-      "put": {
-        "responses": {
-          "200": {
-            "description": "success",
-            "examples": {
-              "application/json": {
-                "data": {
-                  "id": "5bb5c3358cc1563e96445da2",
-                  "title": "new title",
-                  "description": "Granny Smith apples mixed with brown sugar and butter filling, in a flaky all-butter crust, with ice cream.",
-                  "price": 100.09,
-                  "weight": "5 milligrams"
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "product": {
-                  "type": "object",
-                  "properties": {
-                    "title": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "price": {
-                      "type": "number"
-                    },
-                    "weight": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        ],
-        "tags": [
-          "products"
-        ],
-        "summary": "update an item",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ]
-      },
-      "delete": {
-        "responses": {
-          "204": {
-            "description": "success"
-          }
-        },
-        "tags": [
-          "products"
-        ],
-        "summary": "delete an item"
-      }
-    },
-    "/api/v1/orders": {
-      "parameters": [
-        {
-          "name": "Authorization",
-          "in": "header",
-          "type": "string",
-          "required": true,
-          "description": "Bearer token"
-        }
-      ],
-      "get": {
-        "responses": {
-          "200": {
-            "description": "successful",
-            "examples": {
-              "application/json": {
-                "data": {
-                  "items": [
-                    {
-                      "id": "5bb5c3358cc1563e96445daf",
-                      "clientId": "5bb5c3358cc1563e96445dae",
-                      "courierId": null,
-                      "shopId": "5bb5c3358cc1563e96445db0",
-                      "status": "new",
-                      "priceTotal": 0.0,
-                      "products": [
-
-                      ],
-                      "courierAssignments": [
-
-                      ]
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "tags": [
-          "orders"
-        ],
-        "summary": "list items",
-        "produces": [
-          "application/json"
-        ]
-      },
-      "post": {
-        "responses": {
-          "201": {
-            "description": "successfully created",
-            "examples": {
-              "application/json": {
-                "data": {
-                  "id": "5bb5c3358cc1563e96445dc0",
-                  "clientId": "5bb5c3358cc1563e96445dbb",
-                  "courierId": null,
-                  "shopId": "5bb5c3358cc1563e96445dbc",
-                  "status": "new",
-                  "priceTotal": null,
-                  "products": [
-
-                  ],
-                  "courierAssignments": [
-
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "order": {
-                  "type": "object",
-                  "properties": {
-                    "client_id": {
-                      "type": "string"
-                    },
-                    "courier_id": {
-                      "type": "string"
-                    },
-                    "shop_id": {
-                      "type": "string"
-                    },
-                    "status": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        ],
-        "tags": [
-          "orders"
-        ],
-        "summary": "create",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ]
-      }
-    },
-    "/api/v1/orders/{order_id}": {
-      "parameters": [
-        {
-          "name": "Authorization",
-          "in": "header",
-          "type": "string",
-          "required": true,
-          "description": "Bearer token"
-        },
-        {
-          "name": "order_id",
-          "in": "path",
-          "type": "string",
-          "required": true
-        }
-      ],
-      "get": {
-        "responses": {
-          "200": {
-            "description": "success",
-            "examples": {
-              "application/json": {
-                "data": {
-                  "id": "5bb5c3368cc1563e96445dca",
-                  "clientId": "5bb5c3368cc1563e96445dc9",
-                  "courierId": null,
-                  "shopId": "5bb5c3368cc1563e96445dcb",
-                  "status": "new",
-                  "priceTotal": 4500.54,
-                  "products": [
-                    {
-                      "id": "5bb5c3368cc1563e96445dcf",
-                      "title": "Vietnamese",
-                      "description": "Fresh Norwegian salmon, lightly brushed with our herbed Dijon mustard sauce, with choice of two sides.",
-                      "price": 500.06,
-                      "weight": "9 metric tons",
-                      "quantity": 9,
-                      "shopProductId": "5bb5c3368cc1563e96445dce"
-                    }
-                  ],
-                  "courierAssignments": [
-
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "tags": [
-          "orders"
-        ],
-        "summary": "fetch an item",
-        "produces": [
-          "application/json"
-        ]
-      },
-      "put": {
-        "responses": {
-          "200": {
-            "description": "success",
-            "examples": {
-              "application/json": {
-                "data": {
-                  "id": "5bb5c3368cc1563e96445ddb",
-                  "clientId": "5bb5c3368cc1563e96445dda",
-                  "courierId": "5bb5c3368cc1563e96445de2",
-                  "shopId": "5bb5c3368cc1563e96445ddc",
-                  "status": "delivered",
-                  "priceTotal": 406.08,
-                  "products": [
-                    {
-                      "id": "5bb5c3368cc1563e96445de0",
-                      "title": "Sushi",
-                      "description": "Fresh Norwegian salmon, lightly brushed with our herbed Dijon mustard sauce, with choice of two sides.",
-                      "price": 203.04,
-                      "weight": "4 dekagrams",
-                      "quantity": 2,
-                      "shopProductId": "5bb5c3368cc1563e96445ddf"
-                    }
-                  ],
-                  "courierAssignments": [
-
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "order": {
-                  "type": "object",
-                  "properties": {
-                    "client_id": {
-                      "type": "string"
-                    },
-                    "courier_id": {
-                      "type": "string"
-                    },
-                    "shop_id": {
-                      "type": "string"
-                    },
-                    "status": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        ],
-        "tags": [
-          "orders"
-        ],
-        "summary": "update an item",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ]
-      },
-      "delete": {
-        "responses": {
-          "204": {
-            "description": "success"
-          }
-        },
-        "tags": [
-          "orders"
-        ],
-        "summary": "delete an item"
-      }
-    },
-    "/api/v1/users": {
-      "parameters": [
-        {
-          "name": "Authorization",
-          "in": "header",
-          "type": "string",
-          "required": true,
-          "description": "Bearer token"
-        }
-      ],
-      "get": {
-        "responses": {
-          "200": {
-            "description": "successful",
-            "examples": {
-              "application/json": {
-                "data": {
-                  "items": [
-                    {
-                      "id": "5bb5c3368cc1563e96445dec",
-                      "name": "Юрий Альбертович Игнатов",
-                      "phone": "+7(993)816-78-23",
-                      "role": "client"
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "tags": [
-          "users"
-        ],
-        "summary": "list items",
-        "produces": [
-          "application/json"
-        ]
-      },
-      "post": {
-        "responses": {
-          "201": {
-            "description": "successfully created",
-            "examples": {
-              "application/json": {
-                "data": {
-                  "id": "5bb5c3368cc1563e96445df0",
-                  "name": "Владислав Юрьевич Мясников",
-                  "phone": "+7(922)948-93-79",
-                  "role": null
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "user": {
-                  "type": "object",
-                  "properties": {
-                    "name": {
-                      "type": "string"
-                    },
-                    "phone": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        ],
-        "tags": [
-          "users"
-        ],
-        "summary": "create",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ]
-      }
-    },
-    "/api/v1/users/{user_id}": {
-      "parameters": [
-        {
-          "name": "Authorization",
-          "in": "header",
-          "type": "string",
-          "required": true,
-          "description": "Bearer token"
-        },
-        {
-          "name": "user_id",
-          "in": "path",
-          "type": "string",
-          "required": true
-        }
-      ],
-      "get": {
-        "responses": {
-          "200": {
-            "examples": {
-              "application/json": {
-                "data": {
-                  "id": "5bb5c3368cc1563e96445df1",
-                  "name": "Некрасова Оксана",
-                  "phone": "+7(982)218-41-97",
-                  "role": "client"
-                }
-              }
-            },
-            "description": "success"
-          }
-        },
-        "tags": [
-          "users"
-        ],
-        "summary": "fetch an item",
-        "produces": [
-          "application/json"
-        ]
-      },
-      "put": {
-        "responses": {
-          "200": {
-            "description": "success",
-            "examples": {
-              "application/json": {
-                "data": {
-                  "id": "5bb5c3368cc1563e96445df5",
-                  "name": "new name",
-                  "phone": "+7(918)985-08-50",
-                  "role": "client"
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "required": true,
-            "schema": {
-              "type": "object",
-              "properties": {
-                "user": {
-                  "type": "object",
-                  "properties": {
-                    "name": {
-                      "type": "string"
-                    },
-                    "phone": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        ],
-        "tags": [
-          "users"
-        ],
-        "summary": "update an item",
-        "consumes": [
-          "application/json"
-        ],
-        "produces": [
-          "application/json"
-        ]
-      },
-      "delete": {
-        "responses": {
-          "204": {
-            "description": "success"
-          }
-        },
-        "tags": [
-          "users"
-        ],
-        "summary": "delete an item"
-      }
-    },
     "/api/v1/client/register": {
       "post": {
         "responses": {
@@ -1224,9 +72,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb5c3378cc1563e96445dfa",
-                  "name": "Арсений Юрьевич Капустин",
-                  "phone": "+7(970)924-30-47",
+                  "id": "5bb6e1d38cc15655b27fd868",
+                  "name": "Евгения Гуляева",
+                  "phone": "+7(929)333-64-78",
                   "role": "client"
                 }
               }
@@ -1277,7 +125,7 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNWJiNWMzMzc4Y2MxNTYzZTk2NDQ1ZGZjIn0.mv2-vdig78kpOe_IWrAFb8oovjtNqkP_eihIShEPdzA"
+                  "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNWJiNmUxZDM4Y2MxNTY1NWIyN2ZkODZhIn0.BzApl02cZBsm0MnnVUIs7Dd4VC9tC8Sp2yBJpkkn4lA"
                 }
               }
             }
@@ -1338,10 +186,10 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5bb5c3378cc1563e96445e02",
-                      "clientId": "5bb5c3378cc1563e96445e01",
+                      "id": "5bb6e1d38cc15655b27fd870",
+                      "clientId": "5bb6e1d38cc15655b27fd86f",
                       "courierId": null,
-                      "shopId": "5bb5c3378cc1563e96445e03",
+                      "shopId": "5bb6e1d38cc15655b27fd871",
                       "status": "new",
                       "priceTotal": 0.0,
                       "products": [
@@ -1372,21 +220,21 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb5c3378cc1563e96445e11",
-                  "clientId": "5bb5c3378cc1563e96445e0c",
+                  "id": "5bb6e1d38cc15655b27fd87f",
+                  "clientId": "5bb6e1d38cc15655b27fd87a",
                   "courierId": null,
-                  "shopId": "5bb5c3378cc1563e96445e0d",
+                  "shopId": "5bb6e1d38cc15655b27fd87b",
                   "status": "new",
-                  "priceTotal": 404.14,
+                  "priceTotal": 804.1,
                   "products": [
                     {
-                      "id": "5bb5c3378cc1563e96445e12",
-                      "title": "Vegan",
-                      "description": "Granny Smith apples mixed with brown sugar and butter filling, in a flaky all-butter crust, with ice cream.",
-                      "price": 202.07,
-                      "weight": "3 milligrams",
+                      "id": "5bb6e1d38cc15655b27fd880",
+                      "title": "Burgers",
+                      "description": "Thick slices of French toast bread, brown sugar, half-and-half and vanilla, topped with powdered sugar. With two eggs served any style, and your choice of smoked bacon or smoked ham.",
+                      "price": 402.05,
+                      "weight": "7 metric tons",
                       "quantity": 2,
-                      "shopProductId": "5bb5c3378cc1563e96445e10"
+                      "shopProductId": "5bb6e1d38cc15655b27fd87e"
                     }
                   ],
                   "courierAssignments": [
@@ -1467,21 +315,21 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb5c3378cc1563e96445e1b",
-                  "clientId": "5bb5c3378cc1563e96445e1a",
+                  "id": "5bb6e1d38cc15655b27fd889",
+                  "clientId": "5bb6e1d38cc15655b27fd888",
                   "courierId": null,
-                  "shopId": "5bb5c3378cc1563e96445e1c",
+                  "shopId": "5bb6e1d38cc15655b27fd88a",
                   "status": "new",
-                  "priceTotal": 2816.12,
+                  "priceTotal": 3606.24,
                   "products": [
                     {
-                      "id": "5bb5c3388cc1563e96445e20",
-                      "title": "Indian",
-                      "description": "Two butter croissants of your choice (plain, almond or cheese). With a side of herb butter or house-made hazelnut spread.",
-                      "price": 704.03,
-                      "weight": "9 kilograms",
-                      "quantity": 4,
-                      "shopProductId": "5bb5c3378cc1563e96445e1f"
+                      "id": "5bb6e1d38cc15655b27fd88e",
+                      "title": "African",
+                      "description": "Three egg whites with spinach, mushrooms, caramelized onions, tomatoes and low-fat feta cheese. With herbed quinoa, and your choice of rye or whole-grain toast.",
+                      "price": 601.04,
+                      "weight": "6 milligrams",
+                      "quantity": 6,
+                      "shopProductId": "5bb6e1d38cc15655b27fd88d"
                     }
                   ],
                   "courierAssignments": [
@@ -1524,21 +372,21 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb5c3388cc1563e96445e29",
-                  "clientId": "5bb5c3388cc1563e96445e28",
+                  "id": "5bb6e1d38cc15655b27fd897",
+                  "clientId": "5bb6e1d38cc15655b27fd896",
                   "courierId": null,
-                  "shopId": "5bb5c3388cc1563e96445e2a",
+                  "shopId": "5bb6e1d38cc15655b27fd898",
                   "status": "requested",
-                  "priceTotal": 1648.32,
+                  "priceTotal": 402.18,
                   "products": [
                     {
-                      "id": "5bb5c3388cc1563e96445e2e",
-                      "title": "Vegetarian",
-                      "description": "Fresh parsley, Italian sausage, shallots, garlic, sun-dried tomatoes and mozzarella cheese in an all-butter crust. With a side of mixed fruits.",
-                      "price": 206.04,
+                      "id": "5bb6e1d48cc15655b27fd89c",
+                      "title": "Asian",
+                      "description": "Three eggs with cilantro, tomatoes, onions, avocados and melted Emmental cheese. With a side of roasted potatoes, and your choice of toast or croissant.",
+                      "price": 201.09,
                       "weight": "7 kilograms",
-                      "quantity": 8,
-                      "shopProductId": "5bb5c3388cc1563e96445e2d"
+                      "quantity": 2,
+                      "shopProductId": "5bb6e1d48cc15655b27fd89b"
                     }
                   ],
                   "courierAssignments": [
@@ -1553,6 +401,93 @@
           "client orders"
         ],
         "summary": "change status of order to \"requested\"",
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/api/v1/client/shops": {
+      "parameters": [
+        {
+          "name": "Authorization",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "Bearer token"
+        }
+      ],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "successful",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "items": [
+                    {
+                      "id": "5bb6e1d48cc15655b27fd8a0",
+                      "title": "Green Bakery",
+                      "description": "We are committed to using the finest ingredients in our recipes. No food leaves our kitchen that we ourselves would not eat.",
+                      "categoryIds": [
+
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "client shops"
+        ],
+        "summary": "list items",
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/api/v1/client/shops/{shop_id}": {
+      "parameters": [
+        {
+          "name": "Authorization",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "Bearer token"
+        },
+        {
+          "name": "shop_id",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "get": {
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "5bb6e1d48cc15655b27fd8a3",
+                  "title": "Golden King",
+                  "description": "To provide an exceptional dining experience that satisfies our guests’ grown-up tastes by being a Cut-Above in everything we do.",
+                  "categories": [
+
+                  ],
+                  "productsCategories": [
+
+                  ]
+                }
+              }
+            },
+            "description": "success"
+          }
+        },
+        "tags": [
+          "client shops"
+        ],
+        "summary": "fetch an item",
         "produces": [
           "application/json"
         ]
@@ -1575,9 +510,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb5c3388cc1563e96445e32",
-                  "title": "Thirsty Shakes",
-                  "description": "To achieve and maintain such distinction in food and wine, service, atmosphere and setting that the restaurant gains a first class reputation for gastronomy, gracious and informed hospitality, comfort and beauty which draws new and repeat customers year after year. To achieve the above whilst upholding staff policies and practices which promote a fair and positive working environment. To be aware of and act on our responsibilities as a good corporate citizen to  provide a safe, clean and attractive place for guests to enjoy and for employees to work in - ensure ecologically sound management practices at the restaurant and in our surrounding gardens and woods - undertake meaningful involvement of Restaurant Les Fougères in selected charitable activities in our community and region.",
+                  "id": "5bb6e1d48cc15655b27fd8a9",
+                  "title": "Hungry Pizza",
+                  "description": "To deliver an exceptional shopping experience by offering the best service, value, quality, and freshest products while being good stewards of our environment and giving back to the communities we serve.",
                   "categories": [
 
                   ],
@@ -1604,9 +539,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb5c3388cc1563e96445e38",
+                  "id": "5bb6e1d48cc15655b27fd8af",
                   "title": "new title",
-                  "description": "Culver’s Restaurant was founded by the Culver family in 1984, which eventually branched out to more than 300 franchised restaurants all over the US. Culver’s is well-known for its ButterBurger, which made the restaurant extremely famous. They also have other items which include salads, sandwiches, desserts, etc.",
+                  "description": "To deliver an exceptional shopping experience by offering the best service, value, quality, and freshest products while being good stewards of our environment and giving back to the communities we serve.",
                   "categories": [
 
                   ],
@@ -1676,8 +611,8 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb5c3388cc1563e96445e42",
-                  "title": "Asian",
+                  "id": "5bb6e1d48cc15655b27fd8b9",
+                  "title": "Korean",
                   "products": [
 
                   ]
@@ -1742,7 +677,7 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb5c3388cc1563e96445e49",
+                  "id": "5bb6e1d48cc15655b27fd8c0",
                   "title": "new title",
                   "products": [
 
@@ -1818,11 +753,11 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb5c3398cc1563e96445e58",
-                  "title": "Senegalese",
-                  "description": "Three egg whites with spinach, mushrooms, caramelized onions, tomatoes and low-fat feta cheese. With herbed quinoa, and your choice of rye or whole-grain toast.",
-                  "price": 505.06,
-                  "weight": "8 grams"
+                  "id": "5bb6e1d58cc15655b27fd8cf",
+                  "title": "Italian",
+                  "description": "Smoked salmon, poached eggs, diced red onions and Hollandaise sauce on an English muffin. With a side of roasted potatoes.",
+                  "price": 601.06,
+                  "weight": "6 kilograms"
                 }
               }
             }
@@ -1899,11 +834,11 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb5c3398cc1563e96445e61",
+                  "id": "5bb6e1d58cc15655b27fd8d8",
                   "title": "new title",
-                  "description": "Creamy mascarpone cheese and custard layered between espresso and rum soaked house-made ladyfingers, topped with Valrhona cocoa powder.",
-                  "price": 607.07,
-                  "weight": "8 kilograms"
+                  "description": "Two butter croissants of your choice (plain, almond or cheese). With a side of herb butter or house-made hazelnut spread.",
+                  "price": 703.07,
+                  "weight": "2 centigrams"
                 }
               }
             }
@@ -1980,10 +915,10 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5bb5c3398cc1563e96445e6e",
-                      "clientId": "5bb5c3398cc1563e96445e6d",
+                      "id": "5bb6e1d58cc15655b27fd8e5",
+                      "clientId": "5bb6e1d58cc15655b27fd8e4",
                       "courierId": null,
-                      "shopId": "5bb5c3398cc1563e96445e6f",
+                      "shopId": "5bb6e1d58cc15655b27fd8e6",
                       "status": "new",
                       "priceTotal": 0.0,
                       "products": [
@@ -2030,21 +965,21 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb5c3398cc1563e96445e73",
-                  "clientId": "5bb5c3398cc1563e96445e72",
+                  "id": "5bb6e1d58cc15655b27fd8ea",
+                  "clientId": "5bb6e1d58cc15655b27fd8e9",
                   "courierId": null,
-                  "shopId": "5bb5c3398cc1563e96445e74",
+                  "shopId": "5bb6e1d58cc15655b27fd8eb",
                   "status": "new",
-                  "priceTotal": 105.07,
+                  "priceTotal": 8181.45,
                   "products": [
                     {
-                      "id": "5bb5c3398cc1563e96445e78",
-                      "title": "Vietnamese",
-                      "description": "Granny Smith apples mixed with brown sugar and butter filling, in a flaky all-butter crust, with ice cream.",
-                      "price": 105.07,
-                      "weight": "1 hectogram",
-                      "quantity": 1,
-                      "shopProductId": "5bb5c3398cc1563e96445e77"
+                      "id": "5bb6e1d58cc15655b27fd8ef",
+                      "title": "American (Traditional)",
+                      "description": "Three egg whites with spinach, mushrooms, caramelized onions, tomatoes and low-fat feta cheese. With herbed quinoa, and your choice of rye or whole-grain toast.",
+                      "price": 909.05,
+                      "weight": "8 kilograms",
+                      "quantity": 9,
+                      "shopProductId": "5bb6e1d58cc15655b27fd8ee"
                     }
                   ],
                   "courierAssignments": [
@@ -2088,10 +1023,10 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb5c3398cc1563e96445e82",
-                  "clientId": "5bb5c3398cc1563e96445e81",
-                  "courierId": "5bb5c3398cc1563e96445e86",
-                  "shopId": "5bb5c3398cc1563e96445e83",
+                  "id": "5bb6e1d58cc15655b27fd8f9",
+                  "clientId": "5bb6e1d58cc15655b27fd8f8",
+                  "courierId": "5bb6e1d58cc15655b27fd8fd",
+                  "shopId": "5bb6e1d58cc15655b27fd8fa",
                   "status": "requested",
                   "priceTotal": 0.0,
                   "products": [
@@ -2099,10 +1034,10 @@
                   ],
                   "courierAssignments": [
                     {
-                      "id": "5bb5c3398cc1563e96445e87",
+                      "id": "5bb6e1d58cc15655b27fd8fe",
                       "status": "proposed",
                       "declineReason": null,
-                      "courierId": "5bb5c3398cc1563e96445e86"
+                      "courierId": "5bb6e1d58cc15655b27fd8fd"
                     }
                   ]
                 }
@@ -2156,9 +1091,9 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5bb5c3398cc1563e96445e8b",
-                      "name": "Егоров Станислав Васильевич",
-                      "phone": "+7(916)946-82-40",
+                      "id": "5bb6e1d68cc15655b27fd902",
+                      "name": "Тетерин Макар Даниилович",
+                      "phone": "+7(984)735-79-36",
                       "role": "courier"
                     }
                   ]
@@ -2240,10 +1175,10 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb5c33a8cc1563e96445e98",
-                  "clientId": "5bb5c33a8cc1563e96445e97",
-                  "courierId": "5bb5c33a8cc1563e96445e96",
-                  "shopId": "5bb5c33a8cc1563e96445e99",
+                  "id": "5bb6e1d68cc15655b27fd90f",
+                  "clientId": "5bb6e1d68cc15655b27fd90e",
+                  "courierId": "5bb6e1d68cc15655b27fd90d",
+                  "shopId": "5bb6e1d68cc15655b27fd910",
                   "status": "requested",
                   "priceTotal": 0.0,
                   "products": [
@@ -2251,10 +1186,10 @@
                   ],
                   "courierAssignments": [
                     {
-                      "id": "5bb5c33a8cc1563e96445e9b",
+                      "id": "5bb6e1d68cc15655b27fd912",
                       "status": "accepted",
                       "declineReason": null,
-                      "courierId": "5bb5c33a8cc1563e96445e96"
+                      "courierId": "5bb6e1d68cc15655b27fd90d"
                     }
                   ]
                 }
@@ -2288,10 +1223,10 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb5c33a8cc1563e96445ea4",
-                  "clientId": "5bb5c33a8cc1563e96445ea3",
+                  "id": "5bb6e1d68cc15655b27fd91b",
+                  "clientId": "5bb6e1d68cc15655b27fd91a",
                   "courierId": null,
-                  "shopId": "5bb5c33a8cc1563e96445ea5",
+                  "shopId": "5bb6e1d68cc15655b27fd91c",
                   "status": "requested",
                   "priceTotal": 0.0,
                   "products": [
@@ -2299,10 +1234,10 @@
                   ],
                   "courierAssignments": [
                     {
-                      "id": "5bb5c33a8cc1563e96445ea7",
+                      "id": "5bb6e1d68cc15655b27fd91e",
                       "status": "declined",
                       "declineReason": "не хочу",
-                      "courierId": "5bb5c33a8cc1563e96445ea2"
+                      "courierId": "5bb6e1d68cc15655b27fd919"
                     }
                   ]
                 }
@@ -2354,10 +1289,10 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb5c33a8cc1563e96445eaf",
-                  "clientId": "5bb5c33a8cc1563e96445eae",
-                  "courierId": "5bb5c33a8cc1563e96445ead",
-                  "shopId": "5bb5c33a8cc1563e96445eb0",
+                  "id": "5bb6e1d68cc15655b27fd926",
+                  "clientId": "5bb6e1d68cc15655b27fd925",
+                  "courierId": "5bb6e1d68cc15655b27fd924",
+                  "shopId": "5bb6e1d68cc15655b27fd927",
                   "status": "courier_at_shop",
                   "priceTotal": 0.0,
                   "products": [
@@ -2397,10 +1332,10 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb5c33a8cc1563e96445eb9",
-                  "clientId": "5bb5c33a8cc1563e96445eb8",
-                  "courierId": "5bb5c33a8cc1563e96445eb7",
-                  "shopId": "5bb5c33a8cc1563e96445eba",
+                  "id": "5bb6e1d68cc15655b27fd930",
+                  "clientId": "5bb6e1d68cc15655b27fd92f",
+                  "courierId": "5bb6e1d68cc15655b27fd92e",
+                  "shopId": "5bb6e1d68cc15655b27fd931",
                   "status": "on_delivery",
                   "priceTotal": 0.0,
                   "products": [
@@ -2440,10 +1375,10 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb5c33b8cc1563e96445ec3",
-                  "clientId": "5bb5c33b8cc1563e96445ec2",
-                  "courierId": "5bb5c33b8cc1563e96445ec1",
-                  "shopId": "5bb5c33b8cc1563e96445ec4",
+                  "id": "5bb6e1d78cc15655b27fd93a",
+                  "clientId": "5bb6e1d78cc15655b27fd939",
+                  "courierId": "5bb6e1d78cc15655b27fd938",
+                  "shopId": "5bb6e1d78cc15655b27fd93b",
                   "status": "delivered",
                   "priceTotal": 0.0,
                   "products": [
@@ -2464,6 +1399,1158 @@
         "produces": [
           "application/json"
         ]
+      }
+    },
+    "/api/v1/admin/shops_categories": {
+      "parameters": [
+        {
+          "name": "Authorization",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "Bearer token"
+        }
+      ],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "successful",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "items": [
+                    {
+                      "id": "5bb6e1d78cc15655b27fd93f",
+                      "title": "Brazilian"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "admin shops_categories"
+        ],
+        "summary": "list items",
+        "produces": [
+          "application/json"
+        ]
+      },
+      "post": {
+        "responses": {
+          "201": {
+            "description": "successfully created",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "5bb6e1d78cc15655b27fd944",
+                  "title": "Vegan",
+                  "shopIds": [
+
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "category": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "admin shops_categories"
+        ],
+        "summary": "create",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/api/v1/admin/shops_categories/{category_id}": {
+      "parameters": [
+        {
+          "name": "Authorization",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "Bearer token"
+        },
+        {
+          "name": "category_id",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "put": {
+        "responses": {
+          "200": {
+            "description": "success",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "5bb6e1d78cc15655b27fd947",
+                  "title": "new title",
+                  "shopIds": [
+
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "category": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "admin shops_categories"
+        ],
+        "summary": "update an item",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "responses": {
+          "204": {
+            "description": "success"
+          }
+        },
+        "tags": [
+          "admin shops_categories"
+        ],
+        "summary": "delete an item"
+      }
+    },
+    "/api/v1/admin/shops": {
+      "parameters": [
+        {
+          "name": "Authorization",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "Bearer token"
+        }
+      ],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "successful",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "items": [
+                    {
+                      "id": "5bb6e1d78cc15655b27fd94e",
+                      "title": "WW Diner",
+                      "description": "Delhaize Group will achieve leading positions in food retailing in key mature and emerging markets. We accomplish our goal by developing strong regional companies benefiting from and contributing to the Groups strength, expertise and successful practices. Delhaize Group goes to market with a variety of food store formats. The Group is committed to offer a locally differentiated shopping experience to its customers in each of its markets, to deliver superior value and to maintain high social, environmental and ethical standards.",
+                      "categoryIds": [
+
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "admin shops"
+        ],
+        "summary": "list items",
+        "produces": [
+          "application/json"
+        ]
+      },
+      "post": {
+        "responses": {
+          "201": {
+            "description": "successfully created",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "5bb6e1d78cc15655b27fd956",
+                  "title": "Golden Steakhouse",
+                  "description": "Delhaize Group will achieve leading positions in food retailing in key mature and emerging markets. We accomplish our goal by developing strong regional companies benefiting from and contributing to the Groups strength, expertise and successful practices. Delhaize Group goes to market with a variety of food store formats. The Group is committed to offer a locally differentiated shopping experience to its customers in each of its markets, to deliver superior value and to maintain high social, environmental and ethical standards.",
+                  "categories": [
+                    {
+                      "id": "5bb6e1d78cc15655b27fd955",
+                      "title": "Ramen"
+                    }
+                  ],
+                  "productsCategories": [
+
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "shop": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "category_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "admin shops"
+        ],
+        "summary": "create",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/api/v1/admin/shops/{shop_id}": {
+      "parameters": [
+        {
+          "name": "Authorization",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "Bearer token"
+        },
+        {
+          "name": "shop_id",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "get": {
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "5bb6e1d78cc15655b27fd957",
+                  "title": "Green House",
+                  "description": "We are committed to using the finest ingredients in our recipes. No food leaves our kitchen that we ourselves would not eat.",
+                  "categories": [
+
+                  ],
+                  "productsCategories": [
+
+                  ]
+                }
+              }
+            },
+            "description": "success"
+          }
+        },
+        "tags": [
+          "admin shops"
+        ],
+        "summary": "fetch an item",
+        "produces": [
+          "application/json"
+        ]
+      },
+      "put": {
+        "responses": {
+          "200": {
+            "description": "success",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "5bb6e1d88cc15655b27fd95d",
+                  "title": "new title",
+                  "description": "To achieve and maintain such distinction in food and wine, service, atmosphere and setting that the restaurant gains a first class reputation for gastronomy, gracious and informed hospitality, comfort and beauty which draws new and repeat customers year after year. To achieve the above whilst upholding staff policies and practices which promote a fair and positive working environment. To be aware of and act on our responsibilities as a good corporate citizen to  provide a safe, clean and attractive place for guests to enjoy and for employees to work in - ensure ecologically sound management practices at the restaurant and in our surrounding gardens and woods - undertake meaningful involvement of Restaurant Les Fougères in selected charitable activities in our community and region.",
+                  "categories": [
+
+                  ],
+                  "productsCategories": [
+
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "shop": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "category_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "admin shops"
+        ],
+        "summary": "update an item",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "responses": {
+          "204": {
+            "description": "success"
+          }
+        },
+        "tags": [
+          "admin shops"
+        ],
+        "summary": "delete an item"
+      }
+    },
+    "/api/v1/admin/shops/{shop_id}/products_categories": {
+      "parameters": [
+        {
+          "name": "Authorization",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "Bearer token"
+        },
+        {
+          "name": "shop_id",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "post": {
+        "responses": {
+          "201": {
+            "description": "successfully created",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "5bb6e1d88cc15655b27fd96a",
+                  "title": "Indian",
+                  "products": [
+
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "category": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "admin products_categories"
+        ],
+        "summary": "create",
+        "description": "создает новую категорию товаров для магазина",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/api/v1/admin/shops/{shop_id}/products_categories/{category_id}": {
+      "parameters": [
+        {
+          "name": "Authorization",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "Bearer token"
+        },
+        {
+          "name": "shop_id",
+          "in": "path",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "category_id",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "put": {
+        "responses": {
+          "200": {
+            "description": "success",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "5bb6e1d88cc15655b27fd971",
+                  "title": "new title",
+                  "products": [
+
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "category": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "admin products_categories"
+        ],
+        "summary": "update an item",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "responses": {
+          "204": {
+            "description": "success"
+          }
+        },
+        "tags": [
+          "admin products_categories"
+        ],
+        "summary": "delete an item"
+      }
+    },
+    "/api/v1/admin/shops/{shop_id}/products_categories/{category_id}/products": {
+      "parameters": [
+        {
+          "name": "Authorization",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "Bearer token"
+        },
+        {
+          "name": "shop_id",
+          "in": "path",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "category_id",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "post": {
+        "responses": {
+          "201": {
+            "description": "successfully created",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "5bb6e1d98cc15655b27fd980",
+                  "title": "Vegan",
+                  "description": "Two butter croissants of your choice (plain, almond or cheese). With a side of herb butter or house-made hazelnut spread.",
+                  "price": 904.02,
+                  "weight": "4 kilograms"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "product": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "number"
+                    },
+                    "weight": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "admin products"
+        ],
+        "summary": "create",
+        "description": "создает новую товар в данной категории",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/api/v1/admin/shops/{shop_id}/products_categories/{category_id}/products/{product_id}": {
+      "parameters": [
+        {
+          "name": "Authorization",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "Bearer token"
+        },
+        {
+          "name": "shop_id",
+          "in": "path",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "category_id",
+          "in": "path",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "product_id",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "put": {
+        "responses": {
+          "200": {
+            "description": "success",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "5bb6e1d98cc15655b27fd989",
+                  "title": "new title",
+                  "description": "Thick slices of French toast bread, brown sugar, half-and-half and vanilla, topped with powdered sugar. With two eggs served any style, and your choice of smoked bacon or smoked ham.",
+                  "price": 509.01,
+                  "weight": "6 metric tons"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "product": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "number"
+                    },
+                    "weight": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "admin products"
+        ],
+        "summary": "update an item",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "responses": {
+          "204": {
+            "description": "success"
+          }
+        },
+        "tags": [
+          "admin products"
+        ],
+        "summary": "delete an item"
+      }
+    },
+    "/api/v1/admin/orders": {
+      "parameters": [
+        {
+          "name": "Authorization",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "Bearer token"
+        }
+      ],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "successful",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "items": [
+                    {
+                      "id": "5bb6e1d98cc15655b27fd996",
+                      "clientId": "5bb6e1d98cc15655b27fd995",
+                      "courierId": null,
+                      "shopId": "5bb6e1d98cc15655b27fd997",
+                      "status": "new",
+                      "priceTotal": 0.0,
+                      "products": [
+
+                      ],
+                      "courierAssignments": [
+
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "admin orders"
+        ],
+        "summary": "list items",
+        "produces": [
+          "application/json"
+        ]
+      },
+      "post": {
+        "responses": {
+          "201": {
+            "description": "successfully created",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "5bb6e1d98cc15655b27fd9a7",
+                  "clientId": "5bb6e1d98cc15655b27fd9a2",
+                  "courierId": null,
+                  "shopId": "5bb6e1d98cc15655b27fd9a3",
+                  "status": "new",
+                  "priceTotal": null,
+                  "products": [
+
+                  ],
+                  "courierAssignments": [
+
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "order": {
+                  "type": "object",
+                  "properties": {
+                    "client_id": {
+                      "type": "string"
+                    },
+                    "courier_id": {
+                      "type": "string"
+                    },
+                    "shop_id": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "admin orders"
+        ],
+        "summary": "create",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/api/v1/admin/orders/{order_id}": {
+      "parameters": [
+        {
+          "name": "Authorization",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "Bearer token"
+        },
+        {
+          "name": "order_id",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "success",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "5bb6e1d98cc15655b27fd9b1",
+                  "clientId": "5bb6e1d98cc15655b27fd9b0",
+                  "courierId": null,
+                  "shopId": "5bb6e1d98cc15655b27fd9b2",
+                  "status": "new",
+                  "priceTotal": 7218.27,
+                  "products": [
+                    {
+                      "id": "5bb6e1da8cc15655b27fd9b6",
+                      "title": "Bar",
+                      "description": "Fresh parsley, Italian sausage, shallots, garlic, sun-dried tomatoes and mozzarella cheese in an all-butter crust. With a side of mixed fruits.",
+                      "price": 802.03,
+                      "weight": "5 grams",
+                      "quantity": 9,
+                      "shopProductId": "5bb6e1da8cc15655b27fd9b5"
+                    }
+                  ],
+                  "courierAssignments": [
+
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "admin orders"
+        ],
+        "summary": "fetch an item",
+        "produces": [
+          "application/json"
+        ]
+      },
+      "put": {
+        "responses": {
+          "200": {
+            "description": "success",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "5bb6e1da8cc15655b27fd9c2",
+                  "clientId": "5bb6e1da8cc15655b27fd9c1",
+                  "courierId": "5bb6e1da8cc15655b27fd9c9",
+                  "shopId": "5bb6e1da8cc15655b27fd9c3",
+                  "status": "delivered",
+                  "priceTotal": 4249.49,
+                  "products": [
+                    {
+                      "id": "5bb6e1da8cc15655b27fd9c7",
+                      "title": "Senegalese",
+                      "description": "Three egg whites with spinach, mushrooms, caramelized onions, tomatoes and low-fat feta cheese. With herbed quinoa, and your choice of rye or whole-grain toast.",
+                      "price": 607.07,
+                      "weight": "1 hectogram",
+                      "quantity": 7,
+                      "shopProductId": "5bb6e1da8cc15655b27fd9c6"
+                    }
+                  ],
+                  "courierAssignments": [
+
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "order": {
+                  "type": "object",
+                  "properties": {
+                    "client_id": {
+                      "type": "string"
+                    },
+                    "courier_id": {
+                      "type": "string"
+                    },
+                    "shop_id": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "admin orders"
+        ],
+        "summary": "update an item",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "responses": {
+          "204": {
+            "description": "success"
+          }
+        },
+        "tags": [
+          "admin orders"
+        ],
+        "summary": "delete an item"
+      }
+    },
+    "/api/v1/admin/users": {
+      "parameters": [
+        {
+          "name": "Authorization",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "Bearer token"
+        }
+      ],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "successful",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "items": [
+                    {
+                      "id": "5bb6e1da8cc15655b27fd9d3",
+                      "name": "Крюкова Жанна Викторовна",
+                      "phone": "+7(946)977-67-80",
+                      "role": "admin"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "admin users"
+        ],
+        "summary": "list items",
+        "produces": [
+          "application/json"
+        ]
+      },
+      "post": {
+        "responses": {
+          "201": {
+            "description": "successfully created",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "5bb6e1da8cc15655b27fd9d7",
+                  "name": "Антон Кошелев",
+                  "phone": "+7(987)120-98-02",
+                  "role": null
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "user": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "phone": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "admin users"
+        ],
+        "summary": "create",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/api/v1/admin/users/{user_id}": {
+      "parameters": [
+        {
+          "name": "Authorization",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "Bearer token"
+        },
+        {
+          "name": "user_id",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "get": {
+        "responses": {
+          "200": {
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "5bb6e1da8cc15655b27fd9d8",
+                  "name": "Лука Кошелев",
+                  "phone": "+7(954)276-13-83",
+                  "role": "client"
+                }
+              }
+            },
+            "description": "success"
+          }
+        },
+        "tags": [
+          "admin users"
+        ],
+        "summary": "fetch an item",
+        "produces": [
+          "application/json"
+        ]
+      },
+      "put": {
+        "responses": {
+          "200": {
+            "description": "success",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "5bb6e1da8cc15655b27fd9dc",
+                  "name": "new name",
+                  "phone": "+7(943)651-29-38",
+                  "role": "client"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "user": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "phone": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "admin users"
+        ],
+        "summary": "update an item",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      },
+      "delete": {
+        "responses": {
+          "204": {
+            "description": "success"
+          }
+        },
+        "tags": [
+          "admin users"
+        ],
+        "summary": "delete an item"
       }
     }
   }
