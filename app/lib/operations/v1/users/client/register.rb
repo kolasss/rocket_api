@@ -17,6 +17,7 @@ module Operations
 
           def call(params)
             payload = yield VALIDATOR.call(params).to_monad
+            yield check_phone(payload[:user][:phone])
             code = yield generate_code
             user = yield create(payload[:user], code)
 
@@ -29,6 +30,15 @@ module Operations
 
           def generate_code
             Success('1234') # TODO: generate random code
+          end
+
+          def check_phone(phone)
+            user = ::Users::Client.where(phone: phone).first
+            if user.present?
+              Failure(:phone_already_registered)
+            else
+              Success(true)
+            end
           end
 
           def create(params, code)
