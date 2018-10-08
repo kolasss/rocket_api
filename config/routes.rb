@@ -25,6 +25,7 @@ Rails.application.routes.draw do
         post :register, to: 'registration#create'
         post :login,    to: 'authentication#create'
         # delete  :logout,    to: 'authentication#destroy'
+        resources :shops_categories, only: %i[index]
         resources :shops, only: %i[index show]
         resources :orders, except: %i[update destroy] do
           put :cancel
