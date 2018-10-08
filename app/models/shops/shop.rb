@@ -7,6 +7,7 @@ module Shops
     # field :image, type: String
     field :description, type: String
     # field :coordinates, type: String
+    field :minimum_order_price, type: BigDecimal
 
     # validates :description, presence: true
 

@@ -22,16 +22,20 @@ module Operations
           end
         end
 
+        # rubocop:disable Metrics/AbcSize
         def call(params:, client:)
           payload = yield VALIDATOR.call(params).to_monad
           yield check_products_uniqueness(payload[:order][:products])
           shop = yield find_shop(payload[:order][:shop_id])
-          create(
+          order = yield initialize_order(
             shop: shop,
             client: client,
             products_params: payload[:order][:products]
           )
+          yield check_total_price(order.price_total, shop.minimum_order_price)
+          save_order(order)
         end
+        # rubocop:enable Metrics/AbcSize
 
         private
 
@@ -40,9 +44,9 @@ module Operations
           products_params.each do |product|
             if products_ids.include? product[:id]
               return Failure(:products_ids_should_be_uniq)
-            else
-              products_ids << product[:id]
             end
+
+            products_ids << product[:id]
           end
           Success(true)
         end
@@ -56,7 +60,7 @@ module Operations
           end
         end
 
-        def create(shop:, client:, products_params:)
+        def initialize_order(shop:, client:, products_params:)
           order = ::Orders::Order.new(
             shop: shop,
             client: client
@@ -68,6 +72,18 @@ module Operations
           count_total_price(order)
           configure_defaults(order)
 
+          Success(order)
+        end
+
+        def check_total_price(price, minimum)
+          return Success(true) if minimum.blank?
+
+          return Failure(:order_price_too_low) if price < minimum
+
+          Success(true)
+        end
+
+        def save_order(order)
           if order.save
             Success(order)
           else

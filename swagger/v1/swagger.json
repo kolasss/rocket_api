@@ -13,7 +13,7 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNWJiNzA4MDk4Y2MxNTYyOWM3NTNiY2M5In0.haCQyDwunnWkB4_HBVJ2i1pggPA1sH7h4F3xTvfiH1Y"
+                  "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNWJiYWM5NTU4Y2MxNTY0YTI3ZTIyMDlhIn0.n9ok_6bxeQAwizPsm0BAyVCbUFOzwcNK2xWvUVv9KrE"
                 }
               }
             }
@@ -72,9 +72,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb708098cc15629c753bccb",
-                  "name": "Степан Владиславович Гришин",
-                  "phone": "+7(933)152-21-45",
+                  "id": "5bbac9558cc1564a27e2209c",
+                  "name": "Егорова Зоя",
+                  "phone": "+7(911)662-97-11",
                   "role": "client"
                 }
               }
@@ -125,7 +125,7 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNWJiNzA4MDk4Y2MxNTYyOWM3NTNiY2NkIn0.1-VkITAwNuVLdl66FxMId5q0yMYuE1lAxJM-Q3Gd-18"
+                  "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNWJiYWM5NTU4Y2MxNTY0YTI3ZTIyMDllIn0.fH_YQGz7SqoYo-UKw3k-I_--ZwZT3gRVMxyrUZSo6YY"
                 }
               }
             }
@@ -186,10 +186,10 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5bb7080a8cc15629c753bcd3",
-                      "clientId": "5bb708098cc15629c753bcd2",
+                      "id": "5bbac9558cc1564a27e220a4",
+                      "clientId": "5bbac9558cc1564a27e220a3",
                       "courierId": null,
-                      "shopId": "5bb7080a8cc15629c753bcd4",
+                      "shopId": "5bbac9558cc1564a27e220a5",
                       "status": "new",
                       "priceTotal": 0.0,
                       "products": [
@@ -220,21 +220,21 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb7080a8cc15629c753bce2",
-                  "clientId": "5bb7080a8cc15629c753bcdd",
+                  "id": "5bbac9568cc1564a27e220b3",
+                  "clientId": "5bbac9568cc1564a27e220ae",
                   "courierId": null,
-                  "shopId": "5bb7080a8cc15629c753bcde",
+                  "shopId": "5bbac9568cc1564a27e220af",
                   "status": "new",
-                  "priceTotal": 1408.06,
+                  "priceTotal": 410.02,
                   "products": [
                     {
-                      "id": "5bb7080a8cc15629c753bce3",
-                      "title": "Asian",
-                      "description": "Creamy mascarpone cheese and custard layered between espresso and rum soaked house-made ladyfingers, topped with Valrhona cocoa powder.",
-                      "price": 704.03,
-                      "weight": "1 milligram",
+                      "id": "5bbac9568cc1564a27e220b4",
+                      "title": "Italian",
+                      "description": "Two butter croissants of your choice (plain, almond or cheese). With a side of herb butter or house-made hazelnut spread.",
+                      "price": 205.01,
+                      "weight": "4 centigrams",
                       "quantity": 2,
-                      "shopProductId": "5bb7080a8cc15629c753bce1"
+                      "shopProductId": "5bbac9568cc1564a27e220b2"
                     }
                   ],
                   "courierAssignments": [
@@ -315,21 +315,21 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb7080a8cc15629c753bcec",
-                  "clientId": "5bb7080a8cc15629c753bceb",
+                  "id": "5bbac9568cc1564a27e220bd",
+                  "clientId": "5bbac9568cc1564a27e220bc",
                   "courierId": null,
-                  "shopId": "5bb7080a8cc15629c753bced",
+                  "shopId": "5bbac9568cc1564a27e220be",
                   "status": "new",
-                  "priceTotal": 607.01,
+                  "priceTotal": 3654.54,
                   "products": [
                     {
-                      "id": "5bb7080a8cc15629c753bcf1",
-                      "title": "Vegan",
-                      "description": "Thick slices of French toast bread, brown sugar, half-and-half and vanilla, topped with powdered sugar. With two eggs served any style, and your choice of smoked bacon or smoked ham.",
-                      "price": 607.01,
-                      "weight": "7 kilograms",
-                      "quantity": 1,
-                      "shopProductId": "5bb7080a8cc15629c753bcf0"
+                      "id": "5bbac9568cc1564a27e220c2",
+                      "title": "Korean",
+                      "description": "Fresh parsley, Italian sausage, shallots, garlic, sun-dried tomatoes and mozzarella cheese in an all-butter crust. With a side of mixed fruits.",
+                      "price": 406.06,
+                      "weight": "9 metric tons",
+                      "quantity": 9,
+                      "shopProductId": "5bbac9568cc1564a27e220c1"
                     }
                   ],
                   "courierAssignments": [
@@ -372,21 +372,21 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb7080a8cc15629c753bcfa",
-                  "clientId": "5bb7080a8cc15629c753bcf9",
+                  "id": "5bbac9568cc1564a27e220cb",
+                  "clientId": "5bbac9568cc1564a27e220ca",
                   "courierId": null,
-                  "shopId": "5bb7080a8cc15629c753bcfb",
+                  "shopId": "5bbac9568cc1564a27e220cc",
                   "status": "requested",
-                  "priceTotal": 9020.7,
+                  "priceTotal": 405.02,
                   "products": [
                     {
-                      "id": "5bb7080a8cc15629c753bcff",
-                      "title": "American (Traditional)",
-                      "description": "Fresh parsley, Italian sausage, shallots, garlic, sun-dried tomatoes and mozzarella cheese in an all-butter crust. With a side of mixed fruits.",
-                      "price": 902.07,
-                      "weight": "3 milligrams",
-                      "quantity": 10,
-                      "shopProductId": "5bb7080a8cc15629c753bcfe"
+                      "id": "5bbac9568cc1564a27e220d0",
+                      "title": "European",
+                      "description": "Breaded fried chicken with waffles. Served with maple syrup.",
+                      "price": 405.02,
+                      "weight": "2 hectograms",
+                      "quantity": 1,
+                      "shopProductId": "5bbac9568cc1564a27e220cf"
                     }
                   ],
                   "courierAssignments": [
@@ -425,9 +425,9 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5bb7080a8cc15629c753bd03",
-                      "title": "Sweet Gastropub",
-                      "description": "Yoshinoya is in business to create the structure and systems needed to allow our customers access to the majority of their away-from-home daily meal requirements on a one-stop-shop basis. All our products shall be of the highest quality and value, be healthy, nutritious and provided with outstanding personal services at the lowest possible prices consistent with a fair return on investment for our shareholders, job enhancementsecurity for our employees and a level of community involvement by everyone connected with our business. All of our products and services shall be delivered consistently and measured one satisfied customer at a time, whether by company-owned or franchised operations, in superior, clean, convenient, fun and friendly neighborhood environments. We pledge to make Yoshinoya the best place to eat and the best place to work.",
+                      "id": "5bbac9568cc1564a27e220d4",
+                      "title": "Sweet Pub",
+                      "description": "Delhaize Group will achieve leading positions in food retailing in key mature and emerging markets. We accomplish our goal by developing strong regional companies benefiting from and contributing to the Groups strength, expertise and successful practices. Delhaize Group goes to market with a variety of food store formats. The Group is committed to offer a locally differentiated shopping experience to its customers in each of its markets, to deliver superior value and to maintain high social, environmental and ethical standards.",
                       "categoryIds": [
 
                       ]
@@ -469,8 +469,8 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb7080b8cc15629c753bd06",
-                  "title": "Salty Gastropub",
+                  "id": "5bbac9578cc1564a27e220d7",
+                  "title": "255 Bar & Grill",
                   "description": "We earn the loyalty of the people we serve by first anticipating, then fulfilling their needs with our superior-quality products, a unique shopping experience, customer-focused service and continuous innovation, while generating long-term profitable growth for our shareholders.",
                   "categories": [
 
@@ -493,6 +493,43 @@
         ]
       }
     },
+    "/api/v1/client/shops_categories": {
+      "parameters": [
+        {
+          "name": "Authorization",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "Bearer token"
+        }
+      ],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "successful",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "items": [
+                    {
+                      "id": "5bbac9578cc1564a27e220dc",
+                      "title": "Italian"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "client shops_categories"
+        ],
+        "summary": "list items",
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
     "/api/v1/shop_manager/shop": {
       "parameters": [
         {
@@ -510,9 +547,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb7080b8cc15629c753bd0c",
-                  "title": "Thirsty Burger",
-                  "description": "To achieve and maintain such distinction in food and wine, service, atmosphere and setting that the restaurant gains a first class reputation for gastronomy, gracious and informed hospitality, comfort and beauty which draws new and repeat customers year after year. To achieve the above whilst upholding staff policies and practices which promote a fair and positive working environment. To be aware of and act on our responsibilities as a good corporate citizen to  provide a safe, clean and attractive place for guests to enjoy and for employees to work in - ensure ecologically sound management practices at the restaurant and in our surrounding gardens and woods - undertake meaningful involvement of Restaurant Les Fougères in selected charitable activities in our community and region.",
+                  "id": "5bbac9578cc1564a27e220e1",
+                  "title": "Big Kitchen",
+                  "description": "To deliver an exceptional shopping experience by offering the best service, value, quality, and freshest products while being good stewards of our environment and giving back to the communities we serve.",
                   "categories": [
 
                   ],
@@ -539,9 +576,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb7080b8cc15629c753bd12",
+                  "id": "5bbac9578cc1564a27e220e7",
                   "title": "new title",
-                  "description": "To sell delicious and remarkable food and drinks. That the food and drink we sell meets the highest standards of quality, freshness and seasonality and combines both modern-creative and traditional southern styles of cooking. To consistently provide our customers with impeccable service by demonstrating warmth, graciousness, efficiency, knowledge, professionalism and integrity in our work. To have every customer who comes through our doors leave impressed by Maxie’s and excited to come back again. To create and maintain a restaurant that is comprehensive and exceptional in its attention to every detail of operation. To provide all who work with us a friendly, cooperative and rewarding environment which encourages long- term, satisfying, growth employment. To keep our concept fresh, exciting and on the cutting edge of the hospitality and entertainment industry. To be a giving member of the Ithaca community and to use our restaurant to improve the quality of life in the Finger Lakes region.",
+                  "description": "Our mission is to be a leader in the distribution and merchandising of food, pharmacy, health and personal care items, seasonal merchandise, and related products and services. We place considerable importance on forging strong supplier partnerships. Our suppliers, large or small, local or global, are essential components in accomplishing our mission.",
                   "categories": [
 
                   ],
@@ -611,8 +648,8 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb7080b8cc15629c753bd1c",
-                  "title": "Brazilian",
+                  "id": "5bbac9578cc1564a27e220f1",
+                  "title": "Senegalese",
                   "products": [
 
                   ]
@@ -677,7 +714,7 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb7080b8cc15629c753bd23",
+                  "id": "5bbac9578cc1564a27e220f8",
                   "title": "new title",
                   "products": [
 
@@ -753,11 +790,11 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb7080c8cc15629c753bd32",
-                  "title": "African",
-                  "description": "Granny Smith apples mixed with brown sugar and butter filling, in a flaky all-butter crust, with ice cream.",
-                  "price": 303.08,
-                  "weight": "4 metric tons"
+                  "id": "5bbac9588cc1564a27e22107",
+                  "title": "Pizza",
+                  "description": "Smoked salmon, poached eggs, diced red onions and Hollandaise sauce on an English muffin. With a side of roasted potatoes.",
+                  "price": 600.08,
+                  "weight": "9 grams"
                 }
               }
             }
@@ -834,11 +871,11 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb7080c8cc15629c753bd3b",
+                  "id": "5bbac9588cc1564a27e22110",
                   "title": "new title",
-                  "description": "Two buttermilk waffles, topped with whipped cream and maple syrup, a side of two eggs served any style, and your choice of smoked bacon or smoked ham.",
-                  "price": 302.07,
-                  "weight": "8 hectograms"
+                  "description": "Granny Smith apples mixed with brown sugar and butter filling, in a flaky all-butter crust, with ice cream.",
+                  "price": 701.07,
+                  "weight": "5 centigrams"
                 }
               }
             }
@@ -915,10 +952,10 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5bb7080c8cc15629c753bd48",
-                      "clientId": "5bb7080c8cc15629c753bd47",
+                      "id": "5bbac9588cc1564a27e2211d",
+                      "clientId": "5bbac9588cc1564a27e2211c",
                       "courierId": null,
-                      "shopId": "5bb7080c8cc15629c753bd49",
+                      "shopId": "5bbac9588cc1564a27e2211e",
                       "status": "new",
                       "priceTotal": 0.0,
                       "products": [
@@ -965,21 +1002,21 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb7080c8cc15629c753bd4d",
-                  "clientId": "5bb7080c8cc15629c753bd4c",
+                  "id": "5bbac9588cc1564a27e22122",
+                  "clientId": "5bbac9588cc1564a27e22121",
                   "courierId": null,
-                  "shopId": "5bb7080c8cc15629c753bd4e",
+                  "shopId": "5bbac9588cc1564a27e22123",
                   "status": "new",
-                  "priceTotal": 304.01,
+                  "priceTotal": 924.18,
                   "products": [
                     {
-                      "id": "5bb7080c8cc15629c753bd52",
-                      "title": "Mexican",
-                      "description": "Smoked salmon, poached eggs, diced red onions and Hollandaise sauce on an English muffin. With a side of roasted potatoes.",
-                      "price": 304.01,
-                      "weight": "5 grams",
-                      "quantity": 1,
-                      "shopProductId": "5bb7080c8cc15629c753bd51"
+                      "id": "5bbac9588cc1564a27e22127",
+                      "title": "Vegetarian",
+                      "description": "Creamy mascarpone cheese and custard layered between espresso and rum soaked house-made ladyfingers, topped with Valrhona cocoa powder.",
+                      "price": 308.06,
+                      "weight": "2 centigrams",
+                      "quantity": 3,
+                      "shopProductId": "5bbac9588cc1564a27e22126"
                     }
                   ],
                   "courierAssignments": [
@@ -1023,10 +1060,10 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb7080d8cc15629c753bd5c",
-                  "clientId": "5bb7080d8cc15629c753bd5b",
-                  "courierId": "5bb7080d8cc15629c753bd60",
-                  "shopId": "5bb7080d8cc15629c753bd5d",
+                  "id": "5bbac9588cc1564a27e22131",
+                  "clientId": "5bbac9588cc1564a27e22130",
+                  "courierId": "5bbac9588cc1564a27e22135",
+                  "shopId": "5bbac9588cc1564a27e22132",
                   "status": "requested",
                   "priceTotal": 0.0,
                   "products": [
@@ -1034,10 +1071,10 @@
                   ],
                   "courierAssignments": [
                     {
-                      "id": "5bb7080d8cc15629c753bd61",
+                      "id": "5bbac9598cc1564a27e22136",
                       "status": "proposed",
                       "declineReason": null,
-                      "courierId": "5bb7080d8cc15629c753bd60"
+                      "courierId": "5bbac9588cc1564a27e22135"
                     }
                   ]
                 }
@@ -1091,9 +1128,9 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5bb7080d8cc15629c753bd65",
-                      "name": "Петухов Фёдор Даниилович",
-                      "phone": "+7(979)194-98-37",
+                      "id": "5bbac9598cc1564a27e2213a",
+                      "name": "Поляков Лука",
+                      "phone": "+7(925)430-09-80",
                       "role": "courier"
                     }
                   ]
@@ -1175,10 +1212,10 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb7080e8cc15629c753bd72",
-                  "clientId": "5bb7080e8cc15629c753bd71",
-                  "courierId": "5bb7080e8cc15629c753bd70",
-                  "shopId": "5bb7080e8cc15629c753bd73",
+                  "id": "5bbac9598cc1564a27e22147",
+                  "clientId": "5bbac9598cc1564a27e22146",
+                  "courierId": "5bbac9598cc1564a27e22145",
+                  "shopId": "5bbac9598cc1564a27e22148",
                   "status": "requested",
                   "priceTotal": 0.0,
                   "products": [
@@ -1186,10 +1223,10 @@
                   ],
                   "courierAssignments": [
                     {
-                      "id": "5bb7080e8cc15629c753bd75",
+                      "id": "5bbac9598cc1564a27e2214a",
                       "status": "accepted",
                       "declineReason": null,
-                      "courierId": "5bb7080e8cc15629c753bd70"
+                      "courierId": "5bbac9598cc1564a27e22145"
                     }
                   ]
                 }
@@ -1223,10 +1260,10 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb7080e8cc15629c753bd7e",
-                  "clientId": "5bb7080e8cc15629c753bd7d",
+                  "id": "5bbac9598cc1564a27e22153",
+                  "clientId": "5bbac9598cc1564a27e22152",
                   "courierId": null,
-                  "shopId": "5bb7080e8cc15629c753bd7f",
+                  "shopId": "5bbac9598cc1564a27e22154",
                   "status": "requested",
                   "priceTotal": 0.0,
                   "products": [
@@ -1234,10 +1271,10 @@
                   ],
                   "courierAssignments": [
                     {
-                      "id": "5bb7080e8cc15629c753bd81",
+                      "id": "5bbac9598cc1564a27e22156",
                       "status": "declined",
                       "declineReason": "не хочу",
-                      "courierId": "5bb7080e8cc15629c753bd7c"
+                      "courierId": "5bbac9598cc1564a27e22151"
                     }
                   ]
                 }
@@ -1289,10 +1326,10 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb7080f8cc15629c753bd89",
-                  "clientId": "5bb7080f8cc15629c753bd88",
-                  "courierId": "5bb7080f8cc15629c753bd87",
-                  "shopId": "5bb7080f8cc15629c753bd8a",
+                  "id": "5bbac9598cc1564a27e2215e",
+                  "clientId": "5bbac9598cc1564a27e2215d",
+                  "courierId": "5bbac9598cc1564a27e2215c",
+                  "shopId": "5bbac9598cc1564a27e2215f",
                   "status": "courier_at_shop",
                   "priceTotal": 0.0,
                   "products": [
@@ -1332,10 +1369,10 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb7080f8cc15629c753bd93",
-                  "clientId": "5bb7080f8cc15629c753bd92",
-                  "courierId": "5bb7080f8cc15629c753bd91",
-                  "shopId": "5bb7080f8cc15629c753bd94",
+                  "id": "5bbac95a8cc1564a27e22168",
+                  "clientId": "5bbac95a8cc1564a27e22167",
+                  "courierId": "5bbac95a8cc1564a27e22166",
+                  "shopId": "5bbac95a8cc1564a27e22169",
                   "status": "on_delivery",
                   "priceTotal": 0.0,
                   "products": [
@@ -1375,10 +1412,10 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb708108cc15629c753bd9d",
-                  "clientId": "5bb708108cc15629c753bd9c",
-                  "courierId": "5bb708108cc15629c753bd9b",
-                  "shopId": "5bb708108cc15629c753bd9e",
+                  "id": "5bbac95a8cc1564a27e22172",
+                  "clientId": "5bbac95a8cc1564a27e22171",
+                  "courierId": "5bbac95a8cc1564a27e22170",
+                  "shopId": "5bbac95a8cc1564a27e22173",
                   "status": "delivered",
                   "priceTotal": 0.0,
                   "products": [
@@ -1420,9 +1457,9 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5bb708108cc15629c753bda1",
-                      "name": "Даниил Субботин",
-                      "phone": "+7(990)727-13-82",
+                      "id": "5bbac95a8cc1564a27e22176",
+                      "name": "Егор Эдуардович Рябов",
+                      "phone": "+7(926)714-99-35",
                       "role": "admin"
                     }
                   ]
@@ -1446,9 +1483,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb708108cc15629c753bda5",
-                  "name": "Артём Германович Терентьев",
-                  "phone": "+7(920)770-04-29",
+                  "id": "5bbac95a8cc1564a27e2217a",
+                  "name": "Максим Альбертович Ефимов",
+                  "phone": "+7(967)009-64-50",
                   "role": "supervisor"
                 }
               }
@@ -1518,9 +1555,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb708108cc15629c753bda6",
-                  "name": "Соколова Раиса",
-                  "phone": "+7(936)522-29-65",
+                  "id": "5bbac95a8cc1564a27e2217b",
+                  "name": "Даниил Новиков",
+                  "phone": "+7(989)353-08-73",
                   "role": "client"
                 }
               }
@@ -1543,9 +1580,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb708108cc15629c753bdaa",
+                  "id": "5bbac95a8cc1564a27e2217f",
                   "name": "new name",
-                  "phone": "+7(945)515-81-96",
+                  "phone": "+7(981)288-45-10",
                   "role": "client"
                 }
               }
@@ -1617,8 +1654,8 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5bb708118cc15629c753bdb0",
-                      "title": "Burgers"
+                      "id": "5bbac95b8cc1564a27e22185",
+                      "title": "Tex Mex"
                     }
                   ]
                 }
@@ -1641,8 +1678,8 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb708118cc15629c753bdb5",
-                  "title": "Indian",
+                  "id": "5bbac95b8cc1564a27e2218a",
+                  "title": "African",
                   "shopIds": [
 
                   ]
@@ -1706,7 +1743,7 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb708118cc15629c753bdb8",
+                  "id": "5bbac95b8cc1564a27e2218d",
                   "title": "new title",
                   "shopIds": [
 
@@ -1778,9 +1815,9 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5bb708118cc15629c753bdbf",
-                      "title": "Smokestack Grill",
-                      "description": "To sell delicious and remarkable food and drinks. That the food and drink we sell meets the highest standards of quality, freshness and seasonality and combines both modern-creative and traditional southern styles of cooking. To consistently provide our customers with impeccable service by demonstrating warmth, graciousness, efficiency, knowledge, professionalism and integrity in our work. To have every customer who comes through our doors leave impressed by Maxie’s and excited to come back again. To create and maintain a restaurant that is comprehensive and exceptional in its attention to every detail of operation. To provide all who work with us a friendly, cooperative and rewarding environment which encourages long- term, satisfying, growth employment. To keep our concept fresh, exciting and on the cutting edge of the hospitality and entertainment industry. To be a giving member of the Ithaca community and to use our restaurant to improve the quality of life in the Finger Lakes region.",
+                      "id": "5bbac95b8cc1564a27e22194",
+                      "title": "Green Gastropub",
+                      "description": "Delhaize Group will achieve leading positions in food retailing in key mature and emerging markets. We accomplish our goal by developing strong regional companies benefiting from and contributing to the Groups strength, expertise and successful practices. Delhaize Group goes to market with a variety of food store formats. The Group is committed to offer a locally differentiated shopping experience to its customers in each of its markets, to deliver superior value and to maintain high social, environmental and ethical standards.",
                       "categoryIds": [
 
                       ]
@@ -1806,13 +1843,13 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb708128cc15629c753bdc7",
-                  "title": "Fat Steakhouse",
-                  "description": "To achieve and maintain such distinction in food and wine, service, atmosphere and setting that the restaurant gains a first class reputation for gastronomy, gracious and informed hospitality, comfort and beauty which draws new and repeat customers year after year. To achieve the above whilst upholding staff policies and practices which promote a fair and positive working environment. To be aware of and act on our responsibilities as a good corporate citizen to  provide a safe, clean and attractive place for guests to enjoy and for employees to work in - ensure ecologically sound management practices at the restaurant and in our surrounding gardens and woods - undertake meaningful involvement of Restaurant Les Fougères in selected charitable activities in our community and region.",
+                  "id": "5bbac95b8cc1564a27e2219c",
+                  "title": "9547 Grill & Tap",
+                  "description": "SVIs mission is to deliver quality products at affordable prices to our independent retailers, wholesalers and food service partners around the world by providing international procurement, distribution, marketing and supply chain management.",
                   "categories": [
                     {
-                      "id": "5bb708128cc15629c753bdc6",
-                      "title": "Indian"
+                      "id": "5bbac95b8cc1564a27e2219b",
+                      "title": "Ramen"
                     }
                   ],
                   "productsCategories": [
@@ -1886,9 +1923,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb708128cc15629c753bdc8",
-                  "title": "Orange Spoon",
-                  "description": "To sell delicious and remarkable food and drinks. That the food and drink we sell meets the highest standards of quality, freshness and seasonality and combines both modern-creative and traditional southern styles of cooking. To consistently provide our customers with impeccable service by demonstrating warmth, graciousness, efficiency, knowledge, professionalism and integrity in our work. To have every customer who comes through our doors leave impressed by Maxie’s and excited to come back again. To create and maintain a restaurant that is comprehensive and exceptional in its attention to every detail of operation. To provide all who work with us a friendly, cooperative and rewarding environment which encourages long- term, satisfying, growth employment. To keep our concept fresh, exciting and on the cutting edge of the hospitality and entertainment industry. To be a giving member of the Ithaca community and to use our restaurant to improve the quality of life in the Finger Lakes region.",
+                  "id": "5bbac95b8cc1564a27e2219d",
+                  "title": "Belly Brasserie",
+                  "description": "We are committed to using the finest ingredients in our recipes. No food leaves our kitchen that we ourselves would not eat.",
                   "categories": [
 
                   ],
@@ -1916,9 +1953,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb708128cc15629c753bdce",
+                  "id": "5bbac95c8cc1564a27e221a3",
                   "title": "new title",
-                  "description": "Our mission is to be a leader in the distribution and merchandising of food, pharmacy, health and personal care items, seasonal merchandise, and related products and services. We place considerable importance on forging strong supplier partnerships. Our suppliers, large or small, local or global, are essential components in accomplishing our mission.",
+                  "description": "To sell delicious and remarkable food and drinks. That the food and drink we sell meets the highest standards of quality, freshness and seasonality and combines both modern-creative and traditional southern styles of cooking. To consistently provide our customers with impeccable service by demonstrating warmth, graciousness, efficiency, knowledge, professionalism and integrity in our work. To have every customer who comes through our doors leave impressed by Maxie’s and excited to come back again. To create and maintain a restaurant that is comprehensive and exceptional in its attention to every detail of operation. To provide all who work with us a friendly, cooperative and rewarding environment which encourages long- term, satisfying, growth employment. To keep our concept fresh, exciting and on the cutting edge of the hospitality and entertainment industry. To be a giving member of the Ithaca community and to use our restaurant to improve the quality of life in the Finger Lakes region.",
                   "categories": [
 
                   ],
@@ -2005,8 +2042,8 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb708128cc15629c753bddb",
-                  "title": "Argentinian",
+                  "id": "5bbac95c8cc1564a27e221b0",
+                  "title": "Senegalese",
                   "products": [
 
                   ]
@@ -2077,7 +2114,7 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb708138cc15629c753bde2",
+                  "id": "5bbac95c8cc1564a27e221b7",
                   "title": "new title",
                   "products": [
 
@@ -2159,11 +2196,11 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb708138cc15629c753bdf1",
-                  "title": "Indian",
-                  "description": "Three egg omelet with Roquefort cheese, chives, and ham. With a side of roasted potatoes, and your choice of toast or croissant.",
-                  "price": 306.07,
-                  "weight": "3 milligrams"
+                  "id": "5bbac95d8cc1564a27e221c6",
+                  "title": "Burgers",
+                  "description": "Three eggs with cilantro, tomatoes, onions, avocados and melted Emmental cheese. With a side of roasted potatoes, and your choice of toast or croissant.",
+                  "price": 704.05,
+                  "weight": "2 decigrams"
                 }
               }
             }
@@ -2246,11 +2283,11 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb708148cc15629c753bdfa",
+                  "id": "5bbac95d8cc1564a27e221cf",
                   "title": "new title",
-                  "description": "Creamy mascarpone cheese and custard layered between espresso and rum soaked house-made ladyfingers, topped with Valrhona cocoa powder.",
-                  "price": 706.02,
-                  "weight": "1 hectogram"
+                  "description": "Smoked salmon, poached eggs, diced red onions and Hollandaise sauce on an English muffin. With a side of roasted potatoes.",
+                  "price": 903.03,
+                  "weight": "6 grams"
                 }
               }
             }
@@ -2327,10 +2364,10 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5bb708158cc15629c753be07",
-                      "clientId": "5bb708158cc15629c753be06",
+                      "id": "5bbac95e8cc1564a27e221dc",
+                      "clientId": "5bbac95e8cc1564a27e221db",
                       "courierId": null,
-                      "shopId": "5bb708158cc15629c753be08",
+                      "shopId": "5bbac95e8cc1564a27e221dd",
                       "status": "new",
                       "priceTotal": 0.0,
                       "products": [
@@ -2361,10 +2398,10 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb708158cc15629c753be18",
-                  "clientId": "5bb708158cc15629c753be13",
+                  "id": "5bbac95e8cc1564a27e221ed",
+                  "clientId": "5bbac95e8cc1564a27e221e8",
                   "courierId": null,
-                  "shopId": "5bb708158cc15629c753be14",
+                  "shopId": "5bbac95e8cc1564a27e221e9",
                   "status": "new",
                   "priceTotal": null,
                   "products": [
@@ -2442,21 +2479,21 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb708158cc15629c753be22",
-                  "clientId": "5bb708158cc15629c753be21",
+                  "id": "5bbac95e8cc1564a27e221f7",
+                  "clientId": "5bbac95e8cc1564a27e221f6",
                   "courierId": null,
-                  "shopId": "5bb708158cc15629c753be23",
+                  "shopId": "5bbac95e8cc1564a27e221f8",
                   "status": "new",
-                  "priceTotal": 406.06,
+                  "priceTotal": 2020.45,
                   "products": [
                     {
-                      "id": "5bb708168cc15629c753be27",
-                      "title": "Pizza",
-                      "description": "Breaded fried chicken with waffles. Served with maple syrup.",
-                      "price": 406.06,
-                      "weight": "5 milligrams",
-                      "quantity": 1,
-                      "shopProductId": "5bb708168cc15629c753be26"
+                      "id": "5bbac95e8cc1564a27e221fc",
+                      "title": "Mexican",
+                      "description": "Fresh Norwegian salmon, lightly brushed with our herbed Dijon mustard sauce, with choice of two sides.",
+                      "price": 404.09,
+                      "weight": "7 milligrams",
+                      "quantity": 5,
+                      "shopProductId": "5bbac95e8cc1564a27e221fb"
                     }
                   ],
                   "courierAssignments": [
@@ -2482,21 +2519,21 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bb708168cc15629c753be33",
-                  "clientId": "5bb708168cc15629c753be32",
-                  "courierId": "5bb708168cc15629c753be3a",
-                  "shopId": "5bb708168cc15629c753be34",
+                  "id": "5bbac95e8cc1564a27e22208",
+                  "clientId": "5bbac95e8cc1564a27e22207",
+                  "courierId": "5bbac95e8cc1564a27e2220f",
+                  "shopId": "5bbac95e8cc1564a27e22209",
                   "status": "delivered",
-                  "priceTotal": 9010.3,
+                  "priceTotal": 7050.6,
                   "products": [
                     {
-                      "id": "5bb708168cc15629c753be38",
-                      "title": "Healthy",
-                      "description": "Creamy mascarpone cheese and custard layered between espresso and rum soaked house-made ladyfingers, topped with Valrhona cocoa powder.",
-                      "price": 901.03,
-                      "weight": "9 decigrams",
+                      "id": "5bbac95e8cc1564a27e2220d",
+                      "title": "Ramen",
+                      "description": "Breaded fried chicken with waffles. Served with maple syrup.",
+                      "price": 705.06,
+                      "weight": "9 metric tons",
                       "quantity": 10,
-                      "shopProductId": "5bb708168cc15629c753be37"
+                      "shopProductId": "5bbac95e8cc1564a27e2220c"
                     }
                   ],
                   "courierAssignments": [
