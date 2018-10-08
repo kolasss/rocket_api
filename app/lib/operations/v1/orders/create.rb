@@ -24,6 +24,7 @@ module Operations
 
         def call(params:, client:)
           payload = yield VALIDATOR.call(params).to_monad
+          yield check_products_uniqueness(payload[:order][:products])
           shop = yield find_shop(payload[:order][:shop_id])
           create(
             shop: shop,
@@ -33,6 +34,18 @@ module Operations
         end
 
         private
+
+        def check_products_uniqueness(products_params)
+          products_ids = []
+          products_params.each do |product|
+            if products_ids.include? product[:id]
+              return Failure(:products_ids_should_be_uniq)
+            else
+              products_ids << product[:id]
+            end
+          end
+          Success(true)
+        end
 
         def find_shop(shop_id)
           shop = ::Shops::Shop.where(id: shop_id).first

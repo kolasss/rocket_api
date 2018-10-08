@@ -9,8 +9,5 @@ module Orders
     embedded_in(
       :order, class_name: 'Orders::Order', inverse_of: :products
     )
-
-    # TODO: move to operation
-    validates :shop_product_id, uniqueness: { scope: :order }
   end
 end
