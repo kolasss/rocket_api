@@ -47,7 +47,8 @@ RSpec.describe 'shops', type: :request, tags: ['shop_manager shop'] do
               category_ids: {
                 type: :array,
                 items: { type: :string }
-              }
+              },
+              minimum_order_price: { type: :number }
             }
           }
         }

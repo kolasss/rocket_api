@@ -4,6 +4,7 @@ FactoryBot.define do
   factory :shop, class: Shops::Shop do
     title { Faker::Restaurant.unique.name }
     description { Faker::Restaurant.description }
+    minimum_order_price { 0 }
 
     transient do
       categories_count { 1 }

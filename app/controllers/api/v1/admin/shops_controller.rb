@@ -68,7 +68,8 @@ module Api
           params.require(:shop).permit(
             :title,
             :description,
-            category_ids: []
+            { category_ids: [] },
+            :minimum_order_price
           )
         end
 
