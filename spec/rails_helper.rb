@@ -9,9 +9,6 @@ abort('ABORT: Running not in test mode!') unless Rails.env.test?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 
-require 'sidekiq/testing'
-Sidekiq::Testing.fake!
-
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
@@ -49,8 +46,6 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
-  config.order = :random
-
   config.before(:suite) do
     DatabaseCleaner.clean
   end
@@ -68,4 +63,8 @@ RSpec.configure do |config|
   config.after(:context) do
     Faker::UniqueGenerator.clear
   end
+end
+
+RSpec::Sidekiq.configure do |config|
+  config.warn_when_jobs_not_processed_by_sidekiq = false
 end

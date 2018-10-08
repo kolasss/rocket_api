@@ -52,4 +52,5 @@ end
 group :test do
   gem 'fuubar' # rspec output formatter
   gem 'rspec-rails-swagger' # swagger docs generator
+  gem 'rspec-sidekiq' # test sidekiq jobs
 end
