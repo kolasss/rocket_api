@@ -3,14 +3,16 @@
 module Operations
   module V1
     module Orders
-      module Couriers
-        class Arrive < ::Operations::V1::Base
+      module Courier
+        class Deliver < ::Operations::V1::Base
           include Dry::Monads::Do.for(:call)
 
           def call(courier)
             order = yield find_order(courier)
             yield check_order(order, courier)
-            update_order(order)
+            yield update_order(order)
+            yield update_courier(courier)
+            Success(order)
           end
 
           private
@@ -25,7 +27,7 @@ module Operations
           end
 
           def check_order(order, courier)
-            if order.status != 'accepted'
+            if order.status != 'on_delivery'
               Failure(:invalid_order_status)
             elsif order.courier != courier
               Failure(:not_current_assignment)
@@ -35,11 +37,20 @@ module Operations
           end
 
           def update_order(order)
-            order.status = 'courier_at_shop'
+            order.status = 'delivered'
             if order.save
               Success(order)
             else
               Failure(order: order.errors.as_json)
+            end
+          end
+
+          def update_courier(courier)
+            courier.active_order = nil
+            if courier.save
+              Success(true)
+            else
+              Failure(courier: courier.errors.as_json)
             end
           end
         end

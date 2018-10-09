@@ -13,7 +13,9 @@ module Api
             status: String,
             price_total: BigDecimal,
             products: Array,
-            courier_assignments: Array
+            courier_assignments: Array,
+            shop_response: Hash,
+            cancel_reason: String
           }
         end
 
@@ -40,6 +42,14 @@ module Api
             object.courier_assignments
           ).build_schema
         end
+
+        def shop_response
+          return unless object.shop_response?
+
+          ShopResponseSerializer.new(
+            object.shop_response
+          ).build_schema
+        end
       end
 
       class AssignmentSerializer < Api::V1::ObjectSerializer
@@ -54,6 +64,14 @@ module Api
 
         def courier_id
           object.courier_id&.to_s
+        end
+      end
+
+      class ShopResponseSerializer < Api::V1::ObjectSerializer
+        json_schema do
+          {
+            status: String
+          }
         end
       end
     end

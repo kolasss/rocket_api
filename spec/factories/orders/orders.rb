@@ -8,6 +8,10 @@ FactoryBot.define do
     association :client, factory: :client
     association :shop, factory: :shop
 
+    after(:build) do |order|
+      build(:shop_response, order: order)
+    end
+
     trait :with_product do
       transient do
         products_count { 1 }
@@ -42,6 +46,21 @@ FactoryBot.define do
 
     trait :on_delivery do
       status { 'on_delivery' }
+    end
+
+    trait :with_accepted_assignment do
+      requested
+      after(:build) do |order|
+        assignment = build(:courier_assignment, :accepted, order: order)
+        order.courier_id = assignment.courier_id
+      end
+    end
+
+    trait :with_accepted_shop do
+      requested
+      after(:build) do |order|
+        order.shop_response.status = 'accepted'
+      end
     end
   end
 end

@@ -28,8 +28,8 @@ module Operations
           end
         end
 
-        def find_courier(id)
-          courier = ::Users::Courier.where(id: id).first
+        def find_courier(courier_id)
+          courier = ::Users::Courier.where(id: courier_id).first
           if courier.present?
             Success(courier)
           else

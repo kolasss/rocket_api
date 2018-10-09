@@ -13,7 +13,7 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNWJiYWViZmY4Y2MxNTYxNTQ2ZmVhN2E3In0.-I93IdlF5t-6YJJPU_RY8WtEJqRd1gB2OMyyUlGXAgs"
+                  "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNWJiYzQ0OWE4Y2MxNTYyZDgzYjhiNmQ1In0.29Dog0ilRbAnznrhGSG706N12w-C8-vRo6WYrnc3ohI"
                 }
               }
             }
@@ -72,9 +72,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaebff8cc1561546fea7a9",
-                  "name": "Римма Давыдова",
-                  "phone": "+7(974)068-50-47",
+                  "id": "5bbc449a8cc1562d83b8b6d7",
+                  "name": "Константин Матвеевич Пономарев",
+                  "phone": "+7(935)101-35-19",
                   "role": "client"
                 }
               }
@@ -125,7 +125,7 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNWJiYWViZmY4Y2MxNTYxNTQ2ZmVhN2FiIn0.80NJnUZnxE108_QI_7L2RLdazD7bez7SkHapk8k9LJE"
+                  "token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiNWJiYzQ0OWE4Y2MxNTYyZDgzYjhiNmQ5In0.H93DxiBYrxTzdzQeU5ZRKXg13gZHO4K60PojWkf6EKY"
                 }
               }
             }
@@ -186,10 +186,10 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5bbaebff8cc1561546fea7b1",
-                      "clientId": "5bbaebff8cc1561546fea7b0",
+                      "id": "5bbc449a8cc1562d83b8b6e0",
+                      "clientId": "5bbc449a8cc1562d83b8b6df",
                       "courierId": null,
-                      "shopId": "5bbaebff8cc1561546fea7b2",
+                      "shopId": "5bbc449a8cc1562d83b8b6e1",
                       "status": "new",
                       "priceTotal": 0.0,
                       "products": [
@@ -197,7 +197,11 @@
                       ],
                       "courierAssignments": [
 
-                      ]
+                      ],
+                      "shopResponse": {
+                        "status": "requested"
+                      },
+                      "cancelReason": null
                     }
                   ]
                 }
@@ -220,26 +224,30 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec008cc1561546fea7c0",
-                  "clientId": "5bbaec008cc1561546fea7bb",
+                  "id": "5bbc449b8cc1562d83b8b6f1",
+                  "clientId": "5bbc449b8cc1562d83b8b6ec",
                   "courierId": null,
-                  "shopId": "5bbaec008cc1561546fea7bc",
+                  "shopId": "5bbc449b8cc1562d83b8b6ed",
                   "status": "new",
-                  "priceTotal": 1816.1,
+                  "priceTotal": 204.08,
                   "products": [
                     {
-                      "id": "5bbaec008cc1561546fea7c1",
-                      "title": "Asian",
-                      "description": "Fresh parsley, Italian sausage, shallots, garlic, sun-dried tomatoes and mozzarella cheese in an all-butter crust. With a side of mixed fruits.",
-                      "price": 908.05,
-                      "weight": "6 dekagrams",
+                      "id": "5bbc449b8cc1562d83b8b6f2",
+                      "title": "Juice & Smoothies",
+                      "description": "Thick slices of French toast bread, brown sugar, half-and-half and vanilla, topped with powdered sugar. With two eggs served any style, and your choice of smoked bacon or smoked ham.",
+                      "price": 102.04,
+                      "weight": "2 grams",
                       "quantity": 2,
-                      "shopProductId": "5bbaec008cc1561546fea7bf"
+                      "shopProductId": "5bbc449b8cc1562d83b8b6f0"
                     }
                   ],
                   "courierAssignments": [
 
-                  ]
+                  ],
+                  "shopResponse": {
+                    "status": "requested"
+                  },
+                  "cancelReason": null
                 }
               }
             }
@@ -315,26 +323,30 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec008cc1561546fea7ca",
-                  "clientId": "5bbaec008cc1561546fea7c9",
+                  "id": "5bbc449b8cc1562d83b8b6fd",
+                  "clientId": "5bbc449b8cc1562d83b8b6fc",
                   "courierId": null,
-                  "shopId": "5bbaec008cc1561546fea7cb",
+                  "shopId": "5bbc449b8cc1562d83b8b6fe",
                   "status": "new",
-                  "priceTotal": 2010.6,
+                  "priceTotal": 600.06,
                   "products": [
                     {
-                      "id": "5bbaec008cc1561546fea7cf",
-                      "title": "Greek",
-                      "description": "Three eggs with cilantro, tomatoes, onions, avocados and melted Emmental cheese. With a side of roasted potatoes, and your choice of toast or croissant.",
-                      "price": 201.06,
-                      "weight": "1 dekagram",
-                      "quantity": 10,
-                      "shopProductId": "5bbaec008cc1561546fea7ce"
+                      "id": "5bbc449b8cc1562d83b8b703",
+                      "title": "Bakery",
+                      "description": "Granny Smith apples mixed with brown sugar and butter filling, in a flaky all-butter crust, with ice cream.",
+                      "price": 200.02,
+                      "weight": "4 metric tons",
+                      "quantity": 3,
+                      "shopProductId": "5bbc449b8cc1562d83b8b701"
                     }
                   ],
                   "courierAssignments": [
 
-                  ]
+                  ],
+                  "shopResponse": {
+                    "status": "requested"
+                  },
+                  "cancelReason": null
                 }
               }
             }
@@ -372,26 +384,30 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec008cc1561546fea7d8",
-                  "clientId": "5bbaec008cc1561546fea7d7",
+                  "id": "5bbc449b8cc1562d83b8b70d",
+                  "clientId": "5bbc449b8cc1562d83b8b70c",
                   "courierId": null,
-                  "shopId": "5bbaec008cc1561546fea7d9",
+                  "shopId": "5bbc449b8cc1562d83b8b70e",
                   "status": "requested",
-                  "priceTotal": 2427.06,
+                  "priceTotal": 2020.32,
                   "products": [
                     {
-                      "id": "5bbaec008cc1561546fea7dd",
-                      "title": "Juice & Smoothies",
-                      "description": "Three egg omelet with Roquefort cheese, chives, and ham. With a side of roasted potatoes, and your choice of toast or croissant.",
-                      "price": 809.02,
-                      "weight": "2 hectograms",
-                      "quantity": 3,
-                      "shopProductId": "5bbaec008cc1561546fea7dc"
+                      "id": "5bbc449b8cc1562d83b8b713",
+                      "title": "Chinese",
+                      "description": "Three eggs with cilantro, tomatoes, onions, avocados and melted Emmental cheese. With a side of roasted potatoes, and your choice of toast or croissant.",
+                      "price": 505.08,
+                      "weight": "5 kilograms",
+                      "quantity": 4,
+                      "shopProductId": "5bbc449b8cc1562d83b8b711"
                     }
                   ],
                   "courierAssignments": [
 
-                  ]
+                  ],
+                  "shopResponse": {
+                    "status": "requested"
+                  },
+                  "cancelReason": null
                 }
               }
             }
@@ -425,8 +441,8 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5bbaec008cc1561546fea7e0",
-                      "title": "Senegalese"
+                      "id": "5bbc449c8cc1562d83b8b716",
+                      "title": "Korean"
                     }
                   ]
                 }
@@ -462,8 +478,8 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5bbaec008cc1561546fea7e5",
-                      "title": "Salty Diner",
+                      "id": "5bbc449c8cc1562d83b8b71b",
+                      "title": "Green Burger",
                       "description": "To provide an exceptional dining experience that satisfies our guests’ grown-up tastes by being a Cut-Above in everything we do.",
                       "categoryIds": [
 
@@ -506,9 +522,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec008cc1561546fea7e8",
-                  "title": "FB Grill",
-                  "description": "To ensure that each guest receives prompt, professional, friendly and courteous service. To maintain a clean, comfortable and well maintained premises for our guests and staff. To provide at a fair price – nutritional, well-prepared meals – using only quality ingredients. To ensure that all guests and staff are treated with the respect and dignity they deserve. To thank each guest for the opportunity to serve them. By maintaining these objectives we shall be assured of a fair profit that will allow us to contribute to the community we serve.",
+                  "id": "5bbc449c8cc1562d83b8b71e",
+                  "title": "53 Burger",
+                  "description": "To sell delicious and remarkable food and drinks. That the food and drink we sell meets the highest standards of quality, freshness and seasonality and combines both modern-creative and traditional southern styles of cooking. To consistently provide our customers with impeccable service by demonstrating warmth, graciousness, efficiency, knowledge, professionalism and integrity in our work. To have every customer who comes through our doors leave impressed by Maxie’s and excited to come back again. To create and maintain a restaurant that is comprehensive and exceptional in its attention to every detail of operation. To provide all who work with us a friendly, cooperative and rewarding environment which encourages long- term, satisfying, growth employment. To keep our concept fresh, exciting and on the cutting edge of the hospitality and entertainment industry. To be a giving member of the Ithaca community and to use our restaurant to improve the quality of life in the Finger Lakes region.",
                   "categories": [
 
                   ],
@@ -547,9 +563,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec018cc1561546fea7ee",
-                  "title": "OAI Box",
-                  "description": "To achieve and maintain such distinction in food and wine, service, atmosphere and setting that the restaurant gains a first class reputation for gastronomy, gracious and informed hospitality, comfort and beauty which draws new and repeat customers year after year. To achieve the above whilst upholding staff policies and practices which promote a fair and positive working environment. To be aware of and act on our responsibilities as a good corporate citizen to  provide a safe, clean and attractive place for guests to enjoy and for employees to work in - ensure ecologically sound management practices at the restaurant and in our surrounding gardens and woods - undertake meaningful involvement of Restaurant Les Fougères in selected charitable activities in our community and region.",
+                  "id": "5bbc449c8cc1562d83b8b724",
+                  "title": "Silver House",
+                  "description": "We are committed to using the finest ingredients in our recipes. No food leaves our kitchen that we ourselves would not eat.",
                   "categories": [
 
                   ],
@@ -576,9 +592,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec018cc1561546fea7f4",
+                  "id": "5bbc449c8cc1562d83b8b72a",
                   "title": "new title",
-                  "description": "Delhaize Group will achieve leading positions in food retailing in key mature and emerging markets. We accomplish our goal by developing strong regional companies benefiting from and contributing to the Groups strength, expertise and successful practices. Delhaize Group goes to market with a variety of food store formats. The Group is committed to offer a locally differentiated shopping experience to its customers in each of its markets, to deliver superior value and to maintain high social, environmental and ethical standards.",
+                  "description": "We earn the loyalty of the people we serve by first anticipating, then fulfilling their needs with our superior-quality products, a unique shopping experience, customer-focused service and continuous innovation, while generating long-term profitable growth for our shareholders.",
                   "categories": [
 
                   ],
@@ -651,8 +667,8 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec018cc1561546fea7fe",
-                  "title": "Asian",
+                  "id": "5bbc449d8cc1562d83b8b734",
+                  "title": "Italian",
                   "products": [
 
                   ]
@@ -717,7 +733,7 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec018cc1561546fea805",
+                  "id": "5bbc449d8cc1562d83b8b73b",
                   "title": "new title",
                   "products": [
 
@@ -793,11 +809,11 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec018cc1561546fea814",
-                  "title": "Brazilian",
-                  "description": "Breaded fried chicken with waffles. Served with maple syrup.",
-                  "price": 506.05,
-                  "weight": "4 grams"
+                  "id": "5bbc449d8cc1562d83b8b74a",
+                  "title": "Chinese",
+                  "description": "Two buttermilk waffles, topped with whipped cream and maple syrup, a side of two eggs served any style, and your choice of smoked bacon or smoked ham.",
+                  "price": 807.04,
+                  "weight": "7 dekagrams"
                 }
               }
             }
@@ -874,11 +890,11 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec028cc1561546fea81d",
+                  "id": "5bbc449d8cc1562d83b8b753",
                   "title": "new title",
-                  "description": "Breaded fried chicken with waffles. Served with maple syrup.",
-                  "price": 305.09,
-                  "weight": "5 decigrams"
+                  "description": "Fresh Norwegian salmon, lightly brushed with our herbed Dijon mustard sauce, with choice of two sides.",
+                  "price": 105.03,
+                  "weight": "5 dekagrams"
                 }
               }
             }
@@ -936,6 +952,186 @@
         "summary": "delete an item"
       }
     },
+    "/api/v1/shop_manager/orders": {
+      "parameters": [
+        {
+          "name": "Authorization",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "Bearer token"
+        }
+      ],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "successful",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "items": [
+                    {
+                      "id": "5bbc449e8cc1562d83b8b764",
+                      "clientId": "5bbc449e8cc1562d83b8b763",
+                      "courierId": null,
+                      "shopId": "5bbc449e8cc1562d83b8b760",
+                      "status": "new",
+                      "priceTotal": 0.0,
+                      "products": [
+
+                      ],
+                      "courierAssignments": [
+
+                      ],
+                      "shopResponse": {
+                        "status": "requested"
+                      },
+                      "cancelReason": null
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "shop_manager orders"
+        ],
+        "summary": "list items",
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/api/v1/shop_manager/orders/{order_id}/accept": {
+      "parameters": [
+        {
+          "name": "Authorization",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "Bearer token"
+        },
+        {
+          "name": "order_id",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "put": {
+        "responses": {
+          "200": {
+            "description": "success",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "5bbc449e8cc1562d83b8b772",
+                  "clientId": "5bbc449e8cc1562d83b8b771",
+                  "courierId": "5bbc449e8cc1562d83b8b773",
+                  "shopId": "5bbc449e8cc1562d83b8b76e",
+                  "status": "accepted",
+                  "priceTotal": 0.0,
+                  "products": [
+
+                  ],
+                  "courierAssignments": [
+                    {
+                      "id": "5bbc449e8cc1562d83b8b774",
+                      "status": "accepted",
+                      "declineReason": null,
+                      "courierId": "5bbc449e8cc1562d83b8b773"
+                    }
+                  ],
+                  "shopResponse": {
+                    "status": "accepted"
+                  },
+                  "cancelReason": null
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "shop_manager orders"
+        ],
+        "summary": "accept order",
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/api/v1/shop_manager/orders/{order_id}/cancel": {
+      "parameters": [
+        {
+          "name": "Authorization",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "Bearer token"
+        },
+        {
+          "name": "order_id",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "put": {
+        "responses": {
+          "200": {
+            "description": "success",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "5bbc449e8cc1562d83b8b780",
+                  "clientId": "5bbc449e8cc1562d83b8b77f",
+                  "courierId": null,
+                  "shopId": "5bbc449e8cc1562d83b8b77c",
+                  "status": "canceled_shop",
+                  "priceTotal": 0.0,
+                  "products": [
+
+                  ],
+                  "courierAssignments": [
+
+                  ],
+                  "shopResponse": {
+                    "status": "canceled"
+                  },
+                  "cancelReason": "нет света"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "reason": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "shop_manager orders"
+        ],
+        "summary": "cancel order",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
     "/api/v1/supervisor/orders": {
       "parameters": [
         {
@@ -955,10 +1151,10 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5bbaec028cc1561546fea82a",
-                      "clientId": "5bbaec028cc1561546fea829",
+                      "id": "5bbc449f8cc1562d83b8b789",
+                      "clientId": "5bbc449f8cc1562d83b8b788",
                       "courierId": null,
-                      "shopId": "5bbaec028cc1561546fea82b",
+                      "shopId": "5bbc449f8cc1562d83b8b78a",
                       "status": "new",
                       "priceTotal": 0.0,
                       "products": [
@@ -966,7 +1162,11 @@
                       ],
                       "courierAssignments": [
 
-                      ]
+                      ],
+                      "shopResponse": {
+                        "status": "requested"
+                      },
+                      "cancelReason": null
                     }
                   ]
                 }
@@ -1005,26 +1205,30 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec028cc1561546fea82f",
-                  "clientId": "5bbaec028cc1561546fea82e",
+                  "id": "5bbc449f8cc1562d83b8b78f",
+                  "clientId": "5bbc449f8cc1562d83b8b78e",
                   "courierId": null,
-                  "shopId": "5bbaec028cc1561546fea830",
+                  "shopId": "5bbc449f8cc1562d83b8b790",
                   "status": "new",
-                  "priceTotal": 900.54,
+                  "priceTotal": 2525.2,
                   "products": [
                     {
-                      "id": "5bbaec028cc1561546fea834",
-                      "title": "Vegan",
+                      "id": "5bbc449f8cc1562d83b8b795",
+                      "title": "German",
                       "description": "Three egg omelet with Roquefort cheese, chives, and ham. With a side of roasted potatoes, and your choice of toast or croissant.",
-                      "price": 100.06,
-                      "weight": "6 dekagrams",
-                      "quantity": 9,
-                      "shopProductId": "5bbaec028cc1561546fea833"
+                      "price": 505.04,
+                      "weight": "1 milligram",
+                      "quantity": 5,
+                      "shopProductId": "5bbc449f8cc1562d83b8b793"
                     }
                   ],
                   "courierAssignments": [
 
-                  ]
+                  ],
+                  "shopResponse": {
+                    "status": "requested"
+                  },
+                  "cancelReason": null
                 }
               }
             },
@@ -1063,10 +1267,10 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec028cc1561546fea83e",
-                  "clientId": "5bbaec028cc1561546fea83d",
-                  "courierId": "5bbaec028cc1561546fea842",
-                  "shopId": "5bbaec028cc1561546fea83f",
+                  "id": "5bbc449f8cc1562d83b8b7a0",
+                  "clientId": "5bbc449f8cc1562d83b8b79f",
+                  "courierId": "5bbc449f8cc1562d83b8b7a5",
+                  "shopId": "5bbc449f8cc1562d83b8b7a1",
                   "status": "requested",
                   "priceTotal": 0.0,
                   "products": [
@@ -1074,12 +1278,16 @@
                   ],
                   "courierAssignments": [
                     {
-                      "id": "5bbaec028cc1561546fea843",
+                      "id": "5bbc449f8cc1562d83b8b7a6",
                       "status": "proposed",
                       "declineReason": null,
-                      "courierId": "5bbaec028cc1561546fea842"
+                      "courierId": "5bbc449f8cc1562d83b8b7a5"
                     }
-                  ]
+                  ],
+                  "shopResponse": {
+                    "status": "requested"
+                  },
+                  "cancelReason": null
                 }
               }
             }
@@ -1131,9 +1339,9 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5bbaec028cc1561546fea847",
-                      "name": "Никита Дмитриевич Самойлов",
-                      "phone": "+7(929)230-75-54",
+                      "id": "5bbc449f8cc1562d83b8b7aa",
+                      "name": "Волкова Маргарита",
+                      "phone": "+7(975)597-82-58",
                       "role": "courier"
                     }
                   ]
@@ -1198,54 +1406,6 @@
         ]
       }
     },
-    "/api/v1/courier/active_order/accept": {
-      "parameters": [
-        {
-          "name": "Authorization",
-          "in": "header",
-          "type": "string",
-          "required": true,
-          "description": "Bearer token"
-        }
-      ],
-      "put": {
-        "responses": {
-          "200": {
-            "description": "successful",
-            "examples": {
-              "application/json": {
-                "data": {
-                  "id": "5bbaec038cc1561546fea854",
-                  "clientId": "5bbaec038cc1561546fea853",
-                  "courierId": "5bbaec038cc1561546fea852",
-                  "shopId": "5bbaec038cc1561546fea855",
-                  "status": "requested",
-                  "priceTotal": 0.0,
-                  "products": [
-
-                  ],
-                  "courierAssignments": [
-                    {
-                      "id": "5bbaec038cc1561546fea857",
-                      "status": "accepted",
-                      "declineReason": null,
-                      "courierId": "5bbaec038cc1561546fea852"
-                    }
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "tags": [
-          "courier active_order"
-        ],
-        "summary": "accept order",
-        "produces": [
-          "application/json"
-        ]
-      }
-    },
     "/api/v1/courier/active_order/decline": {
       "parameters": [
         {
@@ -1263,10 +1423,10 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec038cc1561546fea860",
-                  "clientId": "5bbaec038cc1561546fea85f",
+                  "id": "5bbc44a08cc1562d83b8b7b8",
+                  "clientId": "5bbc44a08cc1562d83b8b7b7",
                   "courierId": null,
-                  "shopId": "5bbaec038cc1561546fea861",
+                  "shopId": "5bbc44a08cc1562d83b8b7b9",
                   "status": "requested",
                   "priceTotal": 0.0,
                   "products": [
@@ -1274,12 +1434,16 @@
                   ],
                   "courierAssignments": [
                     {
-                      "id": "5bbaec038cc1561546fea863",
+                      "id": "5bbc44a08cc1562d83b8b7bc",
                       "status": "declined",
                       "declineReason": "не хочу",
-                      "courierId": "5bbaec038cc1561546fea85e"
+                      "courierId": "5bbc44a08cc1562d83b8b7b6"
                     }
-                  ]
+                  ],
+                  "shopResponse": {
+                    "status": "requested"
+                  },
+                  "cancelReason": null
                 }
               }
             }
@@ -1312,6 +1476,58 @@
         ]
       }
     },
+    "/api/v1/courier/active_order/accept": {
+      "parameters": [
+        {
+          "name": "Authorization",
+          "in": "header",
+          "type": "string",
+          "required": true,
+          "description": "Bearer token"
+        }
+      ],
+      "put": {
+        "responses": {
+          "200": {
+            "description": "successful",
+            "examples": {
+              "application/json": {
+                "data": {
+                  "id": "5bbc44a08cc1562d83b8b7c6",
+                  "clientId": "5bbc44a08cc1562d83b8b7c5",
+                  "courierId": "5bbc44a08cc1562d83b8b7c4",
+                  "shopId": "5bbc44a08cc1562d83b8b7c7",
+                  "status": "accepted",
+                  "priceTotal": 0.0,
+                  "products": [
+
+                  ],
+                  "courierAssignments": [
+                    {
+                      "id": "5bbc44a08cc1562d83b8b7ca",
+                      "status": "accepted",
+                      "declineReason": null,
+                      "courierId": "5bbc44a08cc1562d83b8b7c4"
+                    }
+                  ],
+                  "shopResponse": {
+                    "status": "accepted"
+                  },
+                  "cancelReason": null
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "courier active_order"
+        ],
+        "summary": "accept order",
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
     "/api/v1/courier/active_order/arrive": {
       "parameters": [
         {
@@ -1329,10 +1545,10 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec038cc1561546fea86b",
-                  "clientId": "5bbaec038cc1561546fea86a",
-                  "courierId": "5bbaec038cc1561546fea869",
-                  "shopId": "5bbaec038cc1561546fea86c",
+                  "id": "5bbc44a18cc1562d83b8b7d3",
+                  "clientId": "5bbc44a18cc1562d83b8b7d2",
+                  "courierId": "5bbc44a18cc1562d83b8b7d1",
+                  "shopId": "5bbc44a18cc1562d83b8b7d4",
                   "status": "courier_at_shop",
                   "priceTotal": 0.0,
                   "products": [
@@ -1340,7 +1556,11 @@
                   ],
                   "courierAssignments": [
 
-                  ]
+                  ],
+                  "shopResponse": {
+                    "status": "requested"
+                  },
+                  "cancelReason": null
                 }
               }
             }
@@ -1372,10 +1592,10 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec038cc1561546fea875",
-                  "clientId": "5bbaec038cc1561546fea874",
-                  "courierId": "5bbaec038cc1561546fea873",
-                  "shopId": "5bbaec038cc1561546fea876",
+                  "id": "5bbc44a18cc1562d83b8b7df",
+                  "clientId": "5bbc44a18cc1562d83b8b7de",
+                  "courierId": "5bbc44a18cc1562d83b8b7dd",
+                  "shopId": "5bbc44a18cc1562d83b8b7e0",
                   "status": "on_delivery",
                   "priceTotal": 0.0,
                   "products": [
@@ -1383,7 +1603,11 @@
                   ],
                   "courierAssignments": [
 
-                  ]
+                  ],
+                  "shopResponse": {
+                    "status": "requested"
+                  },
+                  "cancelReason": null
                 }
               }
             }
@@ -1415,10 +1639,10 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec038cc1561546fea87f",
-                  "clientId": "5bbaec038cc1561546fea87e",
-                  "courierId": "5bbaec038cc1561546fea87d",
-                  "shopId": "5bbaec038cc1561546fea880",
+                  "id": "5bbc44a18cc1562d83b8b7eb",
+                  "clientId": "5bbc44a18cc1562d83b8b7ea",
+                  "courierId": "5bbc44a18cc1562d83b8b7e9",
+                  "shopId": "5bbc44a18cc1562d83b8b7ec",
                   "status": "delivered",
                   "priceTotal": 0.0,
                   "products": [
@@ -1426,7 +1650,11 @@
                   ],
                   "courierAssignments": [
 
-                  ]
+                  ],
+                  "shopResponse": {
+                    "status": "requested"
+                  },
+                  "cancelReason": null
                 }
               }
             }
@@ -1460,9 +1688,9 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5bbaec048cc1561546fea883",
-                      "name": "Валерий Соловьев",
-                      "phone": "+7(987)964-82-87",
+                      "id": "5bbc44a18cc1562d83b8b7f0",
+                      "name": "Ульяна Григорьевна Селезнева",
+                      "phone": "+7(912)333-95-27",
                       "role": "admin"
                     }
                   ]
@@ -1486,9 +1714,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec048cc1561546fea887",
-                  "name": "Устинов Дмитрий Сергеевич",
-                  "phone": "+7(974)595-38-40",
+                  "id": "5bbc44a28cc1562d83b8b7f4",
+                  "name": "Анжелика Антонова",
+                  "phone": "+7(977)772-45-14",
                   "role": "supervisor"
                 }
               }
@@ -1558,9 +1786,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec048cc1561546fea888",
-                  "name": "Никита Казаков",
-                  "phone": "+7(976)140-29-92",
+                  "id": "5bbc44a28cc1562d83b8b7f5",
+                  "name": "Шарапов Лаврентий Степанович",
+                  "phone": "+7(954)638-22-79",
                   "role": "client"
                 }
               }
@@ -1583,9 +1811,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec048cc1561546fea88c",
+                  "id": "5bbc44a28cc1562d83b8b7f9",
                   "name": "new name",
-                  "phone": "+7(993)487-47-77",
+                  "phone": "+7(980)521-35-28",
                   "role": "client"
                 }
               }
@@ -1657,8 +1885,8 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5bbaec048cc1561546fea892",
-                      "title": "Italian"
+                      "id": "5bbc44a28cc1562d83b8b7ff",
+                      "title": "Desserts"
                     }
                   ]
                 }
@@ -1681,8 +1909,8 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec048cc1561546fea897",
-                  "title": "Desserts",
+                  "id": "5bbc44a28cc1562d83b8b804",
+                  "title": "Healthy",
                   "shopIds": [
 
                   ]
@@ -1746,7 +1974,7 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec048cc1561546fea89a",
+                  "id": "5bbc44a38cc1562d83b8b807",
                   "title": "new title",
                   "shopIds": [
 
@@ -1818,9 +2046,9 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5bbaec048cc1561546fea8a1",
-                      "title": "Thirsty Kitchen",
-                      "description": "Yoshinoya is in business to create the structure and systems needed to allow our customers access to the majority of their away-from-home daily meal requirements on a one-stop-shop basis. All our products shall be of the highest quality and value, be healthy, nutritious and provided with outstanding personal services at the lowest possible prices consistent with a fair return on investment for our shareholders, job enhancementsecurity for our employees and a level of community involvement by everyone connected with our business. All of our products and services shall be delivered consistently and measured one satisfied customer at a time, whether by company-owned or franchised operations, in superior, clean, convenient, fun and friendly neighborhood environments. We pledge to make Yoshinoya the best place to eat and the best place to work.",
+                      "id": "5bbc44a38cc1562d83b8b80e",
+                      "title": "Spice Deli",
+                      "description": "We are committed to using the finest ingredients in our recipes. No food leaves our kitchen that we ourselves would not eat.",
                       "categoryIds": [
 
                       ]
@@ -1846,13 +2074,13 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec058cc1561546fea8a9",
-                  "title": "Silver Creamery",
-                  "description": "To sell delicious and remarkable food and drinks. That the food and drink we sell meets the highest standards of quality, freshness and seasonality and combines both modern-creative and traditional southern styles of cooking. To consistently provide our customers with impeccable service by demonstrating warmth, graciousness, efficiency, knowledge, professionalism and integrity in our work. To have every customer who comes through our doors leave impressed by Maxie’s and excited to come back again. To create and maintain a restaurant that is comprehensive and exceptional in its attention to every detail of operation. To provide all who work with us a friendly, cooperative and rewarding environment which encourages long- term, satisfying, growth employment. To keep our concept fresh, exciting and on the cutting edge of the hospitality and entertainment industry. To be a giving member of the Ithaca community and to use our restaurant to improve the quality of life in the Finger Lakes region.",
+                  "id": "5bbc44a38cc1562d83b8b816",
+                  "title": "Belly Steakhouse",
+                  "description": "We earn the loyalty of the people we serve by first anticipating, then fulfilling their needs with our superior-quality products, a unique shopping experience, customer-focused service and continuous innovation, while generating long-term profitable growth for our shareholders.",
                   "categories": [
                     {
-                      "id": "5bbaec058cc1561546fea8a8",
-                      "title": "African"
+                      "id": "5bbc44a38cc1562d83b8b815",
+                      "title": "Burgers"
                     }
                   ],
                   "productsCategories": [
@@ -1929,9 +2157,9 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec058cc1561546fea8aa",
-                  "title": "Thirsty Subs",
-                  "description": "To achieve and maintain such distinction in food and wine, service, atmosphere and setting that the restaurant gains a first class reputation for gastronomy, gracious and informed hospitality, comfort and beauty which draws new and repeat customers year after year. To achieve the above whilst upholding staff policies and practices which promote a fair and positive working environment. To be aware of and act on our responsibilities as a good corporate citizen to  provide a safe, clean and attractive place for guests to enjoy and for employees to work in - ensure ecologically sound management practices at the restaurant and in our surrounding gardens and woods - undertake meaningful involvement of Restaurant Les Fougères in selected charitable activities in our community and region.",
+                  "id": "5bbc44a38cc1562d83b8b817",
+                  "title": "Fat Diner",
+                  "description": "Our Mission at Denny’s is to establish beneficial business relationships with diverse suppliers who share our commitment to customer service, quality and competitive pricing.",
                   "categories": [
 
                   ],
@@ -1959,7 +2187,7 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec058cc1561546fea8b0",
+                  "id": "5bbc44a38cc1562d83b8b81d",
                   "title": "new title",
                   "description": "Our Mission at Denny’s is to establish beneficial business relationships with diverse suppliers who share our commitment to customer service, quality and competitive pricing.",
                   "categories": [
@@ -2048,8 +2276,8 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec058cc1561546fea8bd",
-                  "title": "Caribbean",
+                  "id": "5bbc44a48cc1562d83b8b82a",
+                  "title": "Juice & Smoothies",
                   "products": [
 
                   ]
@@ -2120,7 +2348,7 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec058cc1561546fea8c4",
+                  "id": "5bbc44a48cc1562d83b8b831",
                   "title": "new title",
                   "products": [
 
@@ -2202,11 +2430,11 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec058cc1561546fea8d3",
-                  "title": "Thai",
-                  "description": "Two butter croissants of your choice (plain, almond or cheese). With a side of herb butter or house-made hazelnut spread.",
-                  "price": 506.05,
-                  "weight": "3 hectograms"
+                  "id": "5bbc44a48cc1562d83b8b840",
+                  "title": "Bakery",
+                  "description": "Thick slices of French toast bread, brown sugar, half-and-half and vanilla, topped with powdered sugar. With two eggs served any style, and your choice of smoked bacon or smoked ham.",
+                  "price": 406.01,
+                  "weight": "9 decigrams"
                 }
               }
             }
@@ -2289,11 +2517,11 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec068cc1561546fea8dc",
+                  "id": "5bbc44a48cc1562d83b8b849",
                   "title": "new title",
-                  "description": "Fresh parsley, Italian sausage, shallots, garlic, sun-dried tomatoes and mozzarella cheese in an all-butter crust. With a side of mixed fruits.",
-                  "price": 305.08,
-                  "weight": "2 grams"
+                  "description": "Two buttermilk waffles, topped with whipped cream and maple syrup, a side of two eggs served any style, and your choice of smoked bacon or smoked ham.",
+                  "price": 709.06,
+                  "weight": "6 hectograms"
                 }
               }
             }
@@ -2370,10 +2598,10 @@
                 "data": {
                   "items": [
                     {
-                      "id": "5bbaec068cc1561546fea8e9",
-                      "clientId": "5bbaec068cc1561546fea8e8",
+                      "id": "5bbc44a58cc1562d83b8b857",
+                      "clientId": "5bbc44a58cc1562d83b8b856",
                       "courierId": null,
-                      "shopId": "5bbaec068cc1561546fea8ea",
+                      "shopId": "5bbc44a58cc1562d83b8b858",
                       "status": "new",
                       "priceTotal": 0.0,
                       "products": [
@@ -2381,7 +2609,11 @@
                       ],
                       "courierAssignments": [
 
-                      ]
+                      ],
+                      "shopResponse": {
+                        "status": "requested"
+                      },
+                      "cancelReason": null
                     }
                   ]
                 }
@@ -2404,10 +2636,10 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec068cc1561546fea8fa",
-                  "clientId": "5bbaec068cc1561546fea8f5",
+                  "id": "5bbc44a58cc1562d83b8b869",
+                  "clientId": "5bbc44a58cc1562d83b8b864",
                   "courierId": null,
-                  "shopId": "5bbaec068cc1561546fea8f6",
+                  "shopId": "5bbc44a58cc1562d83b8b865",
                   "status": "new",
                   "priceTotal": null,
                   "products": [
@@ -2415,7 +2647,9 @@
                   ],
                   "courierAssignments": [
 
-                  ]
+                  ],
+                  "shopResponse": null,
+                  "cancelReason": null
                 }
               }
             }
@@ -2485,26 +2719,30 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec068cc1561546fea904",
-                  "clientId": "5bbaec068cc1561546fea903",
+                  "id": "5bbc44a58cc1562d83b8b874",
+                  "clientId": "5bbc44a58cc1562d83b8b873",
                   "courierId": null,
-                  "shopId": "5bbaec068cc1561546fea905",
+                  "shopId": "5bbc44a58cc1562d83b8b875",
                   "status": "new",
-                  "priceTotal": 918.12,
+                  "priceTotal": 406.06,
                   "products": [
                     {
-                      "id": "5bbaec068cc1561546fea909",
-                      "title": "African",
-                      "description": "Three egg whites with spinach, mushrooms, caramelized onions, tomatoes and low-fat feta cheese. With herbed quinoa, and your choice of rye or whole-grain toast.",
-                      "price": 306.04,
-                      "weight": "5 kilograms",
-                      "quantity": 3,
-                      "shopProductId": "5bbaec068cc1561546fea908"
+                      "id": "5bbc44a58cc1562d83b8b87a",
+                      "title": "Chinese",
+                      "description": "28-day aged 300g USDA Certified Prime Ribeye, rosemary-thyme garlic butter, with choice of two sides.",
+                      "price": 203.03,
+                      "weight": "9 metric tons",
+                      "quantity": 2,
+                      "shopProductId": "5bbc44a58cc1562d83b8b878"
                     }
                   ],
                   "courierAssignments": [
 
-                  ]
+                  ],
+                  "shopResponse": {
+                    "status": "requested"
+                  },
+                  "cancelReason": null
                 }
               }
             }
@@ -2525,26 +2763,30 @@
             "examples": {
               "application/json": {
                 "data": {
-                  "id": "5bbaec068cc1561546fea915",
-                  "clientId": "5bbaec068cc1561546fea914",
-                  "courierId": "5bbaec068cc1561546fea91c",
-                  "shopId": "5bbaec068cc1561546fea916",
+                  "id": "5bbc44a68cc1562d83b8b887",
+                  "clientId": "5bbc44a68cc1562d83b8b886",
+                  "courierId": "5bbc44a68cc1562d83b8b88f",
+                  "shopId": "5bbc44a68cc1562d83b8b888",
                   "status": "delivered",
-                  "priceTotal": 1602.04,
+                  "priceTotal": 1608.28,
                   "products": [
                     {
-                      "id": "5bbaec068cc1561546fea91a",
-                      "title": "Bar",
-                      "description": "Breaded fried chicken with waffles, and a side of maple syrup.",
-                      "price": 801.02,
-                      "weight": "3 centigrams",
-                      "quantity": 2,
-                      "shopProductId": "5bbaec068cc1561546fea919"
+                      "id": "5bbc44a68cc1562d83b8b88d",
+                      "title": "Healthy",
+                      "description": "Smoked salmon, poached eggs, diced red onions and Hollandaise sauce on an English muffin. With a side of roasted potatoes.",
+                      "price": 402.07,
+                      "weight": "1 metric ton",
+                      "quantity": 4,
+                      "shopProductId": "5bbc44a68cc1562d83b8b88b"
                     }
                   ],
                   "courierAssignments": [
 
-                  ]
+                  ],
+                  "shopResponse": {
+                    "status": "requested"
+                  },
+                  "cancelReason": null
                 }
               }
             }

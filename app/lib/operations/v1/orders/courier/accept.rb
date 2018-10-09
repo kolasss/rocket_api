@@ -3,22 +3,16 @@
 module Operations
   module V1
     module Orders
-      module Couriers
-        class Decline < ::Operations::V1::Base
+      module Courier
+        class Accept < ::Operations::V1::Base
           include Dry::Monads::Do.for(:call)
 
-          VALIDATOR = Dry::Validation.Schema do
-            required(:reason).filled(:str?)
-          end
-
-          def call(courier:, params:)
-            payload = yield VALIDATOR.call(params).to_monad
+          def call(courier)
             order = yield find_order(courier)
             yield check_order(order, courier)
             assignment = yield find_assignment(order, courier.id)
             yield validate_assignment(assignment)
-            yield update_assignment(assignment, payload[:reason])
-            yield update_courier(courier)
+            yield update_assignment(assignment)
             update_order(order)
           end
 
@@ -62,9 +56,8 @@ module Operations
             end
           end
 
-          def update_assignment(assignment, reason)
-            assignment.status = 'declined'
-            assignment.decline_reason = reason
+          def update_assignment(assignment)
+            assignment.status = 'accepted'
             if assignment.save
               Success(true)
             else
@@ -72,22 +65,10 @@ module Operations
             end
           end
 
-          def update_courier(courier)
-            courier.active_order = nil
-            if courier.save
-              Success(true)
-            else
-              Failure(courier: courier.errors.as_json)
-            end
-          end
-
           def update_order(order)
-            order.courier = nil
-            if order.save
-              Success(order)
-            else
-              Failure(order: order.errors.as_json)
-            end
+            response = order.shop_response
+            order.update(status: 'accepted') if response.status == 'accepted'
+            Success(order)
           end
         end
       end

@@ -35,7 +35,7 @@ Rails.application.routes.draw do
 
       namespace :courier do
         resource :ready, only: %i[create destroy], controller: :ready
-        namespace :active_order do
+        resource :active_order, only: [:show] do
           put :accept
           put :decline
           put :arrive
@@ -49,6 +49,10 @@ Rails.application.routes.draw do
           resources :products_categories, except: %i[index show] do
             resources :products, except: %i[index show]
           end
+        end
+        resources :orders, only: %i[index] do
+          put :accept
+          put :cancel
         end
       end
 

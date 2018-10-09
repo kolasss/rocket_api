@@ -3,9 +3,18 @@
 module Api
   module V1
     module Courier
-      class ActiveOrderController < ApplicationController
+      class ActiveOrdersController < ApplicationController
+        def show
+          @order = current_user.active_order
+          if @order.present?
+            render json: json_success(serialize_order)
+          else
+            head :no_content
+          end
+        end
+
         def accept
-          operation = Operations::V1::Orders::Couriers::Accept.new
+          operation = Operations::V1::Orders::Courier::Accept.new
           result = operation.call(current_user)
 
           if result.success?
@@ -20,7 +29,7 @@ module Api
         end
 
         def decline
-          operation = Operations::V1::Orders::Couriers::Decline.new
+          operation = Operations::V1::Orders::Courier::Decline.new
           result = operation.call(
             params: request.parameters,
             courier: current_user
@@ -38,7 +47,7 @@ module Api
         end
 
         def arrive
-          operation = Operations::V1::Orders::Couriers::Arrive.new
+          operation = Operations::V1::Orders::Courier::Arrive.new
           result = operation.call(current_user)
 
           if result.success?
@@ -53,7 +62,7 @@ module Api
         end
 
         def pick_up
-          operation = Operations::V1::Orders::Couriers::PickUp.new
+          operation = Operations::V1::Orders::Courier::PickUp.new
           result = operation.call(current_user)
 
           if result.success?
@@ -68,7 +77,7 @@ module Api
         end
 
         def deliver
-          operation = Operations::V1::Orders::Couriers::Deliver.new
+          operation = Operations::V1::Orders::Courier::Deliver.new
           result = operation.call(current_user)
 
           if result.success?

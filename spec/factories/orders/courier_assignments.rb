@@ -6,5 +6,9 @@ FactoryBot.define do
     status { 'proposed' }
 
     association :order, factory: :order
+
+    trait :accepted do
+      status { 'accepted' }
+    end
   end
 end

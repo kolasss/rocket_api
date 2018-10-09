@@ -3,13 +3,12 @@
 module Orders
   class Order
     include Mongoid::Document
+    include Mongoid::Timestamps
     # field :address, type: String
     # field :district, type: String
-    # field :address, type: String
     field :status, type: String
-    # field :courier_status, type: String
-    # field :shop_status, type: String
     field :price_total, type: BigDecimal
+    field :cancel_reason, type: String
 
     belongs_to(
       :client,
@@ -31,6 +30,11 @@ module Orders
       class_name: 'Orders::CourierAssignment',
       inverse_of: :order
     )
+    embeds_one(
+      :shop_response,
+      class_name: 'Orders::ShopResponse',
+      inverse_of: :order
+    )
 
     STATUSES = %w[
       new
@@ -39,7 +43,8 @@ module Orders
       courier_at_shop
       on_delivery
       delivered
-      canceled
+      canceled_supervisor
+      canceled_shop
     ].freeze
 
     validates :status, inclusion: { in: STATUSES }

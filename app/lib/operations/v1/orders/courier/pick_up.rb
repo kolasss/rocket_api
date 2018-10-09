@@ -3,7 +3,7 @@
 module Operations
   module V1
     module Orders
-      module Couriers
+      module Courier
         class PickUp < ::Operations::V1::Base
           include Dry::Monads::Do.for(:call)
 

@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# rubocop:disable Metrics/ClassLength
 module Operations
   module V1
     module Orders
@@ -63,14 +64,15 @@ module Operations
         def initialize_order(shop:, client:, products_params:)
           order = ::Orders::Order.new(
             shop: shop,
-            client: client
+            client: client,
+            status: 'new'
           )
 
           initialize_products(order, products_params)
           return Failure(:products_not_found) unless order.has_products?
 
           count_total_price(order)
-          configure_defaults(order)
+          initialize_shop_response(order)
 
           Success(order)
         end
@@ -122,10 +124,13 @@ module Operations
           end
         end
 
-        def configure_defaults(order)
-          order.status = 'new'
+        def initialize_shop_response(order)
+          order.build_shop_response(
+            status: 'requested'
+          )
         end
       end
     end
   end
 end
+# rubocop:enable Metrics/ClassLength
