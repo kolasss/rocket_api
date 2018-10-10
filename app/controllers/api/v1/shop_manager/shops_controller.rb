@@ -32,6 +32,7 @@ module Api
             :title,
             :description,
             { category_ids: [] },
+            { district_ids: [] },
             :minimum_order_price
           )
         end

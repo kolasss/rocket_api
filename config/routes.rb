@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       end
 
       namespace :admin do
+        resources :districts, except: [:show]
         resources :shops_categories, except: [:show]
         resources :shops do
           resources :products_categories, except: %i[index show] do
@@ -25,6 +26,7 @@ Rails.application.routes.draw do
         post :register, to: 'registration#create'
         post :login,    to: 'authentication#create'
         # delete  :logout,    to: 'authentication#destroy'
+        resources :districts, only: %i[index]
         resources :shops_categories, only: %i[index]
         resources :shops, only: %i[index show]
         resources :orders, except: %i[update destroy] do

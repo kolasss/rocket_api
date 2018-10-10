@@ -48,7 +48,11 @@ RSpec.describe 'shops', type: :request, tags: ['shop_manager shop'] do
                 type: :array,
                 items: { type: :string }
               },
-              minimum_order_price: { type: :number }
+              minimum_order_price: { type: :number },
+              district_ids: {
+                type: :array,
+                items: { type: :string }
+              }
             }
           }
         }

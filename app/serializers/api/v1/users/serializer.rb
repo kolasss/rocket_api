@@ -23,8 +23,11 @@ module Api
         end
 
         def serialize(object)
-          if object.is_a? ::Users::ShopManager
+          case object.class
+          when ::Users::ShopManager
             ShopManagerSerializer.new(object).build_schema
+          when ::Users::Client
+            ClientSerializer.new(object).build_schema
           else
             CommonSerializer.new(object).build_schema
           end

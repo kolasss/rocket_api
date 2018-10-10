@@ -6,6 +6,7 @@ FactoryBot.define do
     phone { Faker::PhoneNumber.unique.phone_number }
 
     factory :client, class: Users::Client do
+      association :district, factory: :district
       trait :with_code do
         code_hash { '1234' }
       end

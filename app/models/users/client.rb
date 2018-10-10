@@ -10,5 +10,10 @@ module Users
       inverse_of: :client,
       dependent: :restrict_with_error
     )
+    belongs_to(
+      :district,
+      class_name: 'Locations::District',
+      inverse_of: :manager
+    )
   end
 end

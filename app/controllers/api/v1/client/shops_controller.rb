@@ -5,8 +5,7 @@ module Api
     module Client
       class ShopsController < ApplicationController
         def index
-          # TODO: select shops by district
-          @shops = ::Shops::Shop.all.without(:products_categories)
+          @shops = current_user.district.shops.without(:products_categories)
 
           shops_json = Api::V1::Shops::CompactSerializer.new(
             @shops

@@ -9,8 +9,8 @@ module Api
             id: String,
             title: String,
             description: String,
-            category_ids: Array
-            # categories: Array
+            category_ids: Array,
+            district_ids: Array
           }
         end
 
@@ -18,12 +18,9 @@ module Api
           object.category_ids.map(&:to_s)
         end
 
-        # def categories
-        #   Api::V1::ShopsCategories::CompactSerializer.new(
-        #     # object.categories.only(:_id, :title)
-        #     object.categories
-        #   ).build_schema
-        # end
+        def district_ids
+          object.district_ids.map(&:to_s)
+        end
       end
     end
   end

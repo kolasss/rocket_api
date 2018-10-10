@@ -25,8 +25,6 @@ module ShopsFaker
   @prng = Random.new
 
   class << self
-    attr_reader :prng
-
     def generate_category
       Shops::Category.create!(
         title: Faker::Restaurant.unique.type
@@ -36,17 +34,18 @@ module ShopsFaker
     def generate_shop
       shop = Shops::Shop.create!(
         title: Faker::Restaurant.unique.name,
-        description: Faker::Restaurant.description
+        description: Faker::Restaurant.description,
+        districts: random_districts
       )
-      prng.rand(1..2).times do
+      @prng.rand(1..2).times do
         shop.categories << Shops::Category.all.sample
       end
     end
 
     def generate_products_for(shop)
-      prng.rand(2..3).times do
+      @prng.rand(2..3).times do
         category = generate_product_category_for(shop)
-        prng.rand(5..20).times do
+        @prng.rand(5..20).times do
           generate_product_for(category)
         end
       end
@@ -68,6 +67,10 @@ module ShopsFaker
         price: Faker::Number.decimal(3, 2),
         weight: Faker::Measurement.metric_weight
       )
+    end
+
+    def random_districts
+      Locations::District.all.sample(@prng.rand(1..2))
     end
   end
 end

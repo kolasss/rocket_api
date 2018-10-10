@@ -17,7 +17,10 @@ RSpec.describe 'shops', type: :request, tags: ['client shops'] do
     )
 
     get summary: 'list items' do
-      let!(:shop) { create(:shop) }
+      let(:district) { user.district }
+      let!(:shop) do
+        create(:shop, :with_district, districts_array: [district])
+      end
 
       produces 'application/json'
 
@@ -28,6 +31,7 @@ RSpec.describe 'shops', type: :request, tags: ['client shops'] do
           expect(items).to be_an_instance_of(Array)
           expect(items.size).to eq 1
           expect(items[0]['title']).to eq shop.title
+          expect(items[0]['districtIds']).to eq [district.id.to_s]
         end
         capture_example
       end

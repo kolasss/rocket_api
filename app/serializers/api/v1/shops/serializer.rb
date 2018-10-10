@@ -10,6 +10,7 @@ module Api
             title: String,
             description: String,
             categories: Array,
+            districts: Array,
             # time: String,
             products_categories: Array
           }
@@ -36,6 +37,12 @@ module Api
           #   serializer: CategoriesSerializer,
           #   raw: true
           # )
+        end
+
+        def districts
+          Api::V1::Districts::Serializer.new(
+            object.districts.only(:_id, :title)
+          ).build_schema
         end
 
         def products_categories
