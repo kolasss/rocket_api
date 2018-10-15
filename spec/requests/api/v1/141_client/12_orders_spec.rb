@@ -34,6 +34,8 @@ RSpec.describe 'orders', type: :request, tags: ['client orders'] do
     end
 
     post summary: 'create' do
+      let(:user) { create(:client, :with_address) }
+      let(:address) { user.addresses.first }
       let(:shop) { create(:shop, :with_product) }
       let(:item_attributes) { attributes_for(:order) }
       let(:product) { shop.products_categories.first.products.first }
@@ -61,7 +63,8 @@ RSpec.describe 'orders', type: :request, tags: ['client orders'] do
                     }
                   }
                 }
-              }
+              },
+              address_id: { type: :string }
             }
           }
         }
@@ -75,7 +78,8 @@ RSpec.describe 'orders', type: :request, tags: ['client orders'] do
                 id: product.id.to_s,
                 quantity: product_quantity
               }
-            ]
+            ],
+            address_id: address.id.to_s
           )
         }
       end
@@ -90,6 +94,10 @@ RSpec.describe 'orders', type: :request, tags: ['client orders'] do
           expect(item['products'][0]['title']).to eq product.title
           expect(item['priceTotal']).to(
             eq((product.price * product_quantity).to_f)
+          )
+          expect(item['address']['street']).to eq address.street
+          expect(item['address']['location']['lat']).to(
+            eq address.location.lat.to_f.truncate(5)
           )
         end
         capture_example

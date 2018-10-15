@@ -32,5 +32,6 @@ module Shops
       inverse_of: :shop,
       dependent: :destroy
     )
+    embeds_one :address, as: :addressable, class_name: 'Locations::Address'
   end
 end

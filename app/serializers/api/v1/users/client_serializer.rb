@@ -10,7 +10,8 @@ module Api
             name: String,
             phone: String,
             role: String,
-            district_id: String
+            district_id: String,
+            addresses: Array
           }
         end
 
@@ -20,6 +21,12 @@ module Api
 
         def district_id
           object.district_id&.to_s
+        end
+
+        def addresses
+          Api::V1::Addresses::Serializer.new(
+            object.addresses
+          ).build_schema
         end
       end
     end

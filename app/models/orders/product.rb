@@ -2,7 +2,13 @@
 
 module Orders
   class Product
-    include ::Shops::Products::Concerns::BaseProduct
+    include Mongoid::Document
+
+    field :title, type: String
+    # field :image, type: String
+    field :description, type: String
+    field :price, type: BigDecimal
+    field :weight, type: String
     field :quantity, type: Integer
     field :shop_product_id, type: BSON::ObjectId
 

@@ -35,6 +35,7 @@ module Orders
       class_name: 'Orders::ShopResponse',
       inverse_of: :order
     )
+    embeds_one :address, as: :addressable, class_name: 'Locations::Address'
 
     STATUSES = %w[
       new

@@ -12,7 +12,8 @@ module Api
             categories: Array,
             districts: Array,
             # time: String,
-            products_categories: Array
+            products_categories: Array,
+            address: Hash
           }
         end
 
@@ -48,6 +49,14 @@ module Api
         def products_categories
           Api::V1::ProductsCategories::Serializer.new(
             object.products_categories
+          ).build_schema
+        end
+
+        def address
+          return unless object.address?
+
+          Api::V1::Addresses::Serializer.new(
+            object.address
           ).build_schema
         end
       end

@@ -3,12 +3,17 @@
 module Api
   module V1
     module OrdersProducts
-      class Serializer < Api::V1::Products::Serializer
+      class Serializer < Api::V1::ObjectSerializer
         json_schema do
-          PRODUCT_FIELDS.merge(
+          {
+            id: String,
+            title: String,
+            description: String,
+            price: BigDecimal,
+            weight: String,
             quantity: Integer,
             shop_product_id: String
-          )
+          }
         end
 
         def shop_product_id

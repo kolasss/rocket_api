@@ -20,6 +20,7 @@ module Operations
                 end
               end
             end
+            required(:address_id).filled(:str?)
           end
         end
 
@@ -27,11 +28,13 @@ module Operations
         def call(params:, client:)
           payload = yield VALIDATOR.call(params).to_monad
           yield check_products_uniqueness(payload[:order][:products])
+          address = yield find_address(client, payload[:order][:address_id])
           shop = yield find_shop(payload[:order][:shop_id])
           order = yield initialize_order(
             shop: shop,
             client: client,
-            products_params: payload[:order][:products]
+            products_params: payload[:order][:products],
+            user_address: address
           )
           yield check_total_price(order.price_total, shop.minimum_order_price)
           save_order(order)
@@ -52,6 +55,15 @@ module Operations
           Success(true)
         end
 
+        def find_address(client, address_id)
+          address = client.addresses.where(id: address_id).first
+          if address.present?
+            Success(address)
+          else
+            Failure(:address_not_found)
+          end
+        end
+
         def find_shop(shop_id)
           shop = ::Shops::Shop.where(id: shop_id).first
           if shop.present?
@@ -61,13 +73,14 @@ module Operations
           end
         end
 
-        def initialize_order(shop:, client:, products_params:)
+        def initialize_order(shop:, client:, products_params:, user_address:)
           order = ::Orders::Order.new(
             shop: shop,
             client: client,
             status: 'new'
           )
 
+          initialize_address(order, user_address)
           initialize_products(order, products_params)
           return Failure(:products_not_found) unless order.has_products?
 
@@ -91,6 +104,13 @@ module Operations
           else
             Failure(order: order.errors.as_json)
           end
+        end
+
+        def initialize_address(order, user_address)
+          order.build_address(
+            user_address.attributes.except('_id', 'location')
+          )
+          order.address.location = user_address.location
         end
 
         def initialize_products(order, products_params)

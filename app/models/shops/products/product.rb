@@ -3,7 +3,13 @@
 module Shops
   module Products
     class Product
-      include ::Shops::Products::Concerns::BaseProduct
+      include Mongoid::Document
+
+      field :title, type: String
+      # field :image, type: String
+      field :description, type: String
+      field :price, type: BigDecimal
+      field :weight, type: String
 
       embedded_in(
         :category,

@@ -10,6 +10,16 @@ FactoryBot.define do
       trait :with_code do
         code_hash { '1234' }
       end
+
+      trait :with_address do
+        transient do
+          addresses_count { 1 }
+        end
+
+        after(:create) do |user, evaluator|
+          create_list(:address, evaluator.addresses_count, addressable: user)
+        end
+      end
     end
 
     factory :shop_manager, class: Users::ShopManager do

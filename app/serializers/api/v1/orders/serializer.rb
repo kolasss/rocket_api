@@ -15,7 +15,8 @@ module Api
             products: Array,
             courier_assignments: Array,
             shop_response: Hash,
-            cancel_reason: String
+            cancel_reason: String,
+            address: Hash
           }
         end
 
@@ -48,6 +49,14 @@ module Api
 
           ShopResponseSerializer.new(
             object.shop_response
+          ).build_schema
+        end
+
+        def address
+          return unless object.address?
+
+          Api::V1::Addresses::Serializer.new(
+            object.address
           ).build_schema
         end
       end
