@@ -18,7 +18,7 @@ RSpec.describe 'districts', type: :request,
     )
 
     get summary: 'list items' do
-      let(:district) { user.district }
+      let!(:district) { create(:district) }
 
       produces 'application/json'
 

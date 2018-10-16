@@ -10,17 +10,12 @@ module Api
             name: String,
             phone: String,
             role: String,
-            district_id: String,
             addresses: Array
           }
         end
 
         def role
           'client'
-        end
-
-        def district_id
-          object.district_id&.to_s
         end
 
         def addresses

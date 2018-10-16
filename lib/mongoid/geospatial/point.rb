@@ -73,7 +73,7 @@ module Mongoid
         DECIMAL_PRECISION = 5
         PRECISION = 3 + DECIMAL_PRECISION
         def parse_bigdecimal(num)
-          BigDecimal(num, PRECISION).truncate(DECIMAL_PRECISION)
+          BigDecimal(num, PRECISION).round(DECIMAL_PRECISION)
         end
 
         private

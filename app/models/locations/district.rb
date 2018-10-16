@@ -11,11 +11,5 @@ module Locations
       inverse_of: :districts,
       dependent: :restrict_with_error
     )
-    has_many(
-      :clients,
-      class_name: 'Users::Client',
-      inverse_of: :district,
-      dependent: :restrict_with_error
-    )
   end
 end

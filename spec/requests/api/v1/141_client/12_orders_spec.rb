@@ -97,7 +97,7 @@ RSpec.describe 'orders', type: :request, tags: ['client orders'] do
           )
           expect(item['address']['street']).to eq address.street
           expect(item['address']['location']['lat']).to(
-            eq address.location.lat.to_f.truncate(5)
+            eq address.location.lat.to_f
           )
         end
         capture_example

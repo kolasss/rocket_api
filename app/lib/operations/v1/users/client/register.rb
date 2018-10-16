@@ -12,7 +12,6 @@ module Operations
               optional(:name).filled(:str?)
               # required(:phone).filled(:str?, format?: GITHUB_LINK)
               required(:phone).filled(:str?)
-              required(:district_id).filled(:str?)
             end
           end
 

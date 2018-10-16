@@ -7,7 +7,7 @@ RSpec.describe 'shops', type: :request, tags: ['client shops'] do
   let(:token) { UserAuthentication::User.new(user: user).new_token }
   let(:Authorization) { "Bearer #{token}" }
 
-  path '/api/v1/client/shops' do
+  path '/api/v1/client/shops?district_id={district_id}' do
     parameter(
       :Authorization,
       in: :header,
@@ -17,10 +17,13 @@ RSpec.describe 'shops', type: :request, tags: ['client shops'] do
     )
 
     get summary: 'list items' do
-      let(:district) { user.district }
       let!(:shop) do
-        create(:shop, :with_district, districts_array: [district])
+        create(:shop, :with_district)
       end
+
+      parameter :district_id, in: :path, type: :string, required: true
+      let(:district) { shop.districts.first }
+      let(:district_id) { district.id.to_s }
 
       produces 'application/json'
 

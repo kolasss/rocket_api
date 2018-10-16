@@ -20,16 +20,13 @@ RSpec.describe 'client registration', type: :request,
             type: :object,
             properties: {
               name: { type: :string },
-              phone: { type: :string },
-              district_id: { type: :string }
+              phone: { type: :string }
             }
           }
         }
       }
       let(:body) do
-        { user: item_attributes.merge(
-          district_id: district.id.to_s
-        ) }
+        { user: item_attributes }
       end
 
       response(201, description: 'successfully created') do
