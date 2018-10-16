@@ -7,7 +7,7 @@ RSpec.describe 'shops', type: :request, tags: ['client shops'] do
   let(:token) { UserAuthentication::User.new(user: user).new_token }
   let(:Authorization) { "Bearer #{token}" }
 
-  path '/api/v1/client/shops?district_id={district_id}' do
+  path '/api/v1/client/shops' do
     parameter(
       :Authorization,
       in: :header,
@@ -21,7 +21,7 @@ RSpec.describe 'shops', type: :request, tags: ['client shops'] do
         create(:shop, :with_district)
       end
 
-      parameter :district_id, in: :path, type: :string, required: true
+      parameter :district_id, in: :query, type: :string, required: true
       let(:district) { shop.districts.first }
       let(:district_id) { district.id.to_s }
 
@@ -59,6 +59,33 @@ RSpec.describe 'shops', type: :request, tags: ['client shops'] do
 
       response(200, description: 'success') do
         capture_example
+      end
+    end
+  end
+
+  describe 'public access' do
+    let!(:shop) { create(:shop, :with_district) }
+    let(:district) { shop.districts.first }
+    let(:district_id) { district.id.to_s }
+    let(:shop_id) { shop.id.to_s }
+
+    context 'to index' do
+      it 'allowed' do
+        get "/api/v1/client/shops?district_id=#{district_id}"
+        expect(response).to have_http_status(200)
+        json = JSON.parse(response.body)
+        items = json['data']['items']
+        expect(items).to be_an_instance_of(Array)
+        expect(items.size).to eq 1
+        expect(items[0]['title']).to eq shop.title
+        expect(items[0]['districtIds']).to eq [district.id.to_s]
+      end
+    end
+
+    context 'to show' do
+      it 'allowed' do
+        get "/api/v1/client/shops/#{shop_id}"
+        expect(response).to have_http_status(200)
       end
     end
   end

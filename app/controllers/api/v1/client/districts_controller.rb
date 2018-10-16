@@ -4,6 +4,8 @@ module Api
   module V1
     module Client
       class DistrictsController < ApplicationController
+        skip_before_action :authenticate
+
         def index
           @districts = ::Locations::District.all
 

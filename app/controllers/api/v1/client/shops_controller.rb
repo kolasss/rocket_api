@@ -4,6 +4,8 @@ module Api
   module V1
     module Client
       class ShopsController < ApplicationController
+        skip_before_action :authenticate
+
         def index
           district = ::Locations::District.find(params[:district_id])
           @shops = district.shops.without(:products_categories)

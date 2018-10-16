@@ -34,4 +34,18 @@ RSpec.describe 'shops categories', type: :request,
       end
     end
   end
+
+  describe 'public access' do
+    let!(:category) { create(:shop_category) }
+
+    it 'allowed' do
+      get '/api/v1/client/shops_categories'
+      expect(response).to have_http_status(200)
+      json = JSON.parse(response.body)
+      items = json['data']['items']
+      expect(items).to be_an_instance_of(Array)
+      expect(items.size).to eq 1
+      expect(items[0]['title']).to eq category.title
+    end
+  end
 end

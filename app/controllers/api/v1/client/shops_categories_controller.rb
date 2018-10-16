@@ -4,6 +4,8 @@ module Api
   module V1
     module Client
       class ShopsCategoriesController < ApplicationController
+        skip_before_action :authenticate
+
         def index
           @categories = ::Shops::Category.all
 
