@@ -5,8 +5,7 @@ require 'swagger_helper'
 RSpec.describe 'client registration', type: :request,
                                       tags: ['client registration'] do
   path '/api/v1/client/register' do
-    post summary: 'sign up',
-         description: 'регистрация нового пользователя' do
+    post summary: 'sign up' do
       let(:district) { create(:district) }
       let(:item_attributes) { attributes_for(:client) }
 

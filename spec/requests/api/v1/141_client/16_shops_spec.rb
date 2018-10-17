@@ -16,7 +16,8 @@ RSpec.describe 'shops', type: :request, tags: ['client shops'] do
       description: 'Bearer token'
     )
 
-    get summary: 'list items' do
+    description = 'send query parameter district_id'
+    get summary: 'list items', description: description do
       let!(:shop) do
         create(:shop, :with_district)
       end

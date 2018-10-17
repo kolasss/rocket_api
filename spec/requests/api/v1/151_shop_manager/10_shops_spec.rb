@@ -35,6 +35,9 @@ RSpec.describe 'shops', type: :request, tags: ['shop_manager shop'] do
       consumes 'application/json'
 
       let(:new_title) { 'new title' }
+      let(:new_address) { 'new address title' }
+      let(:new_lat) { 123.04538 }
+      let(:new_lon) { -45.34566 }
 
       parameter :body, in: :body, required: true, schema: {
         type: :object,
@@ -52,13 +55,44 @@ RSpec.describe 'shops', type: :request, tags: ['shop_manager shop'] do
               district_ids: {
                 type: :array,
                 items: { type: :string }
+              },
+              address: {
+                type: :object,
+                properties: {
+                  title: { type: :string },
+                  street: { type: :string },
+                  building: { type: :string },
+                  apartment: { type: :string },
+                  entrance: { type: :string },
+                  floor: { type: :string },
+                  intercom: { type: :string },
+                  note: { type: :string },
+                  location: {
+                    type: :object,
+                    properties: {
+                      lat: { type: :number },
+                      lon: { type: :number }
+                    }
+                  }
+                }
               }
             }
           }
         }
       }
       let(:body) do
-        { shop: { title: new_title } }
+        {
+          shop: {
+            title: new_title,
+            address: {
+              title: new_address,
+              location: {
+                lat: new_lat,
+                lon: new_lon
+              }
+            }
+          }
+        }
       end
 
       response 200, description: 'success' do
@@ -66,6 +100,9 @@ RSpec.describe 'shops', type: :request, tags: ['shop_manager shop'] do
           json = JSON.parse(response.body)
           item = json['data']
           expect(item['title']).to eq new_title
+          expect(item['address']['title']).to eq new_address
+          expect(item['address']['location']['lat']).to eq new_lat
+          expect(item['address']['location']['lon']).to eq new_lon
         end
         capture_example
       end

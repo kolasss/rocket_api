@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/stympy/faker.git
-  revision: b1532ea3a546ce691529551eb7a90948dac3a2e7
+  revision: 4e264df2eb8b682ee94e8b0e0e045dbff96ad250
   specs:
     faker (1.9.1)
       i18n (>= 0.7)
@@ -74,7 +74,7 @@ GEM
       dry-container (~> 0.2, >= 0.2.6)
       dry-core (~> 0.2)
       dry-equalizer (~> 0.2)
-    dry-monads (1.0.1)
+    dry-monads (1.1.0)
       concurrent-ruby (~> 1.0)
       dry-core (~> 0.4, >= 0.4.4)
       dry-equalizer
@@ -137,7 +137,7 @@ GEM
     nio4r (2.3.1)
     nokogiri (1.8.5)
       mini_portile2 (~> 2.3.0)
-    oj (3.6.11)
+    oj (3.6.12)
     pry (0.11.3)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)

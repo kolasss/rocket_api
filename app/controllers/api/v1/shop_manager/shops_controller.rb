@@ -5,37 +5,29 @@ module Api
     module ShopManager
       class ShopsController < ApplicationController
         def show
-          set_shop
+          @shop = current_user.shop
           render json: json_success(serialize_shop)
         end
 
         def update
-          set_shop
-          if @shop.update(shop_params)
+          operation = Operations::V1::Shops::Update.new
+          result = operation.call(
+            params: request.parameters,
+            shop: current_user.shop
+          )
+
+          if result.success?
+            @shop = result.value!
             render json: json_success(serialize_shop)
           else
             render_error(
               status: :unprocessable_entity,
-              errors: @shop.errors.as_json
+              errors: result.failure
             )
           end
         end
 
         private
-
-        def set_shop
-          @shop = current_user.shop
-        end
-
-        def shop_params
-          params.require(:shop).permit(
-            :title,
-            :description,
-            { category_ids: [] },
-            { district_ids: [] },
-            :minimum_order_price
-          )
-        end
 
         def serialize_shop
           Api::V1::Shops::Serializer.new(@shop).build_schema

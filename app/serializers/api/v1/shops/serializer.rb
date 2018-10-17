@@ -13,7 +13,8 @@ module Api
             districts: Array,
             # time: String,
             products_categories: Array,
-            address: Hash
+            address: Hash,
+            minimum_order_price: BigDecimal
           }
         end
 

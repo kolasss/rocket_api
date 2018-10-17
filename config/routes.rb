@@ -33,6 +33,7 @@ Rails.application.routes.draw do
           put :cancel
           put :make_request
         end
+        resources :addresses, except: %i[show]
       end
 
       namespace :courier do

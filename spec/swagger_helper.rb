@@ -14,7 +14,18 @@ RSpec.configure do |config|
       info: {
         title: 'Rocket API',
         version: 'v1'
-      }
+      },
+      host: 'back.foodkit.com.ua',
+      schemes: ['https'],
+      tags: [
+        {
+          name: 'user authentication',
+          description: 'Получение токена для всех кроме client'
+        }, {
+          name: 'client registration',
+          description: 'регистрация нового client'
+        }
+      ]
     }
   }
 end
