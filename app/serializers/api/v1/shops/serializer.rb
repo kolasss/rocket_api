@@ -14,7 +14,9 @@ module Api
             # time: String,
             products_categories: Array,
             address: Hash,
-            minimum_order_price: BigDecimal
+            minimum_order_price: BigDecimal,
+            image: Array,
+            logo: Array
           }
         end
 
@@ -23,22 +25,9 @@ module Api
         # end
 
         def categories
-          # object.categories.map do |category|
-          # object.categories.pluck(:_id, :title).map do |category|
-          # object.categories.only(:_id, :title).map do |category|
-          #   serializer = Api::V1::ShopsCategories::CompactSerializer
-          #   # serializer = CategoriesSerializer
-          #   serializer.new(category).build_schema
-          # end
-          # serializer = Api::V1::ShopsCategories::CompactSerializer
           Api::V1::ShopsCategories::CompactSerializer.new(
             object.categories.only(:_id, :title)
           ).build_schema
-          # Surrealist.surrealize_collection(
-          #   object.categories.only(:_id, :title),
-          #   serializer: CategoriesSerializer,
-          #   raw: true
-          # )
         end
 
         def districts
@@ -59,6 +48,18 @@ module Api
           Api::V1::Addresses::Serializer.new(
             object.address
           ).build_schema
+        end
+
+        def image
+          return if object.image.blank?
+
+          object.image.map { |version, file| { version => file.url } }
+        end
+
+        def logo
+          return if object.logo.blank?
+
+          object.logo.map { |version, file| { version => file.url } }
         end
       end
     end

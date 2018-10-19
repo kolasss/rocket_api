@@ -41,11 +41,20 @@ module Api
 
         def update
           set_shop
-          if @shop.update(shop_params)
+          operation = Operations::V1::Shops::Update.new
+          result = operation.call(
+            params: request.parameters,
+            shop: @shop
+          )
+
+          if result.success?
+            @shop = result.value!
             render json: json_success(serialize_shop)
           else
-            # render json: @shop.errors, status: :unprocessable_entity
-            render_shop_error
+            render_error(
+              status: :unprocessable_entity,
+              errors: result.failure
+            )
           end
         end
 
@@ -70,7 +79,9 @@ module Api
             :description,
             { category_ids: [] },
             { district_ids: [] },
-            :minimum_order_price
+            :minimum_order_price,
+            :image,
+            :logo
           )
         end
 

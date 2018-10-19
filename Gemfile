@@ -31,6 +31,11 @@ gem 'surrealist' # json serializer
 gem 'dry-monads' # for operations
 gem 'dry-validation' # validations
 
+gem 'aws-sdk-s3', '~> 1.2' # aws s3 api
+gem 'image_processing', '~> 1.0' # process images
+gem 'shrine', '~> 2.0' # file uploader
+gem 'shrine-mongoid'
+
 # TODO: remove github source after release > 1.9.1
 gem 'faker', github: 'stympy/faker' # fake data generator
 

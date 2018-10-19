@@ -10,8 +10,15 @@ module Api
             title: String,
             description: String,
             price: BigDecimal,
-            weight: String
+            weight: String,
+            image: Array
           }
+        end
+
+        def image
+          return if object.image.blank?
+
+          object.image.map { |version, file| { version => file.url } }
         end
       end
     end

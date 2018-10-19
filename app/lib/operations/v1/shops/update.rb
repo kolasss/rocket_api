@@ -11,7 +11,7 @@ module Operations
             optional(:title).filled(:str?)
             optional(:description).filled(:str?)
             optional(:minimum_order_price).value(
-              :filled?, type?: Numeric, gteq?: 0
+              :filled?, :numeric?, gteq?: 0
             )
             optional(:category_ids).value(min_size?: 1) { each(:str?) }
             optional(:district_ids).value(min_size?: 1) { each(:str?) }
@@ -29,6 +29,8 @@ module Operations
                 required(:lon).filled(:float?)
               end
             end
+            optional(:image).filled(:file?)
+            optional(:logo).filled(:file?)
           end
         end
 
@@ -73,6 +75,8 @@ module Operations
         end
 
         def update_shop(shop, shop_params)
+          # binding.pry
+          # Rails.logger.warn shop_params
           shop.assign_attributes(shop_params)
 
           if shop.save

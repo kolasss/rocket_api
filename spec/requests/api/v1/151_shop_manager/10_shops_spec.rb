@@ -30,9 +30,10 @@ RSpec.describe 'shops', type: :request, tags: ['shop_manager shop'] do
       end
     end
 
-    put summary: 'update an item' do
+    description = 'image and logo have type file'
+    put summary: 'update an item', description: description do
       produces 'application/json'
-      consumes 'application/json'
+      consumes 'application/json', 'multipart/form-data'
 
       let(:new_title) { 'new title' }
       let(:new_address) { 'new address title' }
@@ -75,7 +76,9 @@ RSpec.describe 'shops', type: :request, tags: ['shop_manager shop'] do
                     }
                   }
                 }
-              }
+              },
+              image: { type: :string },
+              logo: { type: :string }
             }
           }
         }

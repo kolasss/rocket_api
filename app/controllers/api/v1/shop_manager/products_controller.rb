@@ -56,7 +56,8 @@ module Api
             :title,
             :description,
             :price,
-            :weight
+            :weight,
+            :image
           )
         end
 

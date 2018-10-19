@@ -21,3 +21,5 @@
 
 # Igonre gems
 /vendor/bundle/
+
+/public/uploads/

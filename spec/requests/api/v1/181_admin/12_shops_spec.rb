@@ -33,13 +33,14 @@ RSpec.describe 'shops', type: :request, tags: ['admin shops'] do
       end
     end
 
-    post summary: 'create' do
+    description = 'image and logo have type file'
+    post summary: 'create', description: description do
       let(:category) { create(:shop_category) }
       let(:district) { create(:district) }
       let(:item_attributes) { attributes_for(:shop) }
 
       produces 'application/json'
-      consumes 'application/json'
+      consumes 'application/json', 'multipart/form-data'
 
       parameter :body, in: :body, required: true, schema: {
         type: :object,
@@ -57,11 +58,14 @@ RSpec.describe 'shops', type: :request, tags: ['admin shops'] do
               district_ids: {
                 type: :array,
                 items: { type: :string }
-              }
+              },
+              image: { type: :string },
+              logo: { type: :string }
             }
           }
         }
       }
+      # parameter 'shop[image]', in: :formData, type: :file
       let(:body) do
         { shop: item_attributes.merge(
           category_ids: [category.id.to_s],
@@ -103,9 +107,10 @@ RSpec.describe 'shops', type: :request, tags: ['admin shops'] do
       end
     end
 
-    put summary: 'update an item' do
+    description = 'image and logo have type file'
+    put summary: 'update an item', description: description do
       produces 'application/json'
-      consumes 'application/json'
+      consumes 'application/json', 'multipart/form-data'
 
       let(:new_title) { 'new title' }
 
@@ -125,7 +130,9 @@ RSpec.describe 'shops', type: :request, tags: ['admin shops'] do
               district_ids: {
                 type: :array,
                 items: { type: :string }
-              }
+              },
+              image: { type: :string },
+              logo: { type: :string }
             }
           }
         }

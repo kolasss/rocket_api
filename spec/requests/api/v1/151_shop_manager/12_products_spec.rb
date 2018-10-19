@@ -22,12 +22,12 @@ RSpec.describe 'products', type: :request,
 
     parameter :category_id, in: :path, type: :string, required: true
 
-    post summary: 'create',
-         description: 'создает новую товар в данной категории' do
+    description = %(создает новую товар в данной категории, image has type file)
+    post summary: 'create', description: description do
       let(:item_attributes) { attributes_for(:product) }
 
       produces 'application/json'
-      consumes 'application/json'
+      consumes 'application/json', 'multipart/form-data'
 
       parameter :body, in: :body, required: true, schema: {
         type: :object,
@@ -38,7 +38,8 @@ RSpec.describe 'products', type: :request,
               title: { type: :string },
               description: { type: :string },
               price: { type: :number },
-              weight: { type: :string }
+              weight: { type: :string },
+              image: { type: :string }
             }
           }
         }
@@ -73,9 +74,10 @@ RSpec.describe 'products', type: :request,
     let(:product) { create(:product, category: category) }
     let(:product_id) { product.id.to_s }
 
-    put summary: 'update an item' do
+    description = %(image has type file)
+    put summary: 'update an item', description: description do
       produces 'application/json'
-      consumes 'application/json'
+      consumes 'application/json', 'multipart/form-data'
 
       let(:new_title) { 'new title' }
 
@@ -88,7 +90,8 @@ RSpec.describe 'products', type: :request,
               title: { type: :string },
               description: { type: :string },
               price: { type: :number },
-              weight: { type: :string }
+              weight: { type: :string },
+              image: { type: :string }
             }
           }
         }

@@ -3,10 +3,13 @@
 module Shops
   class Shop
     include Mongoid::Document
+    include ImageUploader[:image]
+    include ImageUploader[:logo]
+
     field :title, type: String
-    # field :image, type: String
+    field :image_data, type: Hash
+    field :logo_data, type: Hash
     field :description, type: String
-    # field :coordinates, type: String
     field :minimum_order_price, type: BigDecimal
 
     has_and_belongs_to_many(
