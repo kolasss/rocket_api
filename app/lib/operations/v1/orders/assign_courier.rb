@@ -6,6 +6,8 @@ module Operations
       class AssignCourier < ::Operations::V1::Base
         include Dry::Monads::Do.for(:call)
 
+        DECLINE_REASON = 'order assigned to another courier'
+
         def call(id:, courier_id:)
           order = yield find_order(id)
           yield check_status(order)
@@ -57,6 +59,7 @@ module Operations
 
         def update_order(order, courier)
           order.courier = courier
+          unassign_another_couriers(order, courier)
           build_assignment(order, courier)
 
           # TODO: transactions only allowed on replica sets
@@ -71,6 +74,31 @@ module Operations
           else
             Failure(order: order.errors.as_json)
           end
+        end
+
+        def unassign_another_couriers(order, courier)
+          assignments = order.courier_assignments
+                             .where(status: 'proposed')
+                             .not(id: courier.id)
+          return if assignments.empty?
+
+          assignments.each do |assignment|
+            decline_assignment(assignment)
+            unassign_courier(assignment.courier_id)
+          end
+        end
+
+        def decline_assignment(assignment)
+          assignment.status = 'declined'
+          assignment.decline_reason = DECLINE_REASON
+        end
+
+        def unassign_courier(courier_id)
+          courier = ::Users::Courier.where(id: courier_id).first
+          return if courier.blank?
+
+          courier.active_order = nil
+          courier.save
         end
 
         def build_assignment(order, courier)
