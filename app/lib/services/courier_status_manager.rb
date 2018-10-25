@@ -5,12 +5,12 @@ module Services
     READY_KEY = 'couriers:status:ready'
     TTL_MINUTES = 10
 
-    # all couriers with time from now to infinity
+    # return couriers ids with time from now to infinity
     def actual
       redis.zrangebyscore(READY_KEY, score_limit, '+inf')
     end
 
-    # store courier with time = now + ttl
+    # store courier id with time = now + ttl
     def add(id)
       redis.zadd(READY_KEY, new_score, id)
     end
@@ -19,8 +19,13 @@ module Services
       redis.zrem(READY_KEY, id)
     end
 
-    # remove couriers with time older than now
-    def clear_old
+    # return couriers ids with time older than now
+    def outdated
+      redis.zrangebyscore(READY_KEY, 0, score_limit)
+    end
+
+    # remove couriers ids with time older than now
+    def clear_outdated
       redis.zremrangebyscore(READY_KEY, 0, score_limit)
     end
 

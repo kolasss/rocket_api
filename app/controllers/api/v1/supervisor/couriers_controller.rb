@@ -7,7 +7,7 @@ module Api
         def index
           service = Services::CourierStatusManager.new
           ids = service.actual
-          @couriers = ::Users::Courier.in(id: ids)
+          @couriers = ::Users::Courier.where(status: 'online').in(id: ids)
 
           couriers_json = Api::V1::Users::Serializer.new(
             @couriers

@@ -179,6 +179,7 @@ RSpec.describe 'active_order', type: :request, tags: ['courier active_order'] do
     let!(:order) do
       create(:order, :on_delivery, courier_id: user.id)
     end
+    let!(:shift) { create(:shift, courier: user) }
 
     before do
       user.update(active_order_id: order.id)

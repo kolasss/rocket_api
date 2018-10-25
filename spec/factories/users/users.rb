@@ -26,6 +26,7 @@ FactoryBot.define do
     end
 
     factory :courier, class: Users::Courier do
+      status { 'online' }
     end
 
     factory :supervisor, class: Users::Supervisor do

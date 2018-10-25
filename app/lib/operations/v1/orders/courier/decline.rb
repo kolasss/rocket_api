@@ -74,6 +74,7 @@ module Operations
 
           def update_courier(courier)
             courier.active_order = nil
+            courier.status = 'online'
             if courier.save
               Success(true)
             else

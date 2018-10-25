@@ -37,7 +37,7 @@ Rails.application.routes.draw do
       end
 
       namespace :courier do
-        resource :ready, only: %i[create destroy], controller: :ready
+        resource :shift, only: %i[create destroy]
         resource :active_order, only: [:show] do
           put :accept
           put :decline

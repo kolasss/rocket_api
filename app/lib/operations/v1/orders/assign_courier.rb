@@ -15,7 +15,6 @@ module Operations
           yield validate_assignment(order, courier)
           yield update_order(order, courier)
           yield update_courier(order, courier)
-          yield unready_courier(courier)
           Success(order)
         end
 
@@ -98,6 +97,7 @@ module Operations
           return if courier.blank?
 
           courier.active_order = nil
+          courier.status = 'online' if courier.status == 'on_delivery'
           courier.save
         end
 
@@ -111,17 +111,13 @@ module Operations
 
         def update_courier(order, courier)
           courier.active_order = order
+          courier.status = 'on_delivery'
 
           if courier.save
             Success(courier)
           else
             Failure(courier: courier.errors.as_json)
           end
-        end
-
-        def unready_courier(courier)
-          operation = Operations::V1::Couriers::Unready.new
-          operation.call(courier)
         end
       end
     end

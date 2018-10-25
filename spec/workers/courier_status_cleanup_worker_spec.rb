@@ -7,10 +7,10 @@ RSpec.describe CourierStatusCleanupWorker, type: :worker do
   it { is_expected.to be_retryable false }
 
   it 'calls clear_old' do
-    service = instance_double('Services::CourierStatusManager')
-    expect(service).to receive(:clear_old)
+    operation = instance_double('Operations::V1::Couriers::Shifts::AutoStop')
+    expect(operation).to receive(:call)
 
-    expect(subject).to receive(:service).and_return(service)
+    expect(subject).to receive(:operation).and_return(operation)
     subject.perform
   end
 end

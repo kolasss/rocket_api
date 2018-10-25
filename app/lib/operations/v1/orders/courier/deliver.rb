@@ -12,6 +12,7 @@ module Operations
             yield check_order(order, courier)
             yield update_order(order)
             yield update_courier(courier)
+            yield count_delivery(courier)
             Success(order)
           end
 
@@ -47,10 +48,22 @@ module Operations
 
           def update_courier(courier)
             courier.active_order = nil
+            courier.status = 'online'
             if courier.save
               Success(true)
             else
               Failure(courier: courier.errors.as_json)
+            end
+          end
+
+          def count_delivery(courier)
+            shift = courier.shifts.current
+            return Failure(:shift_not_found) if shift.blank?
+
+            if shift.inc(delivered: 1)
+              Success(true)
+            else
+              Failure(shift: shift.errors.as_json)
             end
           end
         end

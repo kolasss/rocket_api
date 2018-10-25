@@ -5,12 +5,12 @@ class CourierStatusCleanupWorker
   sidekiq_options retry: false
 
   def perform
-    service.clear_old
+    operation.call
   end
 
   private
 
-  def service
-    @service ||= Services::CourierStatusManager.new
+  def operation
+    @operation ||= Operations::V1::Couriers::Shifts::AutoStop.new
   end
 end

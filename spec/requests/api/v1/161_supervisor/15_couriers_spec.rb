@@ -22,8 +22,9 @@ RSpec.describe 'couriers', type: :request, tags: ['supervisor couriers'] do
       let!(:courier2) { create(:courier) }
 
       before do
-        operation = Operations::V1::Couriers::Ready.new
-        operation.call(courier1)
+        # add courier id to redis
+        service = Services::CourierStatusManager.new
+        service.add(courier1.id)
       end
 
       produces 'application/json'

@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/stympy/faker.git
-  revision: ebaa7d9a2bc2bc1ad7968c90bd52e6f923a2b7f7
+  revision: 098f0455d5c91ae55e5e4ece32e117c557dabbee
   specs:
     faker (1.9.1)
       i18n (>= 0.7)
@@ -53,16 +53,16 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (9.0.0)
     aws-eventstream (1.0.1)
-    aws-partitions (1.105.0)
-    aws-sdk-core (3.32.0)
+    aws-partitions (1.106.0)
+    aws-sdk-core (3.35.0)
       aws-eventstream (~> 1.0)
       aws-partitions (~> 1.0)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-kms (1.9.0)
+    aws-sdk-kms (1.11.0)
       aws-sdk-core (~> 3, >= 3.26.0)
       aws-sigv4 (~> 1.0)
-    aws-sdk-s3 (1.21.0)
+    aws-sdk-s3 (1.23.0)
       aws-sdk-core (~> 3, >= 3.26.0)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.0)
@@ -78,7 +78,7 @@ GEM
     crass (1.0.4)
     database_cleaner (1.7.0)
     diff-lcs (1.3)
-    down (4.6.0)
+    down (4.6.1)
       addressable (~> 2.5)
     dry-configurable (0.7.0)
       concurrent-ruby (~> 1.0)
@@ -213,7 +213,7 @@ GEM
     rspec-mocks (3.8.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.8.0)
-    rspec-rails (3.8.0)
+    rspec-rails (3.8.1)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       railties (>= 3.0)
