@@ -16,7 +16,7 @@ RSpec.describe 'shift', type: :request, tags: ['courier shift'] do
       description: 'Bearer token'
     )
 
-    description = %(Сообщение серверу о то что курьер готов к заказу)
+    description = %(Сообщение серверу о то что курьер начал смену)
     post summary: 'set status to online', description: description do
       let(:user) { create(:courier, status: 'offline') }
 

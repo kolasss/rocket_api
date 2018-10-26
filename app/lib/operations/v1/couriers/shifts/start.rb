@@ -19,7 +19,7 @@ module Operations
           def check_courier(courier)
             if !courier.is_a?(::Users::Courier)
               Failure(:user_is_not_courier)
-            elsif courier.status != 'offline'
+            elsif courier.status.present? && courier.status != 'offline'
               Failure(invalid_status: courier.status)
             else
               Success(true)

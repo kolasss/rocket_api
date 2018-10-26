@@ -38,6 +38,7 @@ Rails.application.routes.draw do
 
       namespace :courier do
         resource :shift, only: %i[create destroy]
+        resource :geoposition, only: %i[create]
         resource :active_order, only: [:show] do
           put :accept
           put :decline

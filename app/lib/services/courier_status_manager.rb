@@ -2,31 +2,31 @@
 
 module Services
   class CourierStatusManager
-    READY_KEY = 'couriers:status:ready'
+    REDIS_KEY = 'couriers:status:online'
     TTL_MINUTES = 10
 
     # return couriers ids with time from now to infinity
     def actual
-      redis.zrangebyscore(READY_KEY, score_limit, '+inf')
+      redis.zrangebyscore(REDIS_KEY, score_limit, '+inf')
     end
 
     # store courier id with time = now + ttl
     def add(id)
-      redis.zadd(READY_KEY, new_score, id)
+      redis.zadd(REDIS_KEY, new_score, id)
     end
 
     def remove(id)
-      redis.zrem(READY_KEY, id)
+      redis.zrem(REDIS_KEY, id)
     end
 
     # return couriers ids with time older than now
     def outdated
-      redis.zrangebyscore(READY_KEY, 0, score_limit)
+      redis.zrangebyscore(REDIS_KEY, 0, score_limit)
     end
 
     # remove couriers ids with time older than now
     def clear_outdated
-      redis.zremrangebyscore(READY_KEY, 0, score_limit)
+      redis.zremrangebyscore(REDIS_KEY, 0, score_limit)
     end
 
     private

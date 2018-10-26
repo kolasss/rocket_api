@@ -28,6 +28,8 @@ module Api
             ShopManagerSerializer.new(object).build_schema
           when ::Users::Client
             ClientSerializer.new(object).build_schema
+          when ::Users::Courier
+            CourierSerializer.new(object).build_schema
           else
             CommonSerializer.new(object).build_schema
           end

@@ -5,6 +5,8 @@ module Users
     field :password_hash, type: String
     field :status, type: String
 
+    attr_accessor :geoposition
+
     STATUSES = %w[
       offline
       online
