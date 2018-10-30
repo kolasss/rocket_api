@@ -7,7 +7,7 @@ module Api
         def show
           @order = current_user.active_order
           if @order.present?
-            render json: json_success(serialize_order)
+            render json: json_success(serialize_order_detailed)
           else
             head :no_content
           end
@@ -95,6 +95,10 @@ module Api
 
         def serialize_order
           Api::V1::Orders::Serializer.new(@order).build_schema
+        end
+
+        def serialize_order_detailed
+          Api::V1::Orders::DetailedSerializer.new(@order).build_schema
         end
       end
     end

@@ -7,6 +7,43 @@ RSpec.describe 'active_order', type: :request, tags: ['courier active_order'] do
   let(:token) { UserAuthentication::User.new(user: user).new_token }
   let(:Authorization) { "Bearer #{token}" }
 
+  path '/api/v1/courier/active_order' do
+    parameter(
+      :Authorization,
+      in: :header,
+      type: :string,
+      required: true,
+      description: 'Bearer token'
+    )
+
+    get summary: 'show active order' do
+      let!(:order) { create(:order, :requested, courier_id: user.id) }
+      let!(:assignment) do
+        create(
+          :courier_assignment,
+          courier_id: user.id,
+          order: order
+        )
+      end
+
+      before do
+        user.update(active_order_id: order.id)
+      end
+
+      produces 'application/json'
+
+      response(200, description: 'successful') do
+        it 'respond with order' do
+          json = JSON.parse(response.body)
+          item = json['data']
+          expect(item['courierId']).to eq user.id.to_s
+          expect(item['id']).to eq order.id.to_s
+        end
+        capture_example
+      end
+    end
+  end
+
   path '/api/v1/courier/active_order/decline' do
     parameter(
       :Authorization,
