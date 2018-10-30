@@ -18,7 +18,11 @@ module Operations
             payload = yield VALIDATOR.call(params).to_monad
             user = yield find_user(payload[:user][:phone], ::Users::Client)
             yield check_code(user, payload[:user][:code])
-            get_token(user)
+            token = get_token(user)
+            Success(
+              user: user,
+              token: token
+            )
           end
 
           private

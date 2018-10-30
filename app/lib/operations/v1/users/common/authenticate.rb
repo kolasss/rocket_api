@@ -20,7 +20,11 @@ module Operations
             klass = yield detect_class(payload[:user][:role])
             user = yield find_user(payload[:user][:phone], klass)
             yield check_password(user, payload[:user][:password])
-            get_token(user)
+            token = get_token(user)
+            Success(
+              user: user,
+              token: token
+            )
           end
 
           private

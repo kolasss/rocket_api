@@ -11,9 +11,13 @@ module Api
           result = operation.call(request.parameters)
 
           if result.success?
-            token = result.value!
+            token = result.value![:token]
+            @user = result.value![:user]
             render(
-              json: json_success(token: token),
+              json: json_success(
+                token: token,
+                user: serialize_user
+              ),
               status: :created
             )
           else
@@ -24,6 +28,12 @@ module Api
         # def destroy
         #   head :no_content
         # end
+
+        private
+
+        def serialize_user
+          Api::V1::Users::Serializer.new(@user).build_schema
+        end
       end
     end
   end

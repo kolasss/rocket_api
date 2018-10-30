@@ -16,7 +16,7 @@ module Operations
         end
 
         def get_token(user)
-          Success(::UserAuthentication::User.new(user: user).new_token)
+          ::UserAuthentication::User.new(user: user).new_token
         end
 
         def encrypt_code(code)
