@@ -18,7 +18,7 @@ module Api
           end
         end
 
-        def destroy
+        def update
           operation = Operations::V1::Couriers::Shifts::Stop.new
           result = operation.call(current_user)
 

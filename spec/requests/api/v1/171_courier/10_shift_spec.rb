@@ -27,7 +27,7 @@ RSpec.describe 'shift', type: :request, tags: ['courier shift'] do
       end
     end
 
-    delete summary: 'set status to offline' do
+    put summary: 'set status to offline' do
       let!(:shift) { create(:shift, courier: user) }
 
       produces 'application/json'
