@@ -46,6 +46,7 @@ Rails.application.routes.draw do
           put :pick_up
           put :deliver
         end
+        resources :orders, only: %i[index show]
       end
 
       namespace :shop_manager do
