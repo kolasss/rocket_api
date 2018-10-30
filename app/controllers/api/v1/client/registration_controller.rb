@@ -15,7 +15,6 @@ module Api
             render(
               json: json_success(serialize_user),
               status: :created
-              # location: api_v1_user_path(@user)
             )
           else
             render_error(
@@ -24,10 +23,6 @@ module Api
             )
           end
         end
-
-        # def resend_code
-        #   head :ok
-        # end
 
         private
 

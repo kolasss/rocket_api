@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/stympy/faker.git
-  revision: 098f0455d5c91ae55e5e4ece32e117c557dabbee
+  revision: 723d7807516a425daead8f5e01e74b99515c0d1c
   specs:
     faker (1.9.1)
       i18n (>= 0.7)
@@ -161,7 +161,7 @@ GEM
     nio4r (2.3.1)
     nokogiri (1.8.5)
       mini_portile2 (~> 2.3.0)
-    oj (3.6.12)
+    oj (3.7.0)
     pry (0.11.3)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)

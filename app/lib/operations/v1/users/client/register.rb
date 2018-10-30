@@ -9,7 +9,6 @@ module Operations
 
           VALIDATOR = Dry::Validation.Schema do
             required(:user).schema do
-              optional(:name).filled(:str?)
               # required(:phone).filled(:str?, format?: GITHUB_LINK)
               required(:phone).filled(:str?)
             end
@@ -17,32 +16,21 @@ module Operations
 
           def call(params)
             payload = yield VALIDATOR.call(params).to_monad
-            yield check_phone(payload[:user][:phone])
-            code = yield generate_code
-            user = yield create(payload[:user], code)
-
+            code = generate_code
+            user = yield create(payload[:user][:phone], code)
             send_sms(user.phone, code)
-
             Success(user)
           end
 
           private
 
           def generate_code
-            Success('1234') # TODO: generate random code
+            '1234' # TODO: generate random code
+            # Random.rand(1000..9999)
           end
 
-          def check_phone(phone)
-            user = ::Users::Client.where(phone: phone).first
-            if user.present?
-              Failure(:phone_already_registered)
-            else
-              Success(true)
-            end
-          end
-
-          def create(params, code)
-            user = ::Users::Client.new(params)
+          def create(phone, code)
+            user = ::Users::Client.find_or_initialize_by(phone: phone)
             user.code_hash = encrypt_code(code)
 
             if user.save
