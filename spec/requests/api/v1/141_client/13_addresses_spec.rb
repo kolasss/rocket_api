@@ -36,6 +36,7 @@ RSpec.describe 'addresses', type: :request,
 
     post summary: 'create' do
       let(:item_attributes) { attributes_for(:address) }
+      let(:precision) { 5 }
 
       produces 'application/json'
       consumes 'application/json'
@@ -75,10 +76,10 @@ RSpec.describe 'addresses', type: :request,
           item = json['data']
           expect(item['title']).to eq item_attributes[:title]
           expect(item['location']['lat']).to(
-            eq item_attributes[:location][:lat].round(5)
+            eq item_attributes[:location][:lat].round(precision)
           )
           expect(item['location']['lon']).to(
-            eq item_attributes[:location][:lon].round(5)
+            eq item_attributes[:location][:lon].round(precision)
           )
         end
         capture_example

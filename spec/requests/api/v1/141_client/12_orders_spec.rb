@@ -159,4 +159,33 @@ RSpec.describe 'orders', type: :request, tags: ['client orders'] do
       end
     end
   end
+
+  path '/api/v1/client/orders/{order_id}/cancel' do
+    parameter(
+      :Authorization,
+      in: :header,
+      type: :string,
+      required: true,
+      description: 'Bearer token'
+    )
+
+    parameter :order_id, in: :path, type: :string, required: true
+    let(:order) do
+      create(:order, :with_product, client: user, status: 'requested')
+    end
+    let(:order_id) { order.id.to_s }
+
+    put summary: 'change status of order to "canceled_client"' do
+      produces 'application/json'
+
+      response(200, description: 'success') do
+        it 'shows right info' do
+          json = JSON.parse(response.body)
+          item = json['data']
+          expect(item['status']).to eq 'canceled_client'
+        end
+        capture_example
+      end
+    end
+  end
 end

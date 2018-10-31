@@ -15,7 +15,7 @@ module Api
         end
 
         def show
-          set_order
+          @order = current_user.orders.find(params[:id])
           render json: json_success(serialize_order)
         end
 
@@ -42,17 +42,25 @@ module Api
         end
 
         def cancel
-          set_order
-          # if @order.update(order_params)
-          #   render json: json_success(serialize_order)
-          # else
-          #   # render json: @order.errors, status: :unprocessable_entity
-          #   render_error
-          # end
+          operation = Operations::V1::Orders::Client::Cancel.new
+          result = operation.call(
+            id: params[:order_id],
+            client: current_user
+          )
+
+          if result.success?
+            @order = result.value!
+            render json: json_success(serialize_order)
+          else
+            render_error(
+              status: :bad_request,
+              errors: result.failure
+            )
+          end
         end
 
         def make_request
-          operation = Operations::V1::Orders::Request.new
+          operation = Operations::V1::Orders::Client::Request.new
           result = operation.call(
             id: params[:order_id],
             client: current_user
@@ -70,10 +78,6 @@ module Api
         end
 
         private
-
-        def set_order
-          @order = current_user.orders.find(params[:id])
-        end
 
         def serialize_order
           Api::V1::Orders::Serializer.new(@order).build_schema

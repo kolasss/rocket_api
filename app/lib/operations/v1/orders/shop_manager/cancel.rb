@@ -15,12 +15,13 @@ module Operations
             payload = yield VALIDATOR.call(params).to_monad
             shop = yield find_shop(shop_id)
             order = yield find_order(id, shop)
-            yield check_order(order)
+            yield check_status(order)
             response = order.shop_response
             yield validate_response(response)
             yield update_response(response)
             yield cancel_order(order, payload[:reason])
-            decline_assignment(order)
+            yield update_courier(order)
+            Success(order)
           end
 
           private
@@ -43,7 +44,7 @@ module Operations
             end
           end
 
-          def check_order(order)
+          def check_status(order)
             if order.status != 'requested'
               Failure(:invalid_order_status)
             else
@@ -78,9 +79,18 @@ module Operations
             end
           end
 
-          def decline_assignment(order)
-            # TODO: decline assignment? notify courier
-            Success(order)
+          # TODO: refactor with courier notification
+          def update_courier(order)
+            courier = order.courier
+            return Success(true) if courier.blank?
+
+            courier.active_order = nil
+            courier.status = 'online'
+            if courier.save
+              Success(true)
+            else
+              Failure(courier: courier.errors.as_json)
+            end
           end
         end
       end

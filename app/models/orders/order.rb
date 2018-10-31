@@ -46,6 +46,7 @@ module Orders
       delivered
       canceled_supervisor
       canceled_shop
+      canceled_client
     ].freeze
 
     validates :status, inclusion: { in: STATUSES }
