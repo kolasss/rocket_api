@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/stympy/faker.git
-  revision: 723d7807516a425daead8f5e01e74b99515c0d1c
+  revision: a1a4a77f4b86d87abae9e486660d83241d802ca6
   specs:
     faker (1.9.1)
       i18n (>= 0.7)
@@ -204,7 +204,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
-    redis (4.0.2)
+    redis (4.0.3)
     rspec-core (3.8.0)
       rspec-support (~> 3.8.0)
     rspec-expectations (3.8.2)

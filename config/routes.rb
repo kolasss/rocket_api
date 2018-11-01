@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       namespace :users do
         post :login, to: 'authentication#create'
         # delete  :logout,    to: 'authentication#destroy'
+        resource :profile, only: %i[show update]
       end
 
       namespace :admin do
