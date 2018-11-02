@@ -5,7 +5,10 @@ class CourierStatusCleanupWorker
   sidekiq_options retry: false
 
   def perform
-    operation.call
+    result = operation.call
+    return if result.success?
+
+    Rails.logger.error("CourierStatusCleanupWorker: #{result.failure}")
   end
 
   private

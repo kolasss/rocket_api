@@ -9,6 +9,8 @@ module Operations
 
           def call
             ids = yield outdated_ids
+            return Success(true) if ids.empty?
+
             yield clear_outdated_ids(ids)
             couriers = get_couriers(ids)
             couriers.each do |courier|
@@ -22,11 +24,7 @@ module Operations
 
           def outdated_ids
             ids = status_service.outdated
-            if ids.any?
-              Success(ids)
-            else
-              Failure(:no_outdated_ids)
-            end
+            Success(ids)
           end
 
           def clear_outdated_ids(ids)
