@@ -48,7 +48,7 @@ RSpec.describe 'user authentication', type: :request,
           json = JSON.parse(response.body)
           # binding.pry
           item = json['data']
-          expect(item['token']).to be
+          expect(item['token']).to be_truthy
         end
         capture_example
       end

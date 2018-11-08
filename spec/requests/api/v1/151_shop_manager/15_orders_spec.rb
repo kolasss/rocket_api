@@ -23,13 +23,21 @@ RSpec.describe 'orders', type: :request, tags: ['shop_manager orders'] do
       produces 'application/json'
 
       response(200, description: 'successful') do
-        it 'contains array of orders' do
-          json = JSON.parse(response.body)
-          items = json['data']['items']
-          expect(items).to be_an_instance_of(Array)
-          expect(items.size).to eq 1
-          expect(items[0]['shopId']).to eq shop.id.to_s
+        context 'with response contains' do
+          let(:json) { JSON.parse(response.body) }
+          let(:items) { json['data']['items'] }
+
+          it 'array' do
+            expect(items).to be_an_instance_of(Array)
+          end
+          it '1 item' do
+            expect(items.size).to eq 1
+          end
+          it 'shop\'s order' do
+            expect(items[0]['shopId']).to eq shop.id.to_s
+          end
         end
+
         capture_example
       end
     end
@@ -52,11 +60,16 @@ RSpec.describe 'orders', type: :request, tags: ['shop_manager orders'] do
       produces 'application/json'
 
       response(200, description: 'success') do
-        it 'changes order status to accepted' do
-          json = JSON.parse(response.body)
-          item = json['data']
-          expect(item['shopResponse']['status']).to eq 'accepted'
-          expect(item['status']).to eq 'accepted'
+        context 'when changes' do
+          let(:json) { JSON.parse(response.body) }
+          let(:item) { json['data'] }
+
+          it 'order status to accepted' do
+            expect(item['status']).to eq 'accepted'
+          end
+          it 'shop response status to accepted' do
+            expect(item['shopResponse']['status']).to eq 'accepted'
+          end
         end
 
         capture_example
@@ -95,11 +108,16 @@ RSpec.describe 'orders', type: :request, tags: ['shop_manager orders'] do
       end
 
       response(200, description: 'success') do
-        it 'changes order status to canceled_shop' do
-          json = JSON.parse(response.body)
-          item = json['data']
-          expect(item['shopResponse']['status']).to eq 'canceled'
-          expect(item['status']).to eq 'canceled_shop'
+        context 'when changes' do
+          let(:json) { JSON.parse(response.body) }
+          let(:item) { json['data'] }
+
+          it 'order status to canceled_shop' do
+            expect(item['status']).to eq 'canceled_shop'
+          end
+          it 'shop response status to canceled' do
+            expect(item['shopResponse']['status']).to eq 'canceled'
+          end
         end
 
         capture_example

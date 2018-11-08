@@ -99,14 +99,24 @@ RSpec.describe 'shops', type: :request, tags: ['shop_manager shop'] do
       end
 
       response 200, description: 'success' do
-        it 'uses the params we passed in' do
-          json = JSON.parse(response.body)
-          item = json['data']
-          expect(item['title']).to eq new_title
-          expect(item['address']['title']).to eq new_address
-          expect(item['address']['location']['lat']).to eq new_lat
-          expect(item['address']['location']['lon']).to eq new_lon
+        context 'with params to update' do
+          let(:json) { JSON.parse(response.body) }
+          let(:item) { json['data'] }
+
+          it 'title' do
+            expect(item['title']).to eq new_title
+          end
+          it 'address' do
+            expect(item['address']['title']).to eq new_address
+          end
+          it 'lat' do
+            expect(item['address']['location']['lat']).to eq new_lat
+          end
+          it 'lon' do
+            expect(item['address']['location']['lon']).to eq new_lon
+          end
         end
+
         capture_example
       end
     end

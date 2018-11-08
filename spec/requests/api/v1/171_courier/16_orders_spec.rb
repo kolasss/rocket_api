@@ -17,8 +17,8 @@ RSpec.describe 'orders', type: :request, tags: ['courier orders'] do
     )
 
     get summary: 'list orders' do
-      let!(:order) { create(:order, :requested, courier_id: user.id) }
-      let!(:assignment) do
+      let(:order) { create(:order, :requested, courier_id: user.id) }
+      before do
         create(
           :courier_assignment,
           courier_id: user.id,
@@ -29,13 +29,21 @@ RSpec.describe 'orders', type: :request, tags: ['courier orders'] do
       produces 'application/json'
 
       response(200, description: 'successful') do
-        it 'contains array of orders' do
-          json = JSON.parse(response.body)
-          items = json['data']['items']
-          expect(items).to be_an_instance_of(Array)
-          expect(items.size).to eq 1
-          expect(items[0]['courierId']).to eq user.id.to_s
+        context 'with response contains' do
+          let(:json) { JSON.parse(response.body) }
+          let(:items) { json['data']['items'] }
+
+          it 'array' do
+            expect(items).to be_an_instance_of(Array)
+          end
+          it '1 item' do
+            expect(items.size).to eq 1
+          end
+          it 'courierId' do
+            expect(items[0]['courierId']).to eq user.id.to_s
+          end
         end
+
         capture_example
       end
     end

@@ -22,13 +22,21 @@ RSpec.describe 'orders', type: :request, tags: ['client orders'] do
       produces 'application/json'
 
       response(200, description: 'successful') do
-        it 'contains array of orders' do
-          json = JSON.parse(response.body)
-          items = json['data']['items']
-          expect(items).to be_an_instance_of(Array)
-          expect(items.size).to eq 1
-          expect(items[0]['clientId']).to eq user.id.to_s
+        context 'with response contains' do
+          let(:json) { JSON.parse(response.body) }
+          let(:items) { json['data']['items'] }
+
+          it 'array' do
+            expect(items).to be_an_instance_of(Array)
+          end
+          it '1 item' do
+            expect(items.size).to eq 1
+          end
+          it 'clients order' do
+            expect(items[0]['clientId']).to eq user.id.to_s
+          end
         end
+
         capture_example
       end
     end
@@ -85,21 +93,37 @@ RSpec.describe 'orders', type: :request, tags: ['client orders'] do
       end
 
       response(201, description: 'successfully created') do
-        it 'uses the params we passed in' do
-          json = JSON.parse(response.body)
-          item = json['data']
-          expect(item['shopId']).to eq shop.id.to_s
-          expect(item['clientId']).to eq user.id.to_s
-          expect(item['status']).to eq 'new'
-          expect(item['products'][0]['title']).to eq product.title
-          expect(item['priceTotal']).to(
-            eq((product.price * product_quantity).to_f)
-          )
-          expect(item['address']['street']).to eq address.street
-          expect(item['address']['location']['lat']).to(
-            eq address.location.lat.to_f
-          )
+        context 'with params to create' do
+          let(:json) { JSON.parse(response.body) }
+          let(:item) { json['data'] }
+
+          it 'shopId' do
+            expect(item['shopId']).to eq shop.id.to_s
+          end
+          it 'clientId' do
+            expect(item['clientId']).to eq user.id.to_s
+          end
+          it 'status' do
+            expect(item['status']).to eq 'new'
+          end
+          it 'products' do
+            expect(item['products'][0]['title']).to eq product.title
+          end
+          it 'priceTotal' do
+            expect(item['priceTotal']).to(
+              eq((product.price * product_quantity).to_f)
+            )
+          end
+          it 'address street' do
+            expect(item['address']['street']).to eq address.street
+          end
+          it 'address location' do
+            expect(item['address']['location']['lat']).to(
+              eq address.location.lat.to_f
+            )
+          end
         end
+
         capture_example
       end
     end
@@ -122,12 +146,18 @@ RSpec.describe 'orders', type: :request, tags: ['client orders'] do
       produces 'application/json'
 
       response(200, description: 'success') do
-        it 'shows right info' do
-          json = JSON.parse(response.body)
-          item = json['data']
-          expect(item['clientId']).to eq user.id.to_s
-          expect(item['priceTotal']).to be_positive
+        context 'when response has right' do
+          let(:json) { JSON.parse(response.body) }
+          let(:item) { json['data'] }
+
+          it 'clientId' do
+            expect(item['clientId']).to eq user.id.to_s
+          end
+          it 'priceTotal' do
+            expect(item['priceTotal']).to be_positive
+          end
         end
+
         capture_example
       end
     end
@@ -150,7 +180,7 @@ RSpec.describe 'orders', type: :request, tags: ['client orders'] do
       produces 'application/json'
 
       response(200, description: 'success') do
-        it 'shows right info' do
+        it 'shows status requested' do
           json = JSON.parse(response.body)
           item = json['data']
           expect(item['status']).to eq 'requested'
@@ -179,7 +209,7 @@ RSpec.describe 'orders', type: :request, tags: ['client orders'] do
       produces 'application/json'
 
       response(200, description: 'success') do
-        it 'shows right info' do
+        it 'shows status canceled_client' do
           json = JSON.parse(response.body)
           item = json['data']
           expect(item['status']).to eq 'canceled_client'

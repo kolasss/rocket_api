@@ -22,12 +22,21 @@ RSpec.describe 'orders', type: :request, tags: ['admin orders'] do
       produces 'application/json'
 
       response(200, description: 'successful') do
-        it 'contains array of orders' do
-          json = JSON.parse(response.body)
-          items = json['data']['items']
-          expect(items).to be_an_instance_of(Array)
-          expect(items.size).to eq 1
+        context 'with response contains' do
+          let(:json) { JSON.parse(response.body) }
+          let(:items) { json['data']['items'] }
+
+          it 'array' do
+            expect(items).to be_an_instance_of(Array)
+          end
+          it '1 item' do
+            expect(items.size).to eq 1
+          end
+          it 'order' do
+            expect(items[0]['id']).to eq order.id.to_s
+          end
         end
+
         capture_example
       end
     end
@@ -86,14 +95,18 @@ RSpec.describe 'orders', type: :request, tags: ['admin orders'] do
       end
 
       response(201, description: 'successfully created') do
-        it 'uses the params we passed in' do
-          json = JSON.parse(response.body)
-          item = json['data']
-          expect(item['shopId']).to eq shop.id.to_s
-          expect(item['clientId']).to eq client.id.to_s
-          # expect(item['products'][0]['title']).to eq product.title
-          # expect(item['priceTotal']).to eq(product.price * quantity)
+        context 'with params to create' do
+          let(:json) { JSON.parse(response.body) }
+          let(:item) { json['data'] }
+
+          it 'shopId' do
+            expect(item['shopId']).to eq shop.id.to_s
+          end
+          it 'clientId' do
+            expect(item['clientId']).to eq client.id.to_s
+          end
         end
+
         capture_example
       end
     end
@@ -156,12 +169,18 @@ RSpec.describe 'orders', type: :request, tags: ['admin orders'] do
       end
 
       response 200, description: 'success' do
-        it 'uses the params we passed in' do
-          json = JSON.parse(response.body)
-          item = json['data']
-          expect(item['status']).to eq new_status
-          expect(item['courierId']).to eq new_courier.id.to_s
+        context 'with params to update' do
+          let(:json) { JSON.parse(response.body) }
+          let(:item) { json['data'] }
+
+          it 'status' do
+            expect(item['status']).to eq new_status
+          end
+          it 'courierId' do
+            expect(item['courierId']).to eq new_courier.id.to_s
+          end
         end
+
         capture_example
       end
     end

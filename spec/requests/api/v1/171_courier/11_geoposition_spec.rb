@@ -2,6 +2,7 @@
 
 require 'swagger_helper'
 
+# rubocop:disable RSpec/EmptyExampleGroup
 RSpec.describe 'geoposition', type: :request, tags: ['courier geoposition'] do
   let(:user) { create(:courier) }
   let(:token) { UserAuthentication::User.new(user: user).new_token }
@@ -51,3 +52,4 @@ RSpec.describe 'geoposition', type: :request, tags: ['courier geoposition'] do
     end
   end
 end
+# rubocop:enable RSpec/EmptyExampleGroup

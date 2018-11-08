@@ -1,3 +1,5 @@
+require: rubocop-rspec
+
 inherit_from: .rubocop_todo.yml
 
 AllCops:
@@ -7,6 +9,7 @@ AllCops:
     - 'bin/puma'
     - 'bin/rspec'
     - 'bin/sidekiq'
+    - 'bin/rubocop'
 
 Rails:
   Enabled: true

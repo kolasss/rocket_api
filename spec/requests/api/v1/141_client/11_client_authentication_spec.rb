@@ -35,7 +35,7 @@ RSpec.describe 'client authentication', type: :request,
         it 'uses the params we passed in' do
           json = JSON.parse(response.body)
           item = json['data']
-          expect(item['token']).to be
+          expect(item['token']).to be_truthy
         end
         capture_example
       end

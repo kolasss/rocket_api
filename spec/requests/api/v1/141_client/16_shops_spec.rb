@@ -29,14 +29,24 @@ RSpec.describe 'shops', type: :request, tags: ['client shops'] do
       produces 'application/json'
 
       response(200, description: 'successful') do
-        it 'contains array of shops' do
-          json = JSON.parse(response.body)
-          items = json['data']['items']
-          expect(items).to be_an_instance_of(Array)
-          expect(items.size).to eq 1
-          expect(items[0]['title']).to eq shop.title
-          expect(items[0]['districtIds']).to eq [district.id.to_s]
+        context 'with response contains' do
+          let(:json) { JSON.parse(response.body) }
+          let(:items) { json['data']['items'] }
+
+          it 'array' do
+            expect(items).to be_an_instance_of(Array)
+          end
+          it '1 item' do
+            expect(items.size).to eq 1
+          end
+          it 'shop' do
+            expect(items[0]['title']).to eq shop.title
+          end
+          it 'shop\'s district' do
+            expect(items[0]['districtIds']).to eq [district_id]
+          end
         end
+
         capture_example
       end
     end
@@ -70,23 +80,35 @@ RSpec.describe 'shops', type: :request, tags: ['client shops'] do
     let(:district_id) { district.id.to_s }
     let(:shop_id) { shop.id.to_s }
 
-    context 'to index' do
-      it 'allowed' do
+    context 'when get index response contains' do
+      before do
         get "/api/v1/client/shops?district_id=#{district_id}"
-        expect(response).to have_http_status(200)
-        json = JSON.parse(response.body)
-        items = json['data']['items']
+      end
+
+      let(:json) { JSON.parse(response.body) }
+      let(:items) { json['data']['items'] }
+
+      it 'status is ok' do
+        expect(response).to have_http_status(:ok)
+      end
+      it 'array' do
         expect(items).to be_an_instance_of(Array)
+      end
+      it '1 item' do
         expect(items.size).to eq 1
+      end
+      it 'shop' do
         expect(items[0]['title']).to eq shop.title
-        expect(items[0]['districtIds']).to eq [district.id.to_s]
+      end
+      it 'shop\'s district' do
+        expect(items[0]['districtIds']).to eq [district_id]
       end
     end
 
-    context 'to show' do
+    context 'when get show' do
       it 'allowed' do
         get "/api/v1/client/shops/#{shop_id}"
-        expect(response).to have_http_status(200)
+        expect(response).to have_http_status(:ok)
       end
     end
   end

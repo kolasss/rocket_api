@@ -20,13 +20,21 @@ RSpec.describe 'users', type: :request, tags: ['admin users'] do
       produces 'application/json'
 
       response(200, description: 'successful') do
-        it 'contains array of users' do
-          json = JSON.parse(response.body)
-          items = json['data']['items']
-          expect(items).to be_an_instance_of(Array)
-          expect(items.size).to eq 1
-          expect(items[0]['name']).to eq user.name
+        context 'with response contains' do
+          let(:json) { JSON.parse(response.body) }
+          let(:items) { json['data']['items'] }
+
+          it 'array' do
+            expect(items).to be_an_instance_of(Array)
+          end
+          it '1 item' do
+            expect(items.size).to eq 1
+          end
+          it 'user' do
+            expect(items[0]['name']).to eq user.name
+          end
         end
+
         capture_example
       end
     end
@@ -61,7 +69,7 @@ RSpec.describe 'users', type: :request, tags: ['admin users'] do
       end
 
       response(201, description: 'successfully created') do
-        it 'uses the params we passed in' do
+        it 'uses the params to create' do
           json = JSON.parse(response.body)
           item = json['data']
           expect(item['name']).to eq item_attributes[:name]
@@ -115,7 +123,7 @@ RSpec.describe 'users', type: :request, tags: ['admin users'] do
       end
 
       response 200, description: 'success' do
-        it 'uses the params we passed in' do
+        it 'uses the params to update' do
           json = JSON.parse(response.body)
           item = json['data']
           expect(item['name']).to eq new_name

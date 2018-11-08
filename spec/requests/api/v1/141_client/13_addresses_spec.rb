@@ -23,13 +23,21 @@ RSpec.describe 'addresses', type: :request,
       produces 'application/json'
 
       response(200, description: 'successful') do
-        it 'contains array of categories' do
-          json = JSON.parse(response.body)
-          items = json['data']['items']
-          expect(items).to be_an_instance_of(Array)
-          expect(items.size).to eq 1
-          expect(items[0]['title']).to eq address.title
+        context 'with response contains' do
+          let(:json) { JSON.parse(response.body) }
+          let(:items) { json['data']['items'] }
+
+          it 'array' do
+            expect(items).to be_an_instance_of(Array)
+          end
+          it '1 item' do
+            expect(items.size).to eq 1
+          end
+          it 'address' do
+            expect(items[0]['title']).to eq address.title
+          end
         end
+
         capture_example
       end
     end
@@ -71,17 +79,25 @@ RSpec.describe 'addresses', type: :request,
       end
 
       response(201, description: 'successfully created') do
-        it 'uses the params we passed in' do
-          json = JSON.parse(response.body)
-          item = json['data']
-          expect(item['title']).to eq item_attributes[:title]
-          expect(item['location']['lat']).to(
-            eq item_attributes[:location][:lat].round(precision)
-          )
-          expect(item['location']['lon']).to(
-            eq item_attributes[:location][:lon].round(precision)
-          )
+        context 'with params to create' do
+          let(:json) { JSON.parse(response.body) }
+          let(:item) { json['data'] }
+
+          it 'title' do
+            expect(item['title']).to eq item_attributes[:title]
+          end
+          it 'location lat' do
+            expect(item['location']['lat']).to(
+              eq item_attributes[:location][:lat].round(precision)
+            )
+          end
+          it 'location lon' do
+            expect(item['location']['lon']).to(
+              eq item_attributes[:location][:lon].round(precision)
+            )
+          end
         end
+
         capture_example
       end
     end
@@ -146,13 +162,21 @@ RSpec.describe 'addresses', type: :request,
       end
 
       response 200, description: 'success' do
-        it 'uses the params we passed in' do
-          json = JSON.parse(response.body)
-          item = json['data']
-          expect(item['title']).to eq new_title
-          expect(item['location']['lat']).to eq new_lat
-          expect(item['location']['lon']).to eq new_lon
+        context 'with params to update' do
+          let(:json) { JSON.parse(response.body) }
+          let(:item) { json['data'] }
+
+          it 'title' do
+            expect(item['title']).to eq new_title
+          end
+          it 'location lat' do
+            expect(item['location']['lat']).to eq new_lat
+          end
+          it 'location lon' do
+            expect(item['location']['lon']).to eq new_lon
+          end
         end
+
         capture_example
       end
     end

@@ -22,13 +22,21 @@ RSpec.describe 'shops', type: :request, tags: ['admin shops'] do
       produces 'application/json'
 
       response(200, description: 'successful') do
-        it 'contains array of shops' do
-          json = JSON.parse(response.body)
-          items = json['data']['items']
-          expect(items).to be_an_instance_of(Array)
-          expect(items.size).to eq 1
-          expect(items[0]['title']).to eq shop.title
+        context 'with response contains' do
+          let(:json) { JSON.parse(response.body) }
+          let(:items) { json['data']['items'] }
+
+          it 'array' do
+            expect(items).to be_an_instance_of(Array)
+          end
+          it '1 item' do
+            expect(items.size).to eq 1
+          end
+          it 'shop' do
+            expect(items[0]['title']).to eq shop.title
+          end
         end
+
         capture_example
       end
     end
@@ -74,13 +82,21 @@ RSpec.describe 'shops', type: :request, tags: ['admin shops'] do
       end
 
       response(201, description: 'successfully created') do
-        it 'uses the params we passed in' do
-          json = JSON.parse(response.body)
-          item = json['data']
-          expect(item['title']).to eq item_attributes[:title]
-          expect(item['categories'][0]['title']).to eq category.title
-          expect(item['districts'][0]['title']).to eq district.title
+        context 'with params to create' do
+          let(:json) { JSON.parse(response.body) }
+          let(:item) { json['data'] }
+
+          it 'title' do
+            expect(item['title']).to eq item_attributes[:title]
+          end
+          it 'categories' do
+            expect(item['categories'][0]['title']).to eq category.title
+          end
+          it 'districts' do
+            expect(item['districts'][0]['title']).to eq district.title
+          end
         end
+
         capture_example
       end
     end
@@ -142,7 +158,7 @@ RSpec.describe 'shops', type: :request, tags: ['admin shops'] do
       end
 
       response 200, description: 'success' do
-        it 'uses the params we passed in' do
+        it 'uses the params to update' do
           json = JSON.parse(response.body)
           item = json['data']
           expect(item['title']).to eq new_title

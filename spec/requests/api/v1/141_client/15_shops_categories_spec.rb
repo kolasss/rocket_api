@@ -23,13 +23,21 @@ RSpec.describe 'shops categories', type: :request,
       produces 'application/json'
 
       response(200, description: 'successful') do
-        it 'contains array of categories' do
-          json = JSON.parse(response.body)
-          items = json['data']['items']
-          expect(items).to be_an_instance_of(Array)
-          expect(items.size).to eq 1
-          expect(items[0]['title']).to eq category.title
+        context 'with response contains' do
+          let(:json) { JSON.parse(response.body) }
+          let(:items) { json['data']['items'] }
+
+          it 'array' do
+            expect(items).to be_an_instance_of(Array)
+          end
+          it '1 item' do
+            expect(items.size).to eq 1
+          end
+          it 'category' do
+            expect(items[0]['title']).to eq category.title
+          end
         end
+
         capture_example
       end
     end
@@ -38,14 +46,26 @@ RSpec.describe 'shops categories', type: :request,
   describe 'public access' do
     let!(:category) { create(:shop_category) }
 
-    it 'allowed' do
-      get '/api/v1/client/shops_categories'
-      expect(response).to have_http_status(200)
-      json = JSON.parse(response.body)
-      items = json['data']['items']
-      expect(items).to be_an_instance_of(Array)
-      expect(items.size).to eq 1
-      expect(items[0]['title']).to eq category.title
+    context 'with response contains' do
+      before do
+        get '/api/v1/client/shops_categories'
+      end
+
+      let(:json) { JSON.parse(response.body) }
+      let(:items) { json['data']['items'] }
+
+      it 'status is ok' do
+        expect(response).to have_http_status(:ok)
+      end
+      it 'array' do
+        expect(items).to be_an_instance_of(Array)
+      end
+      it '1 item' do
+        expect(items.size).to eq 1
+      end
+      it 'category' do
+        expect(items[0]['title']).to eq category.title
+      end
     end
   end
 end

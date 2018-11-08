@@ -23,6 +23,7 @@ require 'rspec/rails'
 # require only the support files necessary.
 #
 # Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
+require 'support/mocked/operations'
 
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
@@ -50,18 +51,16 @@ RSpec.configure do |config|
     DatabaseCleaner.clean
   end
 
-  config.before(:example) do
+  config.before do
+    Faker::UniqueGenerator.clear
+    Sidekiq::Worker.clear_all
     Redis.current.flushdb
   end
 
-  config.around(:example) do |example|
+  config.around do |example|
     DatabaseCleaner.cleaning do
       example.run
     end
-  end
-
-  config.after(:context) do
-    Faker::UniqueGenerator.clear
   end
 end
 

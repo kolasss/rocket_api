@@ -2,6 +2,7 @@
 
 require 'swagger_helper'
 
+# rubocop:disable RSpec/ScatteredSetup
 RSpec.describe 'active_order', type: :request, tags: ['courier active_order'] do
   let(:user) { create(:courier) }
   let(:token) { UserAuthentication::User.new(user: user).new_token }
@@ -17,28 +18,32 @@ RSpec.describe 'active_order', type: :request, tags: ['courier active_order'] do
     )
 
     get summary: 'show active order' do
-      let!(:order) { create(:order, :requested, courier_id: user.id) }
-      let!(:assignment) do
+      let(:order) { create(:order, :requested, courier_id: user.id) }
+
+      before do
         create(
           :courier_assignment,
           courier_id: user.id,
           order: order
         )
-      end
-
-      before do
         user.update(active_order_id: order.id)
       end
 
       produces 'application/json'
 
       response(200, description: 'successful') do
-        it 'respond with order' do
-          json = JSON.parse(response.body)
-          item = json['data']
-          expect(item['courierId']).to eq user.id.to_s
-          expect(item['id']).to eq order.id.to_s
+        context 'with response contains' do
+          let(:json) { JSON.parse(response.body) }
+          let(:item) { json['data'] }
+
+          it 'id' do
+            expect(item['id']).to eq order.id.to_s
+          end
+          it 'courierId' do
+            expect(item['courierId']).to eq user.id.to_s
+          end
         end
+
         capture_example
       end
     end
@@ -54,17 +59,15 @@ RSpec.describe 'active_order', type: :request, tags: ['courier active_order'] do
     )
 
     put summary: 'decline order' do
-      let!(:order) { create(:order, :requested, courier_id: user.id) }
-      let!(:assignment) do
+      let(:order) { create(:order, :requested, courier_id: user.id) }
+      let(:decline_reason) { 'не хочу' }
+
+      before do
         create(
           :courier_assignment,
           courier_id: user.id,
           order: order
         )
-      end
-      let(:decline_reason) { 'не хочу' }
-
-      before do
         user.update(active_order_id: order.id)
       end
 
@@ -84,34 +87,42 @@ RSpec.describe 'active_order', type: :request, tags: ['courier active_order'] do
       end
 
       response(200, description: 'successful') do
-        it 'respond with order' do
-          json = JSON.parse(response.body)
-          item = json['data']
-          expect(item['courierId']).to eq nil
-          expect(item['courierAssignments'][0]['courierId']).to(
-            eq user.id.to_s
-          )
-          expect(item['courierAssignments'][0]['status']).to eq 'declined'
-          expect(item['courierAssignments'][0]['declineReason']).to(
-            eq decline_reason
-          )
+        context 'with response contains' do
+          let(:json) { JSON.parse(response.body) }
+          let(:item) { json['data'] }
+
+          it 'courierId' do
+            expect(item['courierId']).to eq nil
+          end
+          it 'courierAssignments courierId' do
+            expect(item['courierAssignments'][0]['courierId']).to(
+              eq user.id.to_s
+            )
+          end
+          it 'courierAssignments status' do
+            expect(item['courierAssignments'][0]['status']).to eq 'declined'
+          end
+          it 'courierAssignments declineReason' do
+            expect(item['courierAssignments'][0]['declineReason']).to(
+              eq decline_reason
+            )
+          end
         end
+
         capture_example
       end
     end
   end
 
   path '/api/v1/courier/active_order/accept' do
-    let!(:order) { create(:order, :with_accepted_shop, courier_id: user.id) }
-    let!(:assignment) do
+    let(:order) { create(:order, :with_accepted_shop, courier_id: user.id) }
+
+    before do
       create(
         :courier_assignment,
         courier_id: user.id,
         order: order
       )
-    end
-
-    before do
       user.update(active_order_id: order.id)
     end
 
@@ -127,16 +138,26 @@ RSpec.describe 'active_order', type: :request, tags: ['courier active_order'] do
       produces 'application/json'
 
       response(200, description: 'successful') do
-        it 'respond with order' do
-          json = JSON.parse(response.body)
-          item = json['data']
-          expect(item['status']).to eq 'accepted'
-          expect(item['courierId']).to eq user.id.to_s
-          expect(item['courierAssignments'][0]['courierId']).to(
-            eq user.id.to_s
-          )
-          expect(item['courierAssignments'][0]['status']).to eq 'accepted'
+        context 'with response contains' do
+          let(:json) { JSON.parse(response.body) }
+          let(:item) { json['data'] }
+
+          it 'courierId' do
+            expect(item['courierId']).to eq user.id.to_s
+          end
+          it 'status' do
+            expect(item['status']).to eq 'accepted'
+          end
+          it 'courierAssignments courierId' do
+            expect(item['courierAssignments'][0]['courierId']).to(
+              eq user.id.to_s
+            )
+          end
+          it 'courierAssignments status' do
+            expect(item['courierAssignments'][0]['status']).to eq 'accepted'
+          end
         end
+
         capture_example
       end
     end
@@ -151,7 +172,7 @@ RSpec.describe 'active_order', type: :request, tags: ['courier active_order'] do
       description: 'Bearer token'
     )
 
-    let!(:order) { create(:order, :accepted, courier_id: user.id) }
+    let(:order) { create(:order, :accepted, courier_id: user.id) }
 
     before do
       user.update(active_order_id: order.id)
@@ -161,12 +182,18 @@ RSpec.describe 'active_order', type: :request, tags: ['courier active_order'] do
       produces 'application/json'
 
       response(200, description: 'successful') do
-        it 'respond with order' do
-          json = JSON.parse(response.body)
-          item = json['data']
-          expect(item['courierId']).to eq user.id.to_s
-          expect(item['status']).to eq 'courier_at_shop'
+        context 'with response contains' do
+          let(:json) { JSON.parse(response.body) }
+          let(:item) { json['data'] }
+
+          it 'courierId' do
+            expect(item['courierId']).to eq user.id.to_s
+          end
+          it 'status' do
+            expect(item['status']).to eq 'courier_at_shop'
+          end
         end
+
         capture_example
       end
     end
@@ -181,7 +208,7 @@ RSpec.describe 'active_order', type: :request, tags: ['courier active_order'] do
       description: 'Bearer token'
     )
 
-    let!(:order) do
+    let(:order) do
       create(:order, :courier_at_shop, courier_id: user.id)
     end
 
@@ -193,12 +220,18 @@ RSpec.describe 'active_order', type: :request, tags: ['courier active_order'] do
       produces 'application/json'
 
       response(200, description: 'successful') do
-        it 'respond with order' do
-          json = JSON.parse(response.body)
-          item = json['data']
-          expect(item['courierId']).to eq user.id.to_s
-          expect(item['status']).to eq 'on_delivery'
+        context 'with response contains' do
+          let(:json) { JSON.parse(response.body) }
+          let(:item) { json['data'] }
+
+          it 'courierId' do
+            expect(item['courierId']).to eq user.id.to_s
+          end
+          it 'status' do
+            expect(item['status']).to eq 'on_delivery'
+          end
         end
+
         capture_example
       end
     end
@@ -213,12 +246,12 @@ RSpec.describe 'active_order', type: :request, tags: ['courier active_order'] do
       description: 'Bearer token'
     )
 
-    let!(:order) do
+    let(:order) do
       create(:order, :on_delivery, courier_id: user.id)
     end
-    let!(:shift) { create(:shift, courier: user) }
 
     before do
+      create(:shift, courier: user)
       user.update(active_order_id: order.id)
     end
 
@@ -226,14 +259,21 @@ RSpec.describe 'active_order', type: :request, tags: ['courier active_order'] do
       produces 'application/json'
 
       response(200, description: 'successful') do
-        it 'respond with order' do
-          json = JSON.parse(response.body)
-          item = json['data']
-          expect(item['courierId']).to eq user.id.to_s
-          expect(item['status']).to eq 'delivered'
+        context 'with response contains' do
+          let(:json) { JSON.parse(response.body) }
+          let(:item) { json['data'] }
+
+          it 'courierId' do
+            expect(item['courierId']).to eq user.id.to_s
+          end
+          it 'status' do
+            expect(item['status']).to eq 'delivered'
+          end
         end
+
         capture_example
       end
     end
   end
 end
+# rubocop:enable RSpec/ScatteredSetup

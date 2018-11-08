@@ -49,7 +49,7 @@ RSpec.describe 'products', type: :request,
       end
 
       response(201, description: 'successfully created') do
-        it 'uses the params we passed in' do
+        it 'uses the params to create an item' do
           json = JSON.parse(response.body)
           item = json['data']
           expect(item['title']).to eq item_attributes[:title]
@@ -101,7 +101,7 @@ RSpec.describe 'products', type: :request,
       end
 
       response 200, description: 'success' do
-        it 'uses the params we passed in' do
+        it 'uses the params to update' do
           json = JSON.parse(response.body)
           item = json['data']
           expect(item['title']).to eq new_title

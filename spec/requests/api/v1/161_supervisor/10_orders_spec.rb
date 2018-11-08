@@ -22,12 +22,21 @@ RSpec.describe 'orders', type: :request, tags: ['supervisor orders'] do
       produces 'application/json'
 
       response(200, description: 'successful') do
-        it 'contains array of orders' do
-          json = JSON.parse(response.body)
-          items = json['data']['items']
-          expect(items).to be_an_instance_of(Array)
-          expect(items.size).to eq 1
+        context 'with response contains' do
+          let(:json) { JSON.parse(response.body) }
+          let(:items) { json['data']['items'] }
+
+          it 'array' do
+            expect(items).to be_an_instance_of(Array)
+          end
+          it '1 item' do
+            expect(items.size).to eq 1
+          end
+          it 'order' do
+            expect(items[0]['id']).to eq order.id.to_s
+          end
         end
+
         capture_example
       end
     end
@@ -86,14 +95,24 @@ RSpec.describe 'orders', type: :request, tags: ['supervisor orders'] do
       end
 
       response(200, description: 'success') do
-        it 'shows right info' do
-          json = JSON.parse(response.body)
-          item = json['data']
-          expect(item['courierId']).to eq new_courier.id.to_s
-          expect(item['courierAssignments']).to be_an_instance_of(Array)
-          expect(item['courierAssignments'].size).to eq 1
-          expect(item['courierAssignments'][0]['status']).to eq 'proposed'
+        context 'with response contains' do
+          let(:json) { JSON.parse(response.body) }
+          let(:item) { json['data'] }
+
+          it 'courierId' do
+            expect(item['courierId']).to eq new_courier.id.to_s
+          end
+          it 'courierAssignments is array' do
+            expect(item['courierAssignments']).to be_an_instance_of(Array)
+          end
+          it 'courierAssignments contains 1 item' do
+            expect(item['courierAssignments'].size).to eq 1
+          end
+          it 'courierAssignments has status proposed' do
+            expect(item['courierAssignments'][0]['status']).to eq 'proposed'
+          end
         end
+
         capture_example
       end
     end

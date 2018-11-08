@@ -2,6 +2,7 @@
 
 require 'swagger_helper'
 
+# rubocop:disable RSpec/EmptyExampleGroup
 RSpec.describe 'shift', type: :request, tags: ['courier shift'] do
   let(:user) { create(:courier) }
   let(:token) { UserAuthentication::User.new(user: user).new_token }
@@ -28,7 +29,7 @@ RSpec.describe 'shift', type: :request, tags: ['courier shift'] do
     end
 
     put summary: 'set status to offline' do
-      let!(:shift) { create(:shift, courier: user) }
+      before { create(:shift, courier: user) }
 
       produces 'application/json'
 
@@ -38,3 +39,4 @@ RSpec.describe 'shift', type: :request, tags: ['courier shift'] do
     end
   end
 end
+# rubocop:enable RSpec/EmptyExampleGroup
