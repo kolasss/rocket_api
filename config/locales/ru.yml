@@ -1,0 +1,4 @@
+ru:
+  client:
+    sms:
+      code: "Ваш код: %{code}"

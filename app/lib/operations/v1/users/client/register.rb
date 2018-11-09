@@ -44,9 +44,9 @@ module Operations
             ::UserAuthentication::Code.hash(code)
           end
 
-          def send_sms(_phone, code)
-            # TODO: send code
-            Rails.logger.info("User's code is #{code}")
+          def send_sms(phone, code)
+            message = I18n.t('client.sms.code', code: code)
+            SmsCodeWorker.perform_async(phone, message)
           end
         end
       end
