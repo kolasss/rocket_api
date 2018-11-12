@@ -9,7 +9,7 @@ development:
 production:
   :logfile: ./log/sidekiq_production.log
   :schedule:
-    CourierStatusCleanupJob:
+    CourierStatusCleanupWorker:
       every: ['10m', first_in: '1m']
       description: "clean up ready status of couriers from redis"
 
