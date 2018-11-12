@@ -77,7 +77,7 @@ module Operations
           order = ::Orders::Order.new(
             shop: shop,
             client: client,
-            status: 'new'
+            status: 'requested' # 'new'
           )
 
           initialize_address(order, user_address)

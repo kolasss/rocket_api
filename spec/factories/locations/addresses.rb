@@ -9,7 +9,7 @@ FactoryBot.define do
     entrance { Faker::Number.number(1) }
     floor { Faker::Number.number(1) }
     intercom { Faker::Number.number(3) }
-    note { Faker::GameOfThrones.quote }
+    note { Faker::TvShows::GameOfThrones.quote }
     location do
       {
         lat: Faker::Address.latitude,

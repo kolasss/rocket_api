@@ -23,3 +23,6 @@
 /vendor/bundle/
 
 /public/uploads/
+
+# google key
+/config/rocket*.json

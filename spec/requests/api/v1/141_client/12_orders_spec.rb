@@ -104,7 +104,7 @@ RSpec.describe 'orders', type: :request, tags: ['client orders'] do
             expect(item['clientId']).to eq user.id.to_s
           end
           it 'status' do
-            expect(item['status']).to eq 'new'
+            expect(item['status']).to eq 'requested'
           end
           it 'products' do
             expect(item['products'][0]['title']).to eq product.title
@@ -163,32 +163,32 @@ RSpec.describe 'orders', type: :request, tags: ['client orders'] do
     end
   end
 
-  path '/api/v1/client/orders/{order_id}/make_request' do
-    parameter(
-      :Authorization,
-      in: :header,
-      type: :string,
-      required: true,
-      description: 'Bearer token'
-    )
+  # path '/api/v1/client/orders/{order_id}/make_request' do
+  #   parameter(
+  #     :Authorization,
+  #     in: :header,
+  #     type: :string,
+  #     required: true,
+  #     description: 'Bearer token'
+  #   )
 
-    parameter :order_id, in: :path, type: :string, required: true
-    let(:order) { create(:order, :with_product, client: user) }
-    let(:order_id) { order.id.to_s }
+  #   parameter :order_id, in: :path, type: :string, required: true
+  #   let(:order) { create(:order, :with_product, client: user) }
+  #   let(:order_id) { order.id.to_s }
 
-    put summary: 'change status of order to "requested"' do
-      produces 'application/json'
+  #   put summary: 'change status of order to "requested"' do
+  #     produces 'application/json'
 
-      response(200, description: 'success') do
-        it 'shows status requested' do
-          json = JSON.parse(response.body)
-          item = json['data']
-          expect(item['status']).to eq 'requested'
-        end
-        capture_example
-      end
-    end
-  end
+  #     response(200, description: 'success') do
+  #       it 'shows status requested' do
+  #         json = JSON.parse(response.body)
+  #         item = json['data']
+  #         expect(item['status']).to eq 'requested'
+  #       end
+  #       capture_example
+  #     end
+  #   end
+  # end
 
   path '/api/v1/client/orders/{order_id}/cancel' do
     parameter(

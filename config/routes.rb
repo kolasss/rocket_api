@@ -32,7 +32,7 @@ Rails.application.routes.draw do
         resources :shops, only: %i[index show]
         resources :orders, except: %i[update destroy] do
           put :cancel
-          put :make_request
+          # put :make_request
         end
         resources :addresses, except: %i[show]
       end

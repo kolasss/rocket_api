@@ -59,23 +59,23 @@ module Api
           end
         end
 
-        def make_request
-          operation = Operations::V1::Orders::Client::Request.new
-          result = operation.call(
-            id: params[:order_id],
-            client: current_user
-          )
+        # def make_request
+        #   operation = Operations::V1::Orders::Client::Request.new
+        #   result = operation.call(
+        #     id: params[:order_id],
+        #     client: current_user
+        #   )
 
-          if result.success?
-            @order = result.value!
-            render json: json_success(serialize_order)
-          else
-            render_error(
-              status: :bad_request,
-              errors: result.failure
-            )
-          end
-        end
+        #   if result.success?
+        #     @order = result.value!
+        #     render json: json_success(serialize_order)
+        #   else
+        #     render_error(
+        #       status: :bad_request,
+        #       errors: result.failure
+        #     )
+        #   end
+        # end
 
         private
 
