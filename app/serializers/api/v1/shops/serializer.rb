@@ -51,15 +51,11 @@ module Api
         end
 
         def image
-          return if object.image.blank?
-
-          object.image.map { |version, file| { version => file.url } }
+          image_json(object.image)
         end
 
         def logo
-          return if object.logo.blank?
-
-          object.logo.map { |version, file| { version => file.url } }
+          image_json(object.logo)
         end
       end
     end

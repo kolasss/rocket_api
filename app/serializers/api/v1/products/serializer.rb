@@ -16,9 +16,7 @@ module Api
         end
 
         def image
-          return if object.image.blank?
-
-          object.image.map { |version, file| { version => file.url } }
+          image_json(object.image)
         end
       end
     end

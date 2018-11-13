@@ -10,7 +10,9 @@ module Api
             title: String,
             description: String,
             category_ids: Array,
-            district_ids: Array
+            district_ids: Array,
+            image: Array,
+            logo: Array
           }
         end
 
@@ -20,6 +22,14 @@ module Api
 
         def district_ids
           object.district_ids.map(&:to_s)
+        end
+
+        def image
+          image_json(object.image)
+        end
+
+        def logo
+          image_json(object.logo)
         end
       end
     end

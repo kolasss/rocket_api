@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/stympy/faker.git
-  revision: a8229de2c314679e372fe790d8fc0a01be0dd232
+  revision: f73721163f6e96e5c8078b0de6100db4ca4581f6
   specs:
     faker (1.9.1)
       i18n (>= 0.7)
@@ -55,7 +55,7 @@ GEM
     ast (2.4.0)
     aws-eventstream (1.0.1)
     aws-partitions (1.111.0)
-    aws-sdk-core (3.37.0)
+    aws-sdk-core (3.38.0)
       aws-eventstream (~> 1.0)
       aws-partitions (~> 1.0)
       aws-sigv4 (~> 1.0)
@@ -168,7 +168,7 @@ GEM
     parser (2.5.3.0)
       ast (~> 2.4.0)
     powerpack (0.1.2)
-    pry (0.12.0)
+    pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
     pry-byebug (3.6.0)
