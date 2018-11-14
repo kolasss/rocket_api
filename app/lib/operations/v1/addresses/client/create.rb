@@ -9,14 +9,14 @@ module Operations
 
           VALIDATOR = Dry::Validation.Schema do
             required(:address).schema do
-              optional(:title).filled(:str?)
-              optional(:street).filled(:str?)
-              optional(:building).filled(:str?)
-              optional(:apartment).filled(:str?)
-              optional(:entrance).filled(:str?)
-              optional(:floor).filled(:str?)
-              optional(:intercom).filled(:str?)
-              optional(:note).filled(:str?)
+              optional(:title).maybe(:str?)
+              required(:street).filled(:str?)
+              required(:building).filled(:str?)
+              optional(:apartment).maybe(:str?)
+              optional(:entrance).maybe(:str?)
+              optional(:floor).maybe(:str?)
+              optional(:intercom).maybe(:str?)
+              optional(:note).maybe(:str?)
               optional(:location).schema do
                 required(:lat).filled(:float?)
                 required(:lon).filled(:float?)

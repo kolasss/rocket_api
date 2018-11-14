@@ -1,5 +1,7 @@
 # README
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/73fad8c1932d8c04834a/maintainability)](https://codeclimate.com/github/kolasss/rocket_api/maintainability)
+
 Rocket API server
 
 ### Using:

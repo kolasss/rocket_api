@@ -153,6 +153,7 @@ RSpec.describe 'addresses', type: :request,
         {
           address: {
             title: new_title,
+            note: '',
             location: {
               lat: new_lat,
               lon: new_lon
