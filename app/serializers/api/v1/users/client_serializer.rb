@@ -10,7 +10,8 @@ module Api
             name: String,
             phone: String,
             role: String,
-            addresses: Array
+            addresses: Array,
+            active_order_id: String
           }
         end
 
@@ -22,6 +23,10 @@ module Api
           Api::V1::Addresses::Serializer.new(
             object.addresses
           ).build_schema
+        end
+
+        def active_order_id
+          object.active_order_id.to_s
         end
       end
     end

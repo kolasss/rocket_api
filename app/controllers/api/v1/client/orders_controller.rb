@@ -20,7 +20,7 @@ module Api
         end
 
         def create
-          operation = Operations::V1::Orders::Create.new
+          operation = Operations::V1::Orders::Client::Create.new
           result = operation.call(
             params: request.parameters,
             client: current_user

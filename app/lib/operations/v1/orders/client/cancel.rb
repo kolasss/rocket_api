@@ -12,6 +12,7 @@ module Operations
             yield check_status(order)
             yield cancel_order(order)
             yield update_courier(order)
+            yield update_client(client)
             Success(order)
           end
 
@@ -62,6 +63,16 @@ module Operations
               Success(true)
             else
               Failure(courier: courier.errors.as_json)
+            end
+          end
+
+          def update_client(client)
+            client.active_order = nil
+
+            if client.save
+              Success(client)
+            else
+              Failure(client: client.errors.as_json)
             end
           end
         end
