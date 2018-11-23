@@ -20,7 +20,7 @@ module Api
         end
 
         def assign_courier
-          operation = Operations::V1::Orders::AssignCourier.new
+          operation = Operations::V1::Orders::Supervisor::AssignCourier.new
           result = operation.call(
             id: params[:order_id],
             courier_id: params[:courier_id]
