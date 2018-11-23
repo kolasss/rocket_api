@@ -65,6 +65,7 @@ Rails.application.routes.draw do
       namespace :supervisor do
         resources :orders, only: %i[index show] do
           post :assign_courier
+          put :cancel
         end
         resources :couriers, only: %i[index]
       end

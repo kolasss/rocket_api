@@ -60,9 +60,12 @@ module Operations
           end
 
           def create(role:, params:, klass:)
-            if role == 'shop_manager'
+            case role
+            when 'shop_manager'
               shop = yield find_shop(params[:shop_id])
               create_shop_manager(params, klass, shop)
+            when 'courier'
+              create_courier(params, klass)
             else
               create_user(params, klass)
             end
@@ -76,6 +79,12 @@ module Operations
           def create_shop_manager(params, klass, shop)
             user = initialize_user(params, klass)
             user.shop = shop
+            save_user(user)
+          end
+
+          def create_courier(params, klass)
+            user = initialize_user(params, klass)
+            user.status = 'offline'
             save_user(user)
           end
 

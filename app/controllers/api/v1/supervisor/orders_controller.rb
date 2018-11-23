@@ -37,6 +37,21 @@ module Api
           end
         end
 
+        def cancel
+          operation = Operations::V1::Orders::Supervisor::Cancel.new
+          result = operation.call(params[:order_id])
+
+          if result.success?
+            @order = result.value!
+            render json: json_success(serialize_order)
+          else
+            render_error(
+              status: :bad_request,
+              errors: result.failure
+            )
+          end
+        end
+
         private
 
         def set_order

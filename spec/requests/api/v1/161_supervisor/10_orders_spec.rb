@@ -117,4 +117,31 @@ RSpec.describe 'orders', type: :request, tags: ['supervisor orders'] do
       end
     end
   end
+
+  path '/api/v1/supervisor/orders/{order_id}/cancel' do
+    parameter(
+      :Authorization,
+      in: :header,
+      type: :string,
+      required: true,
+      description: 'Bearer token'
+    )
+
+    parameter :order_id, in: :path, type: :string, required: true
+    let(:order) { create(:order, status: 'requested') }
+    let(:order_id) { order.id.to_s }
+
+    put summary: 'change status of order to "canceled_supervisor"' do
+      produces 'application/json'
+
+      response(200, description: 'success') do
+        it 'shows status canceled_supervisor' do
+          json = JSON.parse(response.body)
+          item = json['data']
+          expect(item['status']).to eq 'canceled_supervisor'
+        end
+        capture_example
+      end
+    end
+  end
 end
