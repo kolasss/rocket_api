@@ -16,7 +16,7 @@ module Api
 
         def show
           set_order
-          render json: json_success(serialize_order)
+          render json: json_success(serialize_order_detailed)
         end
 
         def create
@@ -78,6 +78,10 @@ module Api
 
         def serialize_order
           Api::V1::Orders::Serializer.new(@order).build_schema
+        end
+
+        def serialize_order_detailed
+          Api::V1::Orders::DetailedSerializer.new(@order).build_schema
         end
       end
     end

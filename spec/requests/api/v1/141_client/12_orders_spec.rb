@@ -98,10 +98,10 @@ RSpec.describe 'orders', type: :request, tags: ['client orders'] do
           let(:item) { json['data'] }
 
           it 'shopId' do
-            expect(item['shopId']).to eq shop.id.to_s
+            expect(item['shop']['id']).to eq shop.id.to_s
           end
           it 'clientId' do
-            expect(item['clientId']).to eq user.id.to_s
+            expect(item['client']['id']).to eq user.id.to_s
           end
           it 'status' do
             expect(item['status']).to eq 'requested'
@@ -151,7 +151,7 @@ RSpec.describe 'orders', type: :request, tags: ['client orders'] do
           let(:item) { json['data'] }
 
           it 'clientId' do
-            expect(item['clientId']).to eq user.id.to_s
+            expect(item['client']['id']).to eq user.id.to_s
           end
           it 'priceTotal' do
             expect(item['priceTotal']).to be_positive

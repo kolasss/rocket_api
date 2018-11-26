@@ -16,7 +16,7 @@ module Api
 
         def show
           @order = current_user.orders.find(params[:id])
-          render json: json_success(serialize_order)
+          render json: json_success(serialize_order_detailed)
         end
 
         def create
@@ -29,7 +29,7 @@ module Api
           if result.success?
             @order = result.value!
             render(
-              json: json_success(serialize_order),
+              json: json_success(serialize_order_detailed),
               status: :created,
               location: api_v1_client_order_path(@order)
             )
@@ -81,6 +81,10 @@ module Api
 
         def serialize_order
           Api::V1::Orders::Serializer.new(@order).build_schema
+        end
+
+        def serialize_order_detailed
+          Api::V1::Orders::DetailedSerializer.new(@order).build_schema
         end
       end
     end
