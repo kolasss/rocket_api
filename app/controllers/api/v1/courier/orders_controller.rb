@@ -5,7 +5,7 @@ module Api
     module Courier
       class OrdersController < ApplicationController
         def index
-          @orders = current_user.orders
+          @orders = current_user.orders.order_by(created_at: :desc)
 
           orders_json = Api::V1::Orders::Serializer.new(
             @orders

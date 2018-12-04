@@ -16,7 +16,9 @@ module Api
             courier_assignments: Array,
             shop_response: Hash,
             cancel_reason: String,
-            address: Hash
+            address: Hash,
+            created_at: String,
+            updated_at: String
           }
         end
 
@@ -43,7 +45,7 @@ module Api
         end
 
         def courier_assignments
-          AssignmentSerializer.new(
+          Api::V1::Orders::CourierAssignmentSerializer.new(
             object.courier_assignments
           ).build_schema
         end
@@ -51,7 +53,7 @@ module Api
         def shop_response
           return unless object.shop_response?
 
-          ShopResponseSerializer.new(
+          Api::V1::Orders::ShopResponseSerializer.new(
             object.shop_response
           ).build_schema
         end
@@ -63,28 +65,13 @@ module Api
             object.address
           ).build_schema
         end
-      end
 
-      class AssignmentSerializer < Api::V1::ObjectSerializer
-        json_schema do
-          {
-            id: String,
-            status: String,
-            decline_reason: String,
-            courier_id: String
-          }
+        def created_at
+          object.created_at.rfc3339
         end
 
-        def courier_id
-          object.courier_id&.to_s
-        end
-      end
-
-      class ShopResponseSerializer < Api::V1::ObjectSerializer
-        json_schema do
-          {
-            status: String
-          }
+        def updated_at
+          object.updated_at.rfc3339
         end
       end
     end

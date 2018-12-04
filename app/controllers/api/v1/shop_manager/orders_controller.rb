@@ -6,7 +6,7 @@ module Api
       class OrdersController < ApplicationController
         def index
           @shop = current_user.shop
-          @orders = @shop.orders
+          @orders = @shop.orders.order_by(created_at: :desc)
 
           orders_json = Api::V1::Orders::Serializer.new(
             @orders
