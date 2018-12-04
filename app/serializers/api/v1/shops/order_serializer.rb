@@ -14,7 +14,8 @@ module Api
             address: Hash,
             minimum_order_price: BigDecimal,
             image: Array,
-            logo: Array
+            logo: Array,
+            phone: String
           }
         end
 

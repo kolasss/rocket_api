@@ -78,7 +78,8 @@ RSpec.describe 'shops', type: :request, tags: ['shop_manager shop'] do
                 }
               },
               image: { type: :string },
-              logo: { type: :string }
+              logo: { type: :string },
+              phone: { type: :string }
             }
           }
         }

@@ -68,7 +68,8 @@ RSpec.describe 'shops', type: :request, tags: ['admin shops'] do
                 items: { type: :string }
               },
               image: { type: :string },
-              logo: { type: :string }
+              logo: { type: :string },
+              phone: { type: :string }
             }
           }
         }
@@ -148,7 +149,8 @@ RSpec.describe 'shops', type: :request, tags: ['admin shops'] do
                 items: { type: :string }
               },
               image: { type: :string },
-              logo: { type: :string }
+              logo: { type: :string },
+              phone: { type: :string }
             }
           }
         }

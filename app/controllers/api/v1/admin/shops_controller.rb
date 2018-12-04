@@ -81,7 +81,8 @@ module Api
             { district_ids: [] },
             :minimum_order_price,
             :image,
-            :logo
+            :logo,
+            :phone
           )
         end
 

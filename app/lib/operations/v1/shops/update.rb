@@ -31,6 +31,7 @@ module Operations
             end
             optional(:image).filled(:file?)
             optional(:logo).filled(:file?)
+            optional(:phone).filled(:str?)
           end
         end
 

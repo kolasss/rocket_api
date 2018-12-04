@@ -11,6 +11,7 @@ module Shops
     field :logo_data, type: Hash
     field :description, type: String
     field :minimum_order_price, type: BigDecimal
+    field :phone, type: String
 
     has_and_belongs_to_many(
       :categories, class_name: 'Shops::Category', inverse_of: :shops
