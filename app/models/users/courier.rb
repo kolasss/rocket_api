@@ -33,5 +33,6 @@ module Users
       class_name: 'Users::Couriers::Shift',
       inverse_of: :courier
     )
+    embeds_one :token, as: :messageable, class_name: 'Users::Messages::Token'
   end
 end

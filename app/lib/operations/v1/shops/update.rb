@@ -6,6 +6,7 @@ module Operations
       class Update < ::Operations::V1::Base
         include Dry::Monads::Do.for(:call)
 
+        # rubocop:disable Metrics/BlockLength
         VALIDATOR = Dry::Validation.Schema do
           required(:shop).schema do
             optional(:title).filled(:str?)
@@ -34,6 +35,7 @@ module Operations
             optional(:phone).filled(:str?)
           end
         end
+        # rubocop:enable Metrics/BlockLength
 
         def call(params:, shop:)
           payload = yield VALIDATOR.call(params).to_monad

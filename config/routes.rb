@@ -9,6 +9,7 @@ Rails.application.routes.draw do
         post :login, to: 'authentication#create'
         # delete  :logout,    to: 'authentication#destroy'
         resource :profile, only: %i[show update]
+        resource :token, only: %i[update]
       end
 
       namespace :admin do

@@ -32,6 +32,7 @@ gem 'dry-monads' # for operations
 gem 'dry-validation' # validations
 
 gem 'aws-sdk-s3', '~> 1.2' # aws s3 api
+gem 'firebase_cloud_messenger' # for mobile push notifications
 gem 'image_processing', '~> 1.0' # process images
 gem 'shrine', '~> 2.0' # file uploader
 gem 'shrine-mongoid'
