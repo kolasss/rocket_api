@@ -5,9 +5,11 @@ module Api
     module Client
       class OrdersController < ApplicationController
         def index
-          @orders = current_user.orders.order_by(created_at: :desc)
+          @orders = current_user.orders
+                                .order_by(created_at: :desc)
+                                .includes(:shop)
 
-          orders_json = Api::V1::Orders::Serializer.new(
+          orders_json = Api::V1::Orders::WithShopSerializer.new(
             @orders
           ).build_schema
 
