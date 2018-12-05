@@ -1,14 +1,21 @@
 # frozen_string_literal: true
 
+require 'autoinc'
+
 module Orders
   class Order
     include Mongoid::Document
     include Mongoid::Timestamps
+    include Mongoid::Autoinc
+
     # field :address, type: String
     # field :district, type: String
     field :status, type: String
     field :price_total, type: BigDecimal
     field :cancel_reason, type: String
+    field :number, type: Integer
+
+    increments :number, seed: 1000
 
     belongs_to(
       :client,

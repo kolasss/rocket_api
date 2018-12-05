@@ -10,6 +10,7 @@ gem 'rails', '~> 5.2.1'
 gem 'puma', '~> 3.11'
 
 gem 'mongoid', '~> 7.0'
+gem 'mongoid-autoinc' # autoincrement field for mongoid
 gem 'redis', '~> 4.0'
 
 gem 'sidekiq'
