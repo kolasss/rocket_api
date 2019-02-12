@@ -41,4 +41,9 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  logger           = ActiveSupport::Logger.new(STDOUT)
+  logger.formatter = config.log_formatter
+  # config.log_tags  = [:subdomain, :uuid]
+  config.logger    = ActiveSupport::TaggedLogging.new(logger)
 end

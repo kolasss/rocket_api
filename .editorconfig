@@ -12,3 +12,6 @@ insert_final_newline = true
 
 # [*.{md,yml}]
 # trim_trailing_whitespace = false
+
+[master.key]
+insert_final_newline = false

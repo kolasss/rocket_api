@@ -11,6 +11,7 @@ gem 'puma', '~> 3.11'
 
 gem 'mongoid', '~> 7.0'
 gem 'mongoid-autoinc' # autoincrement field for mongoid
+gem 'psych', '~> 3.1.0' # yaml parser
 gem 'redis', '~> 4.0'
 
 gem 'sidekiq'

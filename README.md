@@ -34,3 +34,15 @@ generate swagger's json `RAILS_ENV=test bin/rake swagger`
 run sidekiq `bin/sidekiq`
 
 seed with shops `bin/rails faker:shops`
+
+run rubocop `bin/rubocop`
+
+### Docker
+
+build `docker-compose build`
+run `docker-compose up`
+run bash console in running container `docker-compose exec web bash`
+stop `docker-compose down`
+
+need to rebuild after changind Gemfile/Gemfile.lock
+`docker-compose up --build`

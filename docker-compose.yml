@@ -1,0 +1,26 @@
+version: '3.7'
+services:
+  web:
+    tty: true
+    stdin_open: true
+    build:
+      context: .
+    # command: sh -c "rm -f tmp/pids/server.pid && bin/rails s"
+    volumes:
+      - .:/rails_app:cached # cached for read performance
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+      - redis
+    environment:
+      MONGODB_URL: mongo
+      REDIS_HOST: redis
+  mongo:
+    image: mongo:4.0.6-xenial
+    volumes:
+      - mongodata:/data/db
+  redis:
+    image: redis:5.0.3
+volumes:
+  mongodata:
