@@ -5,9 +5,10 @@
 Rocket API server
 
 ### Using:
-* Ruby ~> 2.5.3
-* Rails ~> 5.2.1
-* MongoDb ~> 4.0.2
+* Ruby ~> 2.6.1
+* Rails ~> 5.2.2
+* MongoDb ~> 4.0.6
+* Redis ~> 5.0.3
 
 ## Tests
 
@@ -51,3 +52,5 @@ stop `docker-compose down`
 
 need to rebuild after changing Gemfile/Gemfile.lock
 `docker-compose up --build`
+
+ports mapping in `docker-compose.yml`: "HOST:CONTAINER"
