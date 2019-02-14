@@ -40,9 +40,14 @@ run rubocop `bin/rubocop`
 ### Docker
 
 build `docker-compose build`
+
 run `docker-compose up`
+
 run bash console in running container `docker-compose exec web bash`
+
+run bash console in new container `docker-compose run web bash`
+
 stop `docker-compose down`
 
-need to rebuild after changind Gemfile/Gemfile.lock
+need to rebuild after changing Gemfile/Gemfile.lock
 `docker-compose up --build`
