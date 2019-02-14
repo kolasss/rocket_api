@@ -8,23 +8,21 @@ module Dry
     # to fix Oj.dump error:
     #   "In :strict and :null mode all Hash keys must be Strings or Symbols,
     #   not Integer.""
-    class Message
+    module MessagePathConvertor
       def initialize(predicate, path, text, options)
-        @predicate = predicate
-        @path = format_path(path)
-        @text = text
-        @options = options
-        @rule = options[:rule]
-        @args = options[:args] || EMPTY_ARRAY
-
-        @path << rule if predicate == :key?
+        path = convert_path_integers(path)
+        super(predicate, path, text, options)
       end
 
       private
 
-      def format_path(path)
+      def convert_path_integers(path)
         path.map { |e| e.is_a?(Integer) ? e.to_s : e }
       end
+    end
+
+    class Message
+      prepend MessagePathConvertor
     end
 
     # custom predicates
