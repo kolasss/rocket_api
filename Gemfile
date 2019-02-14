@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+# git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.3'
 
@@ -39,8 +39,7 @@ gem 'image_processing', '~> 1.0' # process images
 gem 'shrine', '~> 2.0' # file uploader
 gem 'shrine-mongoid'
 
-# TODO: remove github source after release > 1.9.1
-gem 'faker', github: 'stympy/faker' # fake data generator
+gem 'faker'
 
 group :development, :test do
   gem 'database_cleaner'

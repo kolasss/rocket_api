@@ -2,9 +2,12 @@
 
 Dry::Validation.load_extensions(:monads)
 
-# monkey patch to convert integer keys of errors to strings
 module Dry
   module Validation
+    # monkey patch to convert integer keys of errors to strings
+    # to fix Oj.dump error:
+    #   "In :strict and :null mode all Hash keys must be Strings or Symbols,
+    #   not Integer.""
     class Message
       def initialize(predicate, path, text, options)
         @predicate = predicate
@@ -24,6 +27,7 @@ module Dry
       end
     end
 
+    # custom predicates
     module MyPredicates
       include Dry::Logic::Predicates
 

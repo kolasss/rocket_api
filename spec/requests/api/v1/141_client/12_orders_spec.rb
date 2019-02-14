@@ -77,22 +77,23 @@ RSpec.describe 'orders', type: :request, tags: ['client orders'] do
           }
         }
       }
-      let(:body) do
-        {
-          order: item_attributes.merge(
-            shop_id: shop.id.to_s,
-            products: [
-              {
-                id: product.id.to_s,
-                quantity: product_quantity
-              }
-            ],
-            address_id: address.id.to_s
-          )
-        }
-      end
 
       response(201, description: 'successfully created') do
+        let(:body) do
+          {
+            order: item_attributes.merge(
+              shop_id: shop.id.to_s,
+              products: [
+                {
+                  id: product.id.to_s,
+                  quantity: product_quantity
+                }
+              ],
+              address_id: address.id.to_s
+            )
+          }
+        end
+
         context 'with params to create' do
           let(:json) { JSON.parse(response.body) }
           let(:item) { json['data'] }
@@ -120,6 +121,47 @@ RSpec.describe 'orders', type: :request, tags: ['client orders'] do
           it 'address location' do
             expect(item['address']['location']['lat']).to(
               eq address.location.lat.to_f
+            )
+          end
+        end
+
+        capture_example
+      end
+
+      response(422, description: 'validation error') do
+        let(:body) do
+          {
+            order: item_attributes.merge(
+              shop_id: shop.id.to_s,
+              products: [
+                {
+                  id: 'invalid_id',
+                  quantity: 0
+                },
+                {
+                  quantity: product_quantity
+                }
+              ],
+              address_id: address.id.to_s
+            )
+          }
+        end
+
+        context 'with invalid params to create' do
+          let(:json) { JSON.parse(response.body) }
+          let(:error) { json['error'] }
+
+          it 'error code' do
+            expect(error['code']).to eq 422
+          end
+          it 'quantity error' do
+            expect(error['errors']['order']['products']['0']['quantity']).to(
+              eq ['must be greater than or equal to 1']
+            )
+          end
+          it 'id error' do
+            expect(error['errors']['order']['products']['1']['id']).to(
+              eq ['is missing']
             )
           end
         end

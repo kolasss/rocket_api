@@ -10,8 +10,9 @@ RUN apt-get update -qq && apt-get install -y nodejs
 RUN mkdir /rails_app
 WORKDIR /rails_app
 
+# bundler v2.0 expected
+RUN gem install bundler
 COPY Gemfile Gemfile.lock ./
-
 RUN bundle install
 
 COPY . .

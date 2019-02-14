@@ -60,7 +60,7 @@ RSpec.describe 'orders', type: :request, tags: ['admin orders'] do
               client_id: { type: :string },
               courier_id: { type: :string },
               shop_id: { type: :string },
-              status: { type: :string },
+              status: { type: :string }
               # products: {
               #   type: :array,
               #   items: {
